@@ -1,74 +1,74 @@
 {
-    "LastVersion":1027,
-  "LauncherURL": [ "http://update.peakplayer.net/patch/serverversion.dat" ],
+    "LastVersion":1000,
+  "LauncherURL": [ "https://head77x.github.io/CDN/patch/serverversion.dat" ],
   "PatchFiles": [
     {
-      "FileName": "./PeakLauncher.exe",
-      "URL": "http://update.peakplayer.net/patch/launcher/PeakLauncher.dat"
+      "FileName": "./GTLauncher.exe",
+      "URL": "https://head77x.github.io/CDN/patch/launcher/GTLauncher.dat"
     },
     {
-      "FileName": "./PeakLauncher_Data/Managed/Assembly-CSharp.dll",
-      "URL": "http://update.peakplayer.net/patch/launcher/Assembly-CSharp.dat"
+      "FileName": "./GTLauncher_Data/Managed/Assembly-CSharp.dll",
+      "URL": "https://head77x.github.io/CDN/patch/launcher/Assembly-CSharp.dat"
     },
     {
-      "FileName": "./PeakLauncher_Data/Managed/Assembly-CSharp-firstpass.dll",
-      "URL": "http://update.peakplayer.net/patch/launcher/Assembly-CSharp-firstpass.dat"
+      "FileName": "./GTLauncher_Data/Managed/Assembly-CSharp-firstpass.dll",
+      "URL": "https://head77x.github.io/CDN/patch/launcher/Assembly-CSharp-firstpass.dat"
     },
     {
-      "FileName": "./PeakLauncher_Data/Managed/Unity.Analytics.DataPrivacy.dll",
-      "URL": "http://update.peakplayer.net/patch/launcher/Unity.Analytics.DataPrivacy.dat"
+      "FileName": "./GTLauncher_Data/Managed/Unity.Analytics.DataPrivacy.dll",
+      "URL": "https://head77x.github.io/CDN/patch/launcher/Unity.Analytics.DataPrivacy.dat"
     },
     {
-      "FileName": "./PeakLauncher_Data/Managed/Unity.TextMeshPro.dll",
-      "URL": "http://update.peakplayer.net/patch/launcher/Unity.TextMeshPro.dat"
+      "FileName": "./GTLauncher_Data/Managed/Unity.TextMeshPro.dll",
+      "URL": "https://head77x.github.io/CDN/patch/launcher/Unity.TextMeshPro.dat"
     },
     {
-      "FileName": "./PeakLauncher_Data/Resources/unity_builtin_extra",
-      "URL": "http://update.peakplayer.net/patch/launcher/unity_builtin_extra.dat"
+      "FileName": "./GTLauncher_Data/Resources/unity_builtin_extra",
+      "URL": "https://head77x.github.io/CDN/patch/launcher/unity_builtin_extra.dat"
     },
     {
-      "FileName": "./PeakLauncher_Data/app.info",
-      "URL": "http://update.peakplayer.net/patch/launcher/app.dat"
+      "FileName": "./GTLauncher_Data/app.info",
+      "URL": "https://head77x.github.io/CDN/patch/launcher/app.dat"
     },
     {
-      "FileName": "./PeakLauncher_Data/boot.config",
-      "URL": "http://update.peakplayer.net/patch/launcher/boot.dat"
+      "FileName": "./GTLauncher_Data/boot.config",
+      "URL": "https://head77x.github.io/CDN/patch/launcher/boot.dat"
     },
     {
-      "FileName": "./PeakLauncher_Data/globalgamemanagers",
-      "URL": "http://update.peakplayer.net/patch/launcher/globalgamemanagers.dat"
+      "FileName": "./GTLauncher_Data/globalgamemanagers",
+      "URL": "https://head77x.github.io/CDN/patch/launcher/globalgamemanagers.dat"
     },
     {
-      "FileName": "./PeakLauncher_Data/globalgamemanagers.assets",
-      "URL": "http://update.peakplayer.net/patch/launcher/globalgamemanagersassets.dat"
+      "FileName": "./GTLauncher_Data/globalgamemanagers.assets",
+      "URL": "https://head77x.github.io/CDN/patch/launcher/globalgamemanagersassets.dat"
     },
     {
-      "FileName": "./PeakLauncher_Data/level0",
-      "URL": "http://update.peakplayer.net/patch/launcher/level0.dat"
+      "FileName": "./GTLauncher_Data/level0",
+      "URL": "https://head77x.github.io/CDN/patch/launcher/level0.dat"
     },
     {
-      "FileName": "./PeakLauncher_Data/level0.resS",
-      "URL": "http://update.peakplayer.net/patch/launcher/level0resS.dat"
+      "FileName": "./GTLauncher_Data/level0.resS",
+      "URL": "https://head77x.github.io/CDN/patch/launcher/level0resS.dat"
     },
     {
-      "FileName": "./PeakLauncher_Data/resources.assets",
-      "URL": "http://update.peakplayer.net/patch/launcher/resources.dat"
+      "FileName": "./GTLauncher_Data/resources.assets",
+      "URL": "https://head77x.github.io/CDN/patch/launcher/resources.dat"
     },
     {
-      "FileName": "./PeakLauncher_Data/sharedassets0.assets",
-      "URL": "http://update.peakplayer.net/patch/launcher/sharedassets0.dat"
+      "FileName": "./GTLauncher_Data/sharedassets0.assets",
+      "URL": "https://head77x.github.io/CDN/patch/launcher/sharedassets0.dat"
     },
     {
-      "FileName": "./PeakLauncher_Data/sharedassets0.assets.resS",
-      "URL": "http://update.peakplayer.net/patch/launcher/sharedassets0assets.dat"
+      "FileName": "./GTLauncher_Data/sharedassets0.assets.resS",
+      "URL": "https://head77x.github.io/CDN/patch/launcher/sharedassets0assets.dat"
     },
     {
       "FileName": "./restart.bat",
-      "URL": "http://update.peakplayer.net/patch/launcher/restart.dat"
+      "URL": "https://head77x.github.io/CDN/patch/launcher/restart.dat"
     },
     {
       "FileName": "./remover.bat",
-      "URL": "http://update.peakplayer.net/patch/launcher/remover.dat"
+      "URL": "https://head77x.github.io/CDN/patch/launcher/remover.dat"
     }
   ]
 }
