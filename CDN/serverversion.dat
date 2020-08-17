@@ -1,6 +1,6 @@
 {
     "LastVersion":1000,
-  "LauncherURL": [ "https://head77x.github.io/CDN/patch/serverversion.dat" ],
+  "LauncherURL": [ "https://head77x.github.io/CDN/serverversion.dat" ],
   "PatchFiles": [
     {
       "FileName": "./GTLauncher.exe",
