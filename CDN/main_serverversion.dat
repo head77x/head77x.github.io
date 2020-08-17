@@ -1,0 +1,7 @@
+{
+    "LastVersion":2,
+    "LauncherURL":["http://update.peakplayer.net/patch/main_serverversion.dat"],
+    "PatchFiles":[
+        {"FromVersion":0,"NextVersion":2,"FileName":"./temp/Version_0002.zip","URL":"http://update.peakplayer.net/patch/Version_0002.zip"}
+    ]
+}

@@ -1,0 +1,74 @@
+{
+    "LastVersion":1027,
+  "LauncherURL": [ "http://update.peakplayer.net/patch/serverversion.dat" ],
+  "PatchFiles": [
+    {
+      "FileName": "./PeakLauncher.exe",
+      "URL": "http://update.peakplayer.net/patch/launcher/PeakLauncher.dat"
+    },
+    {
+      "FileName": "./PeakLauncher_Data/Managed/Assembly-CSharp.dll",
+      "URL": "http://update.peakplayer.net/patch/launcher/Assembly-CSharp.dat"
+    },
+    {
+      "FileName": "./PeakLauncher_Data/Managed/Assembly-CSharp-firstpass.dll",
+      "URL": "http://update.peakplayer.net/patch/launcher/Assembly-CSharp-firstpass.dat"
+    },
+    {
+      "FileName": "./PeakLauncher_Data/Managed/Unity.Analytics.DataPrivacy.dll",
+      "URL": "http://update.peakplayer.net/patch/launcher/Unity.Analytics.DataPrivacy.dat"
+    },
+    {
+      "FileName": "./PeakLauncher_Data/Managed/Unity.TextMeshPro.dll",
+      "URL": "http://update.peakplayer.net/patch/launcher/Unity.TextMeshPro.dat"
+    },
+    {
+      "FileName": "./PeakLauncher_Data/Resources/unity_builtin_extra",
+      "URL": "http://update.peakplayer.net/patch/launcher/unity_builtin_extra.dat"
+    },
+    {
+      "FileName": "./PeakLauncher_Data/app.info",
+      "URL": "http://update.peakplayer.net/patch/launcher/app.dat"
+    },
+    {
+      "FileName": "./PeakLauncher_Data/boot.config",
+      "URL": "http://update.peakplayer.net/patch/launcher/boot.dat"
+    },
+    {
+      "FileName": "./PeakLauncher_Data/globalgamemanagers",
+      "URL": "http://update.peakplayer.net/patch/launcher/globalgamemanagers.dat"
+    },
+    {
+      "FileName": "./PeakLauncher_Data/globalgamemanagers.assets",
+      "URL": "http://update.peakplayer.net/patch/launcher/globalgamemanagersassets.dat"
+    },
+    {
+      "FileName": "./PeakLauncher_Data/level0",
+      "URL": "http://update.peakplayer.net/patch/launcher/level0.dat"
+    },
+    {
+      "FileName": "./PeakLauncher_Data/level0.resS",
+      "URL": "http://update.peakplayer.net/patch/launcher/level0resS.dat"
+    },
+    {
+      "FileName": "./PeakLauncher_Data/resources.assets",
+      "URL": "http://update.peakplayer.net/patch/launcher/resources.dat"
+    },
+    {
+      "FileName": "./PeakLauncher_Data/sharedassets0.assets",
+      "URL": "http://update.peakplayer.net/patch/launcher/sharedassets0.dat"
+    },
+    {
+      "FileName": "./PeakLauncher_Data/sharedassets0.assets.resS",
+      "URL": "http://update.peakplayer.net/patch/launcher/sharedassets0assets.dat"
+    },
+    {
+      "FileName": "./restart.bat",
+      "URL": "http://update.peakplayer.net/patch/launcher/restart.dat"
+    },
+    {
+      "FileName": "./remover.bat",
+      "URL": "http://update.peakplayer.net/patch/launcher/remover.dat"
+    }
+  ]
+}
