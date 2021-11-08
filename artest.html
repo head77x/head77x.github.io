@@ -1,0 +1,19 @@
+<script src="https://developer.letsee.io/api/webar?key=28bb8aa369945eaa4eeb32e07f96b1dd14eb51882cd87073055708aa56f8c035"></script>
+
+<script>
+	letsee.ready(callback);
+	letsee.init({ trackerType: '사용할 트래커 타입(image | marker | qrcode)'};
+	letsee.onTrackStart((e) => {
+		// tracking 시작 시, 동작시킬 callback 함수의 내용 기술
+	});
+  letsee.onTrackMove((e) => {
+    // tracking 진행 중, 동작시킬 callback 함수의 내용 기술
+	});
+  letsee.onTrackEnd((e) => {
+	  // tracking 완료 후, 동작시킬 callback 함수의 내용 기술
+  });
+	const callback = () => {
+		letsee.start(); 
+		// 엔진 준비가 완료된 후, AR mode 가 동작될 수 있도록 하기 위해 반드시 start() 메서드를 실행한다.
+	};
+</script>
