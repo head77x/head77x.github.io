@@ -58,8 +58,8 @@ window.onload = () => {
                 });
             })
 */
-            const latitude = position.latitude;
-            const longitude = position.longitude;
+            const latitude = 37.478545;
+            const longitude = 126.916387;
 
             // add place name
             const placeText = document.createElement('a-link');
