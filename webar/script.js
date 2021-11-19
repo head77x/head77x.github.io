@@ -3,6 +3,16 @@ window.onload = () => {
     button.innerText = '﹖';
 
     let places = staticLoadPlaces();
+
+    let nowpos = navigator.geolocation.getCurrentPosition(function (position) {
+        return position.coords;
+    });
+
+    places.location.lat = nowpos.latitude;
+    places.location.lng = nowpos.longitude;
+
+    console.log( JSON.stringify(places) );
+
     renderPlaces(places);
 };
 
