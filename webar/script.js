@@ -12,7 +12,7 @@ window.onload = () => {
         nowpos = {"latitude":0, "longitude":0};
     }
 
-    console.log( 'whata the :' + JSON.stringify(nowpos) + ":" + JSON.stringify(places));
+    console.log( 'whata the :' + JSON.stringify(nowpos) + ":" + JSON.stringify(places[0]));
     
 
 
