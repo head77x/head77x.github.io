@@ -13,12 +13,12 @@ AFRAME.registerComponent('gyro-entity-object', {
     init: function () {
         window.addEventListener('gps-camera-origin-coord-set', function () {
             if (!this._cameraGps) {
-                var camera = document.querySelector('[gps-camera]');
-                if (!camera.components['gps-camera']) {
-                    console.error('gps-camera not initialized')
+                var camera = document.querySelector('[gyro-camera]');
+                if (!camera.components['gyro-camera']) {
+                    console.error('gyro-camera not initialized')
                     return;
                 }
-                this._cameraGps = camera.components['gps-camera'];
+                this._cameraGps = camera.components['gyro-camera'];
             }
 
             this._updatePosition();
