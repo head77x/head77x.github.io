@@ -58,7 +58,7 @@ var models = [
 ];
 
 var modelIndex = 0;
-var setModel = function (model, entity) {
+var setModel = function (model, entity, addstr) {
     if (model.scale) {
         entity.setAttribute('scale', model.scale);
     }
@@ -74,7 +74,7 @@ var setModel = function (model, entity) {
     entity.setAttribute('gltf-model', model.url);
 
     const div = document.querySelector('.instructions');
-    div.innerText = model.info;
+    div.innerText = addstr;//model.info;
 };
 
 function renderPlaces(places) {
@@ -94,7 +94,10 @@ function renderPlaces(places) {
         var entity = document.querySelector('[gps-entity-place]');
         modelIndex++;
         var newIndex = modelIndex % models.length;
-        setModel(models[newIndex], entity);
+
+        var addstr = "lat : " + latitude + ", long : " + longitude;
+
+        setModel(models[newIndex], entity, addstr );
     });
 
     scene.appendChild(model);
