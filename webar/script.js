@@ -9,7 +9,7 @@ window.onload = () => {
     });
 
     if ( nowpos == undefined ) {
-        nowpos = {latitude:0, longitude:0};
+        nowpos = {"latitude":0, "longitude":0};
     }
 
     console.log( 'whata the :' + JSON.stringify(nowpos) );
