@@ -12,7 +12,11 @@ AFRAME.registerComponent('rotation-reader', {
 */
 
 window.onload = () => {
-
+    const button = document.querySelector('button[data-action="change"]');
+    button.innerText = '﹖';
+    let places = staticLoadPlaces();
+    renderPlaces(places);
+/*
     return navigator.geolocation.getCurrentPosition(function (position) {
 
         // than use it to load from remote APIs some places nearby
@@ -34,12 +38,12 @@ window.onload = () => {
             timeout: 27000,
         }
     );
-
+*/
 
 
 };
 
-function staticLoadPlaces(position) {
+function staticLoadPlaces() {
     return [
         {
             name: 'Pokèmon',
