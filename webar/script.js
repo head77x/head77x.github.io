@@ -1,6 +1,19 @@
 var debugtext = "";
 
 
+AFRAME.registerComponent('rotation-reader', {
+    /**
+     * We use IIFE (immediately-invoked function expression) to only allocate one
+     * vector or euler and not re-create on every tick to save memory.
+     */
+    tick: (function () {
+        var rotation = this.el.getAttribute('rotation');
+        debugtext = "cam rotate : " + rotation;
+        
+        console.log(debugtext);
+    })
+  });
+  
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
     button.innerText = '﹖';
@@ -8,16 +21,6 @@ window.onload = () => {
     renderPlaces(places);
 
 
-    AFRAME.registerComponent('rotation-reader', {
-        /**
-         * We use IIFE (immediately-invoked function expression) to only allocate one
-         * vector or euler and not re-create on every tick to save memory.
-         */
-        tick: (function () {
-            var rotation = this.el.getAttribute('rotation');
-            console.log("cam rotate : " + rotation);        
-        })
-      });
 
 };
 
