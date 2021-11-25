@@ -14,11 +14,11 @@ AFRAME.registerComponent('rotation-reader', {
 window.onload = () => {
         const button = document.querySelector('button[data-action="change"]');
         button.innerText = '﹖';
-        let places = staticLoadPlaces(nowpos);
+        let places = staticLoadPlaces();
         renderPlaces(places);
 };
 
-function staticLoadPlaces(position) {
+function staticLoadPlaces() {
     return [
         {
             name: 'Pokèmon',
