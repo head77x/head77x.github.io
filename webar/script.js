@@ -10,21 +10,42 @@ AFRAME.registerComponent('rotation-reader', {
     })
   });
 */
- 
+
 window.onload = () => {
+
+    return navigator.geolocation.getCurrentPosition(function (position) {
+
+        // than use it to load from remote APIs some places nearby
+        var nowpos = position.coords;
+
+        debugtext = JSON.stringify(nowpos);
+        console.log("user location : " + debugtext);
+
         const button = document.querySelector('button[data-action="change"]');
         button.innerText = '﹖';
-        let places = staticLoadPlaces();
+        let places = staticLoadPlaces(nowpos);
         renderPlaces(places);
+    
+        },
+        (err) => console.error('Error in retrieving position', err),
+        {
+            enableHighAccuracy: true,
+            maximumAge: 0,
+            timeout: 27000,
+        }
+    );
+
+
+
 };
 
-function staticLoadPlaces() {
+function staticLoadPlaces(position) {
     return [
         {
             name: 'Pokèmon',
             location: {
-                lat: 0,
-                lng: 0,
+                lat: position.latitude,
+                lng: position.longitude,
             },
         },
     ];
@@ -36,20 +57,17 @@ var models = [
         scale: '0.5 0.5 0.5',
         info: 'Magnemite, Lv. 5, HP 10/10',
         rotation: '0 180 0',
-        position: '0 0 0',
     },
     {
         url: './assets/magnemite/scene.gltf',
         scale: '0.2 0.2 0.2',
         rotation: '0 180 0',
-        position: '0 0 0',
         info: 'Articuno, Lv. 80, HP 100/100',
     },
     {
         url: './assets/magnemite/scene.gltf',
         scale: '0.08 0.08 0.08',
         rotation: '0 180 0',
-        position: '0 0 0',
         info: 'Dragonite, Lv. 99, HP 150/150',
     },
 ];
@@ -71,15 +89,15 @@ var setModel = function (model, entity) {
     entity.setAttribute('gltf-model', model.url);
 
     const div = document.querySelector('.instructions');
-    div.innerText = model.info;
+    div.innerText = debugtext;//model.info;
 };
 
 function renderPlaces(places) {
     let scene = document.querySelector('a-scene');
 
     places.forEach((place) => {
-        let latitude = 0;
-        let longitude = 0;
+        let latitude = place.location.lat;
+        let longitude = place.location.lng;
 
         let model = document.createElement('a-entity');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
