@@ -10,7 +10,7 @@ AFRAME.registerComponent('rotation-reader', {
     })
   });
 */
-
+ 
 window.onload = () => {
         const button = document.querySelector('button[data-action="change"]');
         button.innerText = '﹖';
