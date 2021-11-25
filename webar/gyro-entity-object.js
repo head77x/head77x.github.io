@@ -11,7 +11,7 @@ AFRAME.registerComponent('gyro-entity-object', {
         }
     },
     init: function () {
-        window.addEventListener('gps-camera-origin-coord-set', function () {
+        window.addEventListener('gyro-camera-origin-coord-set', function () {
             if (!this._cameraGps) {
                 var camera = document.querySelector('[gyro-camera]');
                 if (!camera.components['gyro-camera']) {
@@ -44,8 +44,8 @@ AFRAME.registerComponent('gyro-entity-object', {
 
         this._positionXDebug = 0;
 
-        window.dispatchEvent(new CustomEvent('gps-entity-place-added'));
-        console.debug('gps-entity-place-added');
+        window.dispatchEvent(new CustomEvent('gyro-entity-place-added'));
+        console.debug('gyro-entity-place-added');
 
         this.debugUIAddedHandler = function () {
             this.setDebugData(this.el);

@@ -40,11 +40,11 @@ AFRAME.registerComponent('gyro-camera', {
         this.loader.classList.add('arjs-loader');
         document.body.appendChild(this.loader);
 
-        window.addEventListener('gps-entity-place-added', function () {
+        window.addEventListener('gyro-entity-place-added', function () {
             // if places are added after camera initialization is finished
             if (this.originCoords) {
-                window.dispatchEvent(new CustomEvent('gps-camera-origin-coord-set'));
-                console.debug('gps-camera-origin-coord-set');
+                window.dispatchEvent(new CustomEvent('gyro-camera-origin-coord-set'));
+                console.debug('gyro-camera-origin-coord-set');
             }
             if (this.loader && this.loader.parentElement) {
                 document.body.removeChild(this.loader)
@@ -202,8 +202,8 @@ AFRAME.registerComponent('gyro-camera', {
             if (loader) {
                 document.body.removeChild(loader)
             }
-            window.dispatchEvent(new CustomEvent('gps-camera-origin-coord-set'));
-            console.debug('gps-camera-origin-coord-set');
+            window.dispatchEvent(new CustomEvent('gyro-camera-origin-coord-set'));
+            console.debug('gyro-camera-origin-coord-set');
         } else {
             this._setPosition();
         }
