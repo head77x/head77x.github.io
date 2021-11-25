@@ -12,31 +12,10 @@ AFRAME.registerComponent('rotation-reader', {
 
 
 window.onload = () => {
-
-    return navigator.geolocation.getCurrentPosition(function (position) {
-
-        // than use it to load from remote APIs some places nearby
-        var nowpos = position.coords;
-
-        debugtext = JSON.stringify(nowpos);
-        console.log("user location : " + debugtext);
-
         const button = document.querySelector('button[data-action="change"]');
         button.innerText = '﹖';
         let places = staticLoadPlaces(nowpos);
         renderPlaces(places);
-    
-        },
-        (err) => console.error('Error in retrieving position', err),
-        {
-            enableHighAccuracy: true,
-            maximumAge: 0,
-            timeout: 27000,
-        }
-    );
-
-
-
 };
 
 function staticLoadPlaces(position) {
@@ -44,8 +23,8 @@ function staticLoadPlaces(position) {
         {
             name: 'Pokèmon',
             location: {
-                lat: position.latitude,
-                lng: position.longitude,
+                lat: 0,
+                lng: 0,
             },
         },
     ];
@@ -89,15 +68,15 @@ var setModel = function (model, entity) {
     entity.setAttribute('gltf-model', model.url);
 
     const div = document.querySelector('.instructions');
-    div.innerText = debugtext;//model.info;
+    div.innerText = model.info;
 };
 
 function renderPlaces(places) {
     let scene = document.querySelector('a-scene');
 
     places.forEach((place) => {
-        let latitude = place.location.lat;
-        let longitude = place.location.lng;
+        let latitude = 0;
+        let longitude = 0;
 
         let model = document.createElement('a-entity');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
