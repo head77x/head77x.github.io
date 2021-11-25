@@ -8,6 +8,8 @@ window.onload = () => {
         return position.coords;
     });
 
+    console.log( JSON.stringify(nowpos) );
+    
     places.location.lat = nowpos.latitude;
     places.location.lng = nowpos.longitude;
 
