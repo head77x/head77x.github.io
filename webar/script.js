@@ -16,12 +16,12 @@ window.onload = () => {
     
 
 
-    places.location.lat = nowpos.latitude;
-    places.location.lng = nowpos.longitude;
+    places[0].location.lat = nowpos.latitude;
+    places[0].location.lng = nowpos.longitude;
 
-    console.log( JSON.stringify(places) );
+    console.log( JSON.stringify(places[0]) );
 
-    renderPlaces(places);
+    renderPlaces(places[0]);
 };
 
 function staticLoadPlaces() {
