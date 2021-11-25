@@ -1,6 +1,6 @@
 var debugtext = "";
 
-
+/*
 AFRAME.registerComponent('rotation-reader', {
     tick: (function () {
         var rotation = this.el.getAttribute('rotation');
@@ -9,7 +9,7 @@ AFRAME.registerComponent('rotation-reader', {
         console.log(debugtext);
     })
   });
-
+*/
 
 window.onload = () => {
         const button = document.querySelector('button[data-action="change"]');
