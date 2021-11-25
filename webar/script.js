@@ -14,6 +14,8 @@ window.onload = () => {
         tick: (function () {
           var position = new THREE.Vector3();
           var rotation = new THREE.Euler();
+
+          console.log('come here???');
       
           return function () {
             this.el.object3D.getWorldPosition(position);
