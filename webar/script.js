@@ -95,7 +95,7 @@ function renderPlaces(places) {
         modelIndex++;
         var newIndex = modelIndex % models.length;
 
-        var addstr = "lat : " + latitude + ", long : " + longitude;
+        var addstr = "lat : " + latitude + ", long : " + longitude + ", model : " + newIndex;
 
         setModel(models[newIndex], entity, addstr );
     });
