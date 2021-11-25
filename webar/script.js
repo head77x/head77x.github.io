@@ -1,30 +1,10 @@
+
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
     button.innerText = '﹖';
 
     let places = staticLoadPlaces();
-
-    let nowpos = navigator.geolocation.getCurrentPosition(function (position) {
-
-        console.log("what loc : " + position);
-
-        return position.coords;
-    });
-
-    if ( nowpos == undefined ) {
-        nowpos = {"latitude":0, "longitude":0};
-    }
-
-    console.log( 'whata the :' + JSON.stringify(nowpos) + ":" + JSON.stringify(places[0]));
-    
-
-
-    places[0].location.lat = nowpos.latitude;
-    places[0].location.lng = nowpos.longitude;
-
-    console.log( JSON.stringify(places[0]) );
-
-    renderPlaces(places[0]);
+    renderPlaces(places);
 };
 
 function staticLoadPlaces() {
@@ -32,8 +12,8 @@ function staticLoadPlaces() {
         {
             name: 'Pokèmon',
             location: {
-                lat: 37.478545,
-                lng: 126.916387,
+                lat: 37.495562,
+                lng: 127.027972,
             },
         },
     ];
@@ -61,7 +41,7 @@ var models = [
 ];
 
 var modelIndex = 0;
-var setModel = function (model, entity, addstr) {
+var setModel = function (model, entity) {
     if (model.scale) {
         entity.setAttribute('scale', model.scale);
     }
@@ -77,31 +57,30 @@ var setModel = function (model, entity, addstr) {
     entity.setAttribute('gltf-model', model.url);
 
     const div = document.querySelector('.instructions');
-    div.innerText = addstr;//model.info;
+    div.innerText = model.info;
 };
 
 function renderPlaces(places) {
     let scene = document.querySelector('a-scene');
 
-    let latitude = places.location.lat;
-    let longitude = places.location.lng;
+    places.forEach((place) => {
+        let latitude = place.location.lat;
+        let longitude = place.location.lng;
 
-    let model = document.createElement('a-entity');
-    model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+        let model = document.createElement('a-entity');
+        model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
 
-    setModel(models[modelIndex], model);
+        setModel(models[modelIndex], model);
 
-    model.setAttribute('animation-mixer', '');
+        model.setAttribute('animation-mixer', '');
 
-    document.querySelector('button[data-action="change"]').addEventListener('click', function () {
-        var entity = document.querySelector('[gps-entity-place]');
-        modelIndex++;
-        var newIndex = modelIndex % models.length;
+        document.querySelector('button[data-action="change"]').addEventListener('click', function () {
+            var entity = document.querySelector('[gps-entity-place]');
+            modelIndex++;
+            var newIndex = modelIndex % models.length;
+            setModel(models[newIndex], entity);
+        });
 
-        var addstr = "lat : " + latitude + ", long : " + longitude + ", model : " + newIndex;
-
-        setModel(models[newIndex], entity, addstr );
+        scene.appendChild(model);
     });
-
-    scene.appendChild(model);
 }
