@@ -8,12 +8,12 @@ AFRAME.registerComponent('rotation-reader', {
      */
     tick: (function () {
         var rotation = this.el.getAttribute('rotation');
-        debugtext = "cam rotate : " + rotation;
+        debugtext = "cam rotate : " + JSON.stringify(rotation);
         
         console.log(debugtext);
     })
   });
-  
+
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
     button.innerText = '﹖';
