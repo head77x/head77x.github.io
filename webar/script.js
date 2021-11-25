@@ -6,7 +6,7 @@ window.onload = () => {
 
     let nowpos = navigator.geolocation.getCurrentPosition(function (position) {
 
-        console.log("what loc : " + JSON.stringify(position));
+        console.log("what loc : " + position);
 
         return position.coords;
     });
