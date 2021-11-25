@@ -4,6 +4,8 @@ var debugtext = "";
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
     button.innerText = '﹖';
+    let places = staticLoadPlaces();
+    renderPlaces(places);
 
 
     AFRAME.registerComponent('rotation-reader', {
@@ -12,24 +14,11 @@ window.onload = () => {
          * vector or euler and not re-create on every tick to save memory.
          */
         tick: (function () {
-          var position = new THREE.Vector3();
-          var rotation = new THREE.Euler();
-
-          console.log('come here???');
-      
-          return function () {
-            this.el.object3D.getWorldPosition(position);
-            this.el.object3D.getWorldRotation(rotation);
-
-            debugtext = "pos : " + JSON.stringify(position) + ", rot : " + JSON.stringify(rotation);         
-            // position and rotation now contain vector and euler in world space.
-          };
+            var rotation = this.el.getAttribute('rotation');
+            console.log("cam rotate : " + rotation);        
         })
       });
 
-
-    let places = staticLoadPlaces();
-    renderPlaces(places);
 };
 
 function staticLoadPlaces() {
