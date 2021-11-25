@@ -1,7 +1,30 @@
+var debugtext = "";
+
 
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
     button.innerText = '﹖';
+
+
+    AFRAME.registerComponent('rotation-reader', {
+        /**
+         * We use IIFE (immediately-invoked function expression) to only allocate one
+         * vector or euler and not re-create on every tick to save memory.
+         */
+        tick: (function () {
+          var position = new THREE.Vector3();
+          var rotation = new THREE.Euler();
+      
+          return function () {
+            this.el.object3D.getWorldPosition(position);
+            this.el.object3D.getWorldRotation(rotation);
+
+            debugtext = "pos : " + JSON.stringify(position) + ", rot : " + JSON.stringify(rotation);         
+            // position and rotation now contain vector and euler in world space.
+          };
+        })
+      });
+
 
     let places = staticLoadPlaces();
     renderPlaces(places);
@@ -57,7 +80,7 @@ var setModel = function (model, entity) {
     entity.setAttribute('gltf-model', model.url);
 
     const div = document.querySelector('.instructions');
-    div.innerText = model.info;
+    div.innerText = debugtext;//model.info;
 };
 
 function renderPlaces(places) {
