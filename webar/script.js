@@ -1,11 +1,7 @@
 var debugtext = "";
 
-
+/*
 AFRAME.registerComponent('rotation-reader', {
-    /**
-     * We use IIFE (immediately-invoked function expression) to only allocate one
-     * vector or euler and not re-create on every tick to save memory.
-     */
     tick: (function () {
         var rotation = this.el.getAttribute('rotation');
         debugtext = "cam rotate : " + JSON.stringify(rotation);
@@ -13,21 +9,43 @@ AFRAME.registerComponent('rotation-reader', {
         console.log(debugtext);
     })
   });
+*/
 
 window.onload = () => {
-    const button = document.querySelector('button[data-action="change"]');
-    button.innerText = '﹖';
-    let places = staticLoadPlaces();
-    renderPlaces(places);
+
+    return navigator.geolocation.getCurrentPosition(function (position) {
+
+        // than use it to load from remote APIs some places nearby
+        var nowpos = position.coords;
+
+        debugtext = JSON.stringify(nowpos);
+        console.log("user location : " + debugtext);
+
+        const button = document.querySelector('button[data-action="change"]');
+        button.innerText = '﹖';
+        let places = staticLoadPlaces(nowpos);
+        renderPlaces(places);
+    
+        },
+        (err) => console.error('Error in retrieving position', err),
+        {
+            enableHighAccuracy: true,
+            maximumAge: 0,
+            timeout: 27000,
+        }
+    );
+
+
+
 };
 
-function staticLoadPlaces() {
+function staticLoadPlaces(position) {
     return [
         {
             name: 'Pokèmon',
             location: {
-                lat: 37.4955325,
-                lng: 127.02797005,
+                lat: position.latitude,
+                lng: position.longitude,
             },
         },
     ];
