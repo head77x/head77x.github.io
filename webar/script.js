@@ -1,46 +1,10 @@
-var debugtext = "";
-
-/*
-AFRAME.registerComponent('rotation-reader', {
-    tick: (function () {
-        var rotation = this.el.getAttribute('rotation');
-        debugtext = "cam rotate : " + JSON.stringify(rotation);
-        
-        console.log(debugtext);
-    })
-  });
-*/
 
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
     button.innerText = '﹖';
+
     let places = staticLoadPlaces();
     renderPlaces(places);
-/*
-    return navigator.geolocation.getCurrentPosition(function (position) {
-
-        // than use it to load from remote APIs some places nearby
-        var nowpos = position.coords;
-
-        debugtext = JSON.stringify(nowpos);
-        console.log("user location : " + debugtext);
-
-        const button = document.querySelector('button[data-action="change"]');
-        button.innerText = '﹖';
-        let places = staticLoadPlaces(nowpos);
-        renderPlaces(places);
-    
-        },
-        (err) => console.error('Error in retrieving position', err),
-        {
-            enableHighAccuracy: true,
-            maximumAge: 0,
-            timeout: 27000,
-        }
-    );
-*/
-
-
 };
 
 function staticLoadPlaces() {
@@ -48,8 +12,8 @@ function staticLoadPlaces() {
         {
             name: 'Pokèmon',
             location: {
-                lat: 0,//position.latitude,
-                lng: 0,//position.longitude,
+                lat: 37.478545,
+                lng: 126.916387,
             },
         },
     ];
@@ -96,7 +60,7 @@ var setModel = function (model, entity) {
     entity.setAttribute('gltf-model', model.url);
 
     const div = document.querySelector('.instructions');
-    div.innerText = debugtext;//model.info;
+    div.innerText = model.info;
 };
 
 function renderPlaces(places) {
@@ -107,14 +71,14 @@ function renderPlaces(places) {
         let longitude = place.location.lng;
 
         let model = document.createElement('a-entity');
-        model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+        model.setAttribute('gyro-entity-object', `latitude: ${latitude}; longitude: ${longitude};`);
 
         setModel(models[modelIndex], model);
 
         model.setAttribute('animation-mixer', '');
 
         document.querySelector('button[data-action="change"]').addEventListener('click', function () {
-            var entity = document.querySelector('[gps-entity-place]');
+            var entity = document.querySelector('[gyro-entity-object]');
             modelIndex++;
             var newIndex = modelIndex % models.length;
             setModel(models[newIndex], entity);
