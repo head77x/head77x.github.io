@@ -5,6 +5,9 @@ window.onload = () => {
     let places = staticLoadPlaces();
 
     let nowpos = navigator.geolocation.getCurrentPosition(function (position) {
+
+        console.log("what loc : " + JSON.stringify(position));
+
         return position.coords;
     });
 
