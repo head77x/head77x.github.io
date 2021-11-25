@@ -2399,7 +2399,7 @@
         {
             "mimeType" : "image/png",
             "name" : "Sol",
-            "uri" : "Sol.png"
+            "uri" : "./Sollogo.png"
         }
     ],
     "skins" : [
