@@ -237,6 +237,8 @@ AFRAME.registerComponent('gyro-camera', {
         position.y = 0;
         position.z = 0;
 
+        console.log("object : " + JSON.stringify(position));
+
         // update position
         this.el.setAttribute('position', position);
 
@@ -330,6 +332,9 @@ AFRAME.registerComponent('gyro-camera', {
             }
         } else if (event.alpha !== null) {
             if (event.absolute === true || event.absolute === undefined) {
+
+                console.log("rotation : " + JSON.stringify(event));
+
                 this.heading = this._computeCompassHeading(event.alpha, event.beta, event.gamma);
             } else {
                 console.warn('event.absolute === false');

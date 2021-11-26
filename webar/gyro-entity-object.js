@@ -65,7 +65,9 @@ AFRAME.registerComponent('gyro-entity-object', {
         var position = this.el.getAttribute('position');
         // update element's position in 3D world
         this.el.setAttribute('position', position);
-        
+
+        console.log("object : " + JSON.stringify(position));
+
         return; // 오브젝트가 이동하지 않는 한, 위치 업데이트는 없음
 
         var position = { x: 0, y: this.el.getAttribute('position').y || 0, z: 0 }
