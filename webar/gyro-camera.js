@@ -36,29 +36,9 @@ AFRAME.registerComponent('gyro-camera', {
             return;
         }
 
-      
         this.loader = document.createElement('DIV');
         this.loader.classList.add('arjs-loader');
         document.body.appendChild(this.loader);
-
-
-        var container = document.createElement('div');
-        container.classList.add('debug');
-
-        var currentLatLng = document.createElement('div');
-        currentLatLng.innerText = 'current lng/lat coords: ';
-        var spanLng = document.createElement('span');
-        spanLng.id = 'current_coords_longitude';
-        var spanLat = document.createElement('span');
-        spanLat.id = 'current_coords_latitude';
-        currentLatLng.appendChild(spanLng);
-        currentLatLng.appendChild(spanLat);
-
-        container.appendChild(currentLatLng);
-        document.body.appendChild(container);
-
-
-
 
         window.addEventListener('gyro-entity-place-added', function () {
             // if places are added after camera initialization is finished
@@ -348,6 +328,10 @@ AFRAME.registerComponent('gyro-camera', {
         if (event.webkitCompassHeading !== undefined) {
             if (event.webkitCompassAccuracy < 50) {
                 this.heading = event.webkitCompassHeading;
+
+                const div = document.querySelector('.instructions');
+                div.innerText = "heading : " + JSON.stringify(this.heading);
+            
 //                alert('what heading : ' + JSON.stringify(this.heading));
             } else {
                 alert('devide webkit');
