@@ -328,10 +328,6 @@ AFRAME.registerComponent('gyro-camera', {
         if (event.webkitCompassHeading !== undefined) {
             if (event.webkitCompassAccuracy < 50) {
                 this.heading = event.webkitCompassHeading;
-
-                const div = document.querySelector('.instructions');
-                div.innerText = "heading : " + JSON.stringify(this.heading);
-            
 //                alert('what heading : ' + JSON.stringify(this.heading));
             } else {
                 alert('devide webkit');
@@ -361,5 +357,9 @@ AFRAME.registerComponent('gyro-camera', {
         var yawRotation = THREE.Math.radToDeg(this.lookControls.yawObject.rotation.y);
         var offset = (heading - (cameraRotation - yawRotation)) % 360;
         this.lookControls.yawObject.rotation.y = THREE.Math.degToRad(offset);
+
+        const div = document.querySelector('.instructions');
+        div.innerText = "heading : " + JSON.stringify(this.lookControls.yawObject.rotation.y);
+
     },
 });
