@@ -326,19 +326,17 @@ AFRAME.registerComponent('gyro-camera', {
      */
     _onDeviceOrientation: function (event) {
         if (event.webkitCompassHeading !== undefined) {
-            alert('devide webkit');
-
             if (event.webkitCompassAccuracy < 50) {
                 this.heading = event.webkitCompassHeading;
             } else {
+                alert('devide webkit');
                 console.warn('webkitCompassAccuracy is event.webkitCompassAccuracy');
             }
         } else if (event.alpha !== null) {
-            alert('absolute : ' + event.absolute);
-
             if (event.absolute === true || event.absolute === undefined) {
                 this.heading = this._computeCompassHeading(event.alpha, event.beta, event.gamma);
             } else {
+                alert('absolute : ' + event.absolute);
                 console.warn('event.absolute === false');
             }
         } else {
