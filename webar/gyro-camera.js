@@ -53,6 +53,8 @@ AFRAME.registerComponent('gyro-camera', {
 
         this.lookControls = this.el.components['look-controls'];
 
+        alert('Gyro support : ' + JSON.stringify(this.lookControls));
+
         // listen to deviceorientation event
         var eventName = this._getDeviceOrientationEventName();
         this._onDeviceOrientation = this._onDeviceOrientation.bind(this);
