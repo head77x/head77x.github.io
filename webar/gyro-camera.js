@@ -211,6 +211,7 @@ AFRAME.registerComponent('gyro-camera', {
     _setPosition: function () {
         var position = this.el.getAttribute('position');
 
+        /*
         // compute position.x
         var dstCoords = {
             longitude: this.currentCoords.longitude,
@@ -229,10 +230,17 @@ AFRAME.registerComponent('gyro-camera', {
         position.z = this.computeDistanceMeters(this.originCoords, dstCoords);
         position.z *= this.currentCoords.latitude > this.originCoords.latitude ? -1 : 1;
 
+        */
+
+        // 카메라는 강제로 항상 0에 포지션 고정
+        position.x = 0;
+        position.y = 0;
+        position.z = 0;
+
         // update position
         this.el.setAttribute('position', position);
 
-
+        // 카메라 위치 바뀌었음을 모든 오브젝트에 알림
         window.dispatchEvent(new CustomEvent('gps-camera-update-position', { detail: { position: this.currentCoords, origin: this.originCoords }}));
     },
     /**

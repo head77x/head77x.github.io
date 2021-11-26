@@ -11,6 +11,7 @@ AFRAME.registerComponent('gyro-entity-object', {
         }
     },
     init: function () {
+        // 카메라 위치가 최초에 셋팅됨을 알려오면, 오브젝트위 위치 보정
         window.addEventListener('gyro-camera-origin-coord-set', function () {
             if (!this._cameraGps) {
                 var camera = document.querySelector('[gyro-camera]');
@@ -24,6 +25,7 @@ AFRAME.registerComponent('gyro-entity-object', {
             this._updatePosition();
         }.bind(this));
 
+        // 카메라의 위치가 GPS로 변경될 때, 오브젝트의 좌표를 카메라로부터 어느정도 떨어져 있는지로 계산해줌. 
         window.addEventListener('gps-camera-update-position', function (ev) {
             if (!this.data || !this._cameraGps) {
                 return;
@@ -60,6 +62,12 @@ AFRAME.registerComponent('gyro-entity-object', {
      * @returns {void}
      */
     _updatePosition: function () {
+        var position = this.el.getAttribute('position');
+        // update element's position in 3D world
+        this.el.setAttribute('position', position);
+        
+        return; // 오브젝트가 이동하지 않는 한, 위치 업데이트는 없음
+
         var position = { x: 0, y: this.el.getAttribute('position').y || 0, z: 0 }
         var hideEntity = false;
 
