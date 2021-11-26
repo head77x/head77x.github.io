@@ -51,7 +51,7 @@ AFRAME.registerComponent('gyro-camera', {
             }
         }.bind(this));
 
-    //    this.lookControls = this.el.components['look-controls'];
+        this.lookControls = this.el.components['look-controls'];
 
         // listen to deviceorientation event
         var eventName = this._getDeviceOrientationEventName();
@@ -353,16 +353,13 @@ AFRAME.registerComponent('gyro-camera', {
      */
     _updateRotation: function () {
         var heading = 360 - this.heading;
-        var cameraRotation = this.el.getAttribute('rotation');
-//        var yawRotation = THREE.Math.radToDeg(this.lookControls.yawObject.rotation.y);
-//        var offset = (heading - (cameraRotation.y - yawRotation)) % 360;
-//        this.lookControls.yawObject.rotation.y = THREE.Math.degToRad(offset);
-        cameraRotation.y = THREE.Math.degToRad(heading);
-        this.el.setAttribute('rotation', cameraRotation);
-
+        var cameraRotation = this.el.getAttribute('rotation').y;
+        var yawRotation = THREE.Math.radToDeg(this.lookControls.yawObject.rotation.y);
+        var offset = (heading - (cameraRotation - yawRotation)) % 360;
+        this.lookControls.yawObject.rotation.y = THREE.Math.degToRad(offset);
 
         const div = document.querySelector('.instructions');
-        div.innerText = "heading : " + JSON.stringify(cameraRotation);
+        div.innerText = "heading : " + JSON.stringify(this.lookControls.yawObject.rotation.y);
 
     },
 });
