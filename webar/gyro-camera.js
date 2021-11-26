@@ -36,11 +36,11 @@ AFRAME.registerComponent('gyro-camera', {
             return;
         }
 
- /*       
+      
         this.loader = document.createElement('DIV');
         this.loader.classList.add('arjs-loader');
         document.body.appendChild(this.loader);
-*/
+
         window.addEventListener('gyro-entity-place-added', function () {
             // if places are added after camera initialization is finished
             if (this.originCoords) {
@@ -58,10 +58,8 @@ AFRAME.registerComponent('gyro-camera', {
         var eventName = this._getDeviceOrientationEventName();
         this._onDeviceOrientation = this._onDeviceOrientation.bind(this);
 
-        alert('event name : ' + eventName);
-
         // if Safari
-        if (!!navigator.userAgent.match(/Version\/[\d.]+.*Safari/)) {
+//        if (!!navigator.userAgent.match(/Version\/[\d.]+.*Safari/)) {
             // iOS 13+
             if (typeof DeviceOrientationEvent.requestPermission === 'function') {
                 var handler = function () {
@@ -81,7 +79,7 @@ AFRAME.registerComponent('gyro-camera', {
                     clearTimeout(timeout);
                 });
             }
-        }
+//        }
 
         window.addEventListener(eventName, this._onDeviceOrientation, false);
 
