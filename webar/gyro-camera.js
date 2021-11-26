@@ -41,6 +41,25 @@ AFRAME.registerComponent('gyro-camera', {
         this.loader.classList.add('arjs-loader');
         document.body.appendChild(this.loader);
 
+
+        var container = document.createElement('div');
+        container.classList.add('debug');
+
+        var currentLatLng = document.createElement('div');
+        currentLatLng.innerText = 'current lng/lat coords: ';
+        var spanLng = document.createElement('span');
+        spanLng.id = 'current_coords_longitude';
+        var spanLat = document.createElement('span');
+        spanLat.id = 'current_coords_latitude';
+        currentLatLng.appendChild(spanLng);
+        currentLatLng.appendChild(spanLat);
+
+        container.appendChild(currentLatLng);
+        document.body.appendChild(container);
+
+
+
+
         window.addEventListener('gyro-entity-place-added', function () {
             // if places are added after camera initialization is finished
             if (this.originCoords) {
