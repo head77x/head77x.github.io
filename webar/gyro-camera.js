@@ -329,7 +329,7 @@ AFRAME.registerComponent('gyro-camera', {
         if (event.webkitCompassHeading !== undefined) {
             if (event.webkitCompassAccuracy < 50) {
                 this.heading = event.webkitCompassHeading;
-                alert('what heading : ' + JSON.stringify(this.heading));
+//                alert('what heading : ' + JSON.stringify(this.heading));
             } else {
                 alert('devide webkit');
                 console.warn('webkitCompassAccuracy is event.webkitCompassAccuracy');
