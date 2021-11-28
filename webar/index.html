@@ -25,7 +25,18 @@
         arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
     <a-camera id='camera1' look-controls-enabled='true' arjs-look-controls='smoothingFactor: 0.1' gyro-camera rotation-reader></a-camera>
 
-    <img id="kazetachinu" src="./assets/first_start/solquizlogo.png"/>    
+    <a-assets>
+        <img id="sollogo" src="./assets/first_start/solquizlogo.png"/>    
+    </a-assets>
+    <a-entity id="ui" position="0 1.6 -2.5">
+        <!-- Poster menu -->
+        <a-entity id="menu" highlight>
+          <a-entity id="karigurashiButton" position="-0.8 0 0" mixin="frame" class="raycastable menu-button">
+            <a-entity material="src: #karigurashiPoster;" mixin="poster"></a-entity>
+          </a-entity>
+        </a-entity>
+    </a-entity>
+
 </a-scene>
 <div class="centered">
     <button data-action="change"></button>
