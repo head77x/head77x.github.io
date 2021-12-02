@@ -40,13 +40,13 @@
 					></a-mixin>			   
 				</a-assets>
 			<a-camera id='camera1' look-controls-enabled='true' arjs-look-controls='smoothingFactor: 0.1' gyro-camera rotation-reader>
-				<a-entity id="ui" position="0 1.6 -2.5">
+				<a-entity id="ui" position="0 0 0">
 						<!-- Poster menu -->
 						<a-entity id="menu" highlight>
-							<a-entity material="src: #sollogo;" mixin="movieImage"></a-entity>
+							<a-entity mixin="movieImage"></a-entity>
 						</a-entity>
 
-						<a-entity text="value: version 0.0.0.4" position="0 0 -0.1"></a-entity>
+						<a-entity text="value: version 0.0.0.5" position="0 0 -0.1"></a-entity>
 <!--
 						<a-entity
 						id="infoPanel"
