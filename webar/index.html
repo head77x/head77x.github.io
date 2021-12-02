@@ -25,25 +25,18 @@
         arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
 				<a-assets>
 					<img id="sollogo" src="./assets/first_start/solquiz_logo.png"/>    
-					<a-mixin
-					id="poster"
-					geometry="primitive: plane; width: 0.544768; height: 0.786432"
-					material="color: white; shader: flat"
-					material="shader: flat"
-					position="0 0 0.005"
-					></a-mixin>      
 				 	<a-mixin
-					id="movieImage"
+					id="shinhanlogo"
 					geometry="primitive: plane; width: 1.5; height: 0.81"
 					material="src: #sollogo; shader: flat; transparent: true"
-					position="0 0.495 0.002"
+					position="0 0 0"
 					></a-mixin>			   
 				</a-assets>
 			<a-camera id='camera1' look-controls-enabled='true' arjs-look-controls='smoothingFactor: 0.1' gyro-camera rotation-reader>
-				<a-entity id="ui" position="0 1.6 -2.5">
+				<a-entity id="ui" position="0 0 0">
 						<!-- Poster menu -->
 						<a-entity id="menu" highlight>
-							<a-entity id="firstux" mixin="movieImage" visible="false"></a-entity>
+							<a-entity id="firstux" mixin="shinhanlogo" visible="false"></a-entity>
 						</a-entity>
 
 						<a-entity text="value: version 0.0.0.13" position="0 0 -0.1"></a-entity>
