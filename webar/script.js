@@ -7,7 +7,9 @@ window.onload = () => {
     renderPlaces(places);
 
     const ui = document.querySelector('firstux');
-    ui.visible = true;
+    ui.setAttribute('visible', true);
+
+
 
 
 };
