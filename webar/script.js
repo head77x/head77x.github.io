@@ -6,7 +6,7 @@ window.onload = () => {
     let places = staticLoadPlaces();
     renderPlaces(places);
 
-    const ui = document.querySelector('firstux');
+    const ui = document.getElementById('firstux');
     ui.setAttribute('visible', true);
 
 
