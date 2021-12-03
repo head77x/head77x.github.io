@@ -33,3 +33,16 @@ button {
     color: white;
     z-index: 999999;
 }
+
+startbutton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    width: 2em;
+    height: 2em;
+    font-size: 2em;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    outline: none;
+}
