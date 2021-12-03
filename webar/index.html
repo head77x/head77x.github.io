@@ -34,6 +34,7 @@
 					material="src: #shinhanlogo; shader: flat; transparent: true"
 					position="0 2 -5.0"
 					></a-mixin>			   
+<!--					
 					<a-mixin
 					id="startgame"
 					geometry="primitive: plane; width: 1.2; height: 0.42"
@@ -52,18 +53,21 @@
 					material="src: #sollogo; shader: flat; transparent: true"
 					position="0 1 -5.0"
 					></a-mixin>			   
+-->
 				</a-assets>
 			<a-camera id='camera1' look-controls-enabled='true' arjs-look-controls='smoothingFactor: 0.1' gyro-camera rotation-reader>
 				<a-entity id="ui" position="0 0 0">
 						<!-- Poster menu -->
 						<a-entity id="menu" highlight>
 							<a-entity id="firstux" mixin="shinhanlogo" visible="true"></a-entity>
+<!--							
 							<a-entity id="firstux1" mixin="startgame" visible="true"></a-entity>
 							<a-entity id="firstux2" mixin="gamehelp" visible="true"></a-entity>
 							<a-entity id="firstux3" mixin="sollogo" visible="true"></a-entity>
+-->							
 						</a-entity>
 
-						<a-entity text="value: version 0.0.0.24" position="0 1.0 -2.1"></a-entity>
+						<a-entity text="value: version 0.0.0.25" position="0 1.0 -2.1"></a-entity>
 <!--
 						<a-entity
 						id="infoPanel"
