@@ -13,7 +13,7 @@ window.onload = () => {
 
 
     document.getElementById('startgameimg').addEventListener('click', function () {
-        document.getElementById('startgameimg').setAttribute('display', 'none');
+        document.getElementById('titlescene').setAttribute('display', 'none');
     });
 
 };
