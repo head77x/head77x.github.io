@@ -12,7 +12,7 @@ window.onload = () => {
     ui.setAttribute('visible', true);
 
 
-    document.getElementById('startgameimg').addEventListener('click', function () {
+    document.getElementById('startgamebutton').addEventListener('click', function () {
         document.getElementById('titlescene').setAttribute('display', 'none');
     });
 

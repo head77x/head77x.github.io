@@ -63,7 +63,7 @@
 							<a-entity id="firstux2" mixin="gamehelp" visible="true"></a-entity>
 						</a-entity>
 
-						<a-entity text="value: version 0.0.0.36" position="0 1.0 -2.1"></a-entity>
+						<a-entity text="value: version 0.0.0.37" position="0 1.0 -2.1"></a-entity>
 <!--
 						<a-entity
 						id="infoPanel"
@@ -89,7 +89,11 @@
 </a-scene>
 <div id="titlescene" class="centered">
     <button data-action="change"></button>
-		<img id="startgameimg" class="startbutton" src="./assets/first_start/start_button.png"/>    
-		<img id="gamehelpimg" class="startbutton" src="./assets/first_start/help_button.png"/>    
-</div>
+		<div id="startgamebutton" class="startbutton">
+			<img class="startbutton" src="./assets/first_start/start_button.png"/>    
+		</div>
+		<div id="helpbutton" class="startbutton">
+			<img id="gamehelpimg" class="startbutton" src="./assets/first_start/help_button.png"/>    
+		</div>
+	</div>
 </body>
