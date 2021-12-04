@@ -1,3 +1,5 @@
+var gameMode = 'titlemode';
+
 
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
@@ -9,8 +11,9 @@ window.onload = () => {
     const ui = document.getElementById('firstux');
     ui.setAttribute('visible', true);
 
-    document.getElementById('realstartbutton').addEventListener('click', function () {
-        console.log('start pushed');
+
+    document.getElementById('startgameimg').addEventListener('click', function () {
+        document.getElementById('startgameimg').setAttribute('display', 'none');
     });
 
 };
