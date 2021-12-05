@@ -17,6 +17,23 @@
     <link rel="stylesheet" type="text/css" href="./style.css"/>
 </head>
 
+<script>
+	AFRAME.registerComponent('solchr', {
+        init: function () {
+					console.log('sol appear');
+        },
+      
+        tick: function (time) {
+					var move = this.el.object3D.position;
+					move.x = move.x + 0.01;
+					this.el.object3D.position = move;
+					console.log('sol move : ' + move);
+        }
+      });	
+</script>
+
+
+
 <body style='margin: 0; overflow: hidden;'>
     <div class="centered instructions"></div>
     <a-scene 
@@ -63,7 +80,7 @@
 							<a-entity id="firstux2" mixin="gamehelp" visible="true"></a-entity>
 						</a-entity>
 
-						<a-entity text="value: version 0.0.0.38" position="0 1.0 -2.1"></a-entity>
+						<a-entity text="value: version 0.0.0.40" position="0 1.0 -2.1"></a-entity>
 <!--
 						<a-entity
 						id="infoPanel"

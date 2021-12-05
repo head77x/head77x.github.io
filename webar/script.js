@@ -11,9 +11,9 @@ window.onload = () => {
     const ui = document.getElementById('firstux');
     ui.setAttribute('visible', true);
 
-
     document.getElementById('startgamebutton').addEventListener('click', function () {
         document.getElementById('titlescene').style.display = 'none';
+        gameMode = 'gameready';
     });
 
 };
@@ -85,6 +85,10 @@ function renderPlaces(places) {
         model.setAttribute('gyro-entity-object', `latitude: ${latitude}; longitude: ${longitude};`);
 
         setModel(models[modelIndex], model);
+
+        if ( modelIndex == 0 ) {
+            model.setAttribute('solchr', '');
+        }
 
         model.setAttribute('animation-mixer', '');
 
