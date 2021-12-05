@@ -40,6 +40,7 @@
         vr-mode-ui='enabled: false' 
         embedded
         arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
+<!--				
 				<a-assets>
 					<img id="shinhanlogoimg" src="./assets/first_start/solquiz_logo.png"/>    
 					<img id="startgameimg" src="./assets/first_start/start_button.png"/>    
@@ -70,37 +71,18 @@
 					position="0 -0.5 -5.0"
 					></a-mixin>			   
 				</a-assets>
+-->				
 			<a-camera id='camera1' look-controls-enabled='true' arjs-look-controls='smoothingFactor: 0.1' gyro-camera rotation-reader>
 				<a-entity id="ui" position="0 0 0">
-						<!-- Poster menu -->
+						<!-- Poster menu 
 						<a-entity id="menu" highlight>
 							<a-entity id="firstux" mixin="shinhanlogo" visible="true"></a-entity>
 							<a-entity id="firstux3" mixin="sollogo" visible="true"></a-entity>
 							<a-entity id="firstux1" mixin="startgame" visible="true"></a-entity>
 							<a-entity id="firstux2" mixin="gamehelp" visible="true"></a-entity>
 						</a-entity>
-
-						<a-entity text="value: version 0.0.0.41" position="0 1.0 -2.1"></a-entity>
-<!--
-						<a-entity
-						id="infoPanel"
-						position="0 0 0.5"
-						info-panel
-						visible="true"
-						scale="0.001 0.001 0.001"
-						geometry="primitive: plane; width: 1.5; height: 1.8"
-						material="color: #333333; shader: flat; transparent: false" class="raycastable">
-							<a-entity id="ponyoMovieImage" mixin="movieImage" material="src: #sollogo" visible="false"></a-entity>
-							<a-entity id="movieTitle"
-								position="-0.68 -0.1 0"
-								text="shader: msdf; anchor: left; width: 1.5; font: https://cdn.aframe.io/examples/ui/Viga-Regular.json; color: white; value: Ponyo (2003)">
-							</a-entity>
-							<a-entity id="movieDescription"
-								position="-0.68 -0.2 0"
-								text="baseline: top; shader: msdf; anchor: left; font: https://cdn.aframe.io/examples/ui/Viga-Regular.json; color: white; value: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.">
-							</a-entity>
-						</a-entity>
--->							
+-->
+						<a-entity text="value: version 0.0.0.42" position="0 1.0 -2.1"></a-entity>
 				</a-entity>
 			</a-camera>
 </a-scene>
