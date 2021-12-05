@@ -70,6 +70,10 @@ var setModel = function (model, entity) {
 
     entity.setAttribute('gltf-model', model.url);
 
+    if ( modelIndex == 1 ) {
+        entity.setAttribute('solchr', '');
+    }
+
     const div = document.querySelector('.instructions');
     div.innerText = model.info;
 };
@@ -85,10 +89,6 @@ function renderPlaces(places) {
         model.setAttribute('gyro-entity-object', `latitude: ${latitude}; longitude: ${longitude};`);
 
         setModel(models[modelIndex], model);
-
-        if ( modelIndex == 0 ) {
-            model.setAttribute('solchr', '');
-        }
 
         model.setAttribute('animation-mixer', '');
 
