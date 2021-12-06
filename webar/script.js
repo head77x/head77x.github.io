@@ -14,6 +14,9 @@ window.onload = () => {
     document.getElementById('startgamebutton').addEventListener('click', function () {
         document.getElementById('titlescene').style.display = 'none';
         gameMode = 'gameready';
+
+        var entity = document.querySelector('[sound]');
+        entity.components.sound.playSound();        
     });
 
 };
@@ -100,5 +103,6 @@ function renderPlaces(places) {
         });
 
         scene.appendChild(model);
+        
     });
 }
