@@ -12,13 +12,25 @@ window.onload = () => {
     ui.setAttribute('visible', true);
 */
 
+    // 첫번째 UX에서 스타트 버튼 누를때 처리
     document.getElementById('startgamebutton').addEventListener('click', function () {
-        document.getElementById('titlescene').style.display = 'none';
+        document.getElementById('firstux').style.display = 'none';
         gameMode = 'gameready';
 
         var entity = document.querySelector('[sound]');
         entity.components.sound.playSound();        
     });
+
+    // 첫번째 UX에서 도움말 버튼 누를때 처리
+    document.getElementById('helpbutton').addEventListener('click', function () {
+        document.getElementById('firstux').style.display = 'none';
+        document.getElementById('secondux').style.display = 'block';
+        gameMode = 'gamehelp';
+
+        var entity = document.querySelector('[sound]');
+        entity.components.sound.playSound();        
+    });
+
 
 };
 
