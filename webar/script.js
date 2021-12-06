@@ -7,9 +7,10 @@ window.onload = () => {
 
     let places = staticLoadPlaces();
     renderPlaces(places);
-
+/*
     const ui = document.getElementById('firstux');
     ui.setAttribute('visible', true);
+*/
 
     document.getElementById('startgamebutton').addEventListener('click', function () {
         document.getElementById('titlescene').style.display = 'none';
