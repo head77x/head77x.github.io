@@ -60,7 +60,7 @@ window.onload = () => {
         var entity = document.querySelector('[sound]');
         entity.components.sound.playSound();        
     });
-
+/*
     // 도움말 ux에서 확인 버튼 누를때 처리
     document.getElementById('helpokbutton').addEventListener('click', function () {
         if ( gameMode === 'titlehelp') {
@@ -77,7 +77,7 @@ window.onload = () => {
     document.getElementById('shootbutton').addEventListener('click', function () {
         console.log('shoot');
     });
-
+*/
     
 };
 
