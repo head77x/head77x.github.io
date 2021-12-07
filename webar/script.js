@@ -1,17 +1,12 @@
 var gameMode = 'titlemode';
 
-/**
-     * Click mouse to shoot.
-     */
+/*
 AFRAME.registerComponent('click-to-shoot', {
 init: function () {
     document.body.addEventListener('mousedown', () => { this.el.emit('shoot'); });
 }
 });
 
-/**
- * Change color when hit.
- */
 AFRAME.registerComponent('hit-handler', {
 dependencies: ['material'],
 
@@ -33,7 +28,7 @@ init: function () {
     });
 }
 });
-
+*/
 
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
