@@ -90,13 +90,40 @@
 				<a-entity sound="src: #background"></a-entity>
 			</a-camera>
 </a-scene>
-<div id="titlescene" class="centered">
+	<div id="titlescene" class="centered">
     <button data-action="change"></button>
-		<div id="startgamebutton" class="startbutton">
-			<img class="startbutton" src="./assets/first_start/start_button.png"/>    
-		</div>
-		<div id="helpbutton" class="startbutton">
-			<img id="gamehelpimg" class="startbutton" src="./assets/first_start/help_button.png"/>    
-		</div>
 	</div>
+	<div id="titlescene" class="titlebackground">
+		<!-- 첫번째 UX 화면 --> 
+		<div id="firstux">
+			<img style="position:absolute; display: flex; width:100%; height:100%; top: 0; left: 0;" src="./assets/first_start/background.png"/>
+
+			<div id="startgamebutton" style="position:absolute; display: flex; width:105px; height:39; top: 500px; left: 30%;">
+				<img src="./assets/first_start/start_button.png"/>    
+			</div>
+			<div id="helpbutton" style="position:absolute; display: flex; width:101px; height:37; top: 600px; left: 30%;">
+				<img src="./assets/first_start/help_button.png"/>    
+			</div>
+		</div>
+		<!-- 도움말 UX 화면 --> 
+		<div id="helpux" style="display: none;">
+			<img style="position:absolute; display: flex; width:100%; height:100%; top: 0; left: 0;" src="./assets/second_game/help_back.png"/>
+
+			<div id="helpokbutton" style="position:absolute; display: flex; width:105px; height:39; top: 500px; left: 30%;">
+				<img src="./assets/third_qa/ok_button.png"/>    
+			</div>
+		</div>
+		<!-- 게임 UX 화면 --> 
+		<div id="gameux" style="display: none;">
+			<img style="position:absolute; display: flex; width:100%; height:20%; top: 0; left: 0;" src="./assets/second_game/topbar_back.png"/>
+			<img style="position:absolute; display: flex; width:84px; height:84px; top: 50%; left: 50%;" src="./assets/second_game/crosshair.png"/>
+
+			<div id="shootbutton" style="position:absolute; display: flex; width:105px; height:39; top: 80%; left: 30%;">
+				<img src="./assets/third_qa/ok_button.png"/>    
+			</div>
+		</div>
+
+	</div>
+
+
 </body>
