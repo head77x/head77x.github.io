@@ -15,6 +15,7 @@ window.onload = () => {
     // 첫번째 UX에서 스타트 버튼 누를때 처리
     document.getElementById('startgamebutton').addEventListener('click', function () {
         document.getElementById('firstux').style.display = 'none';
+        document.getElementById('gameux').style.display = 'block';
         gameMode = 'gameready';
 
         var entity = document.querySelector('[sound]');
@@ -24,7 +25,7 @@ window.onload = () => {
     // 첫번째 UX에서 도움말 버튼 누를때 처리
     document.getElementById('helpbutton').addEventListener('click', function () {
         document.getElementById('firstux').style.display = 'none';
-        document.getElementById('secondux').style.display = 'block';
+        document.getElementById('helpux').style.display = 'block';
         gameMode = 'titlehelp';
 
         var entity = document.querySelector('[sound]');
@@ -35,7 +36,7 @@ window.onload = () => {
     document.getElementById('helpokbutton').addEventListener('click', function () {
         if ( gameMode === 'titlehelp') {
             document.getElementById('firstux').style.display = 'block';
-            document.getElementById('secondux').style.display = 'none';
+            document.getElementById('helpux').style.display = 'none';
             gameMode = 'titlemode';
         }
 
@@ -43,7 +44,12 @@ window.onload = () => {
         entity.components.sound.playSound();        
     });
 
+    // 게임 ux에서 화살 버튼 누를때
+    document.getElementById('shootbutton').addEventListener('click', function () {
+        console.log('shoot');
+    });
 
+    
 };
 
 function staticLoadPlaces() {
