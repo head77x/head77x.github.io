@@ -49,6 +49,9 @@ startbutton {
 
 titlebackground {
     display: flex;
+    left: 0;
+    right: 0;    
+    position: fixed;
     align-items: center;
     justify-content: center;
     width: 100%;
