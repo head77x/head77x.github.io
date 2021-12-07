@@ -36,6 +36,10 @@
 
 <body style='margin: 0; overflow: hidden;'>
     <div class="centered instructions"></div>
+	<div id="backgroundux" class="titlebackground">
+		<img src="./assets/first_start/background.png"/>
+	</div>
+
     <a-scene 
         vr-mode-ui='enabled: false' 
         embedded
@@ -90,9 +94,6 @@
 				<a-entity sound="src: #background"></a-entity>
 			</a-camera>
 </a-scene>
-<div id="backgroundux" class="background">
-	<img src="./assets/first_start/background.png"/>
-</div>
 <div id="titlescene" class="centered">
     <button data-action="change"></button>
 		<!-- 첫번째 UX 화면 -->

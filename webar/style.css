@@ -47,7 +47,7 @@ startbutton {
     outline: none;
 }
 
-background {
+titlebackground {
     display: flex;
     align-items: center;
     justify-content: center;
