@@ -25,7 +25,19 @@ window.onload = () => {
     document.getElementById('helpbutton').addEventListener('click', function () {
         document.getElementById('firstux').style.display = 'none';
         document.getElementById('secondux').style.display = 'block';
-        gameMode = 'gamehelp';
+        gameMode = 'titlehelp';
+
+        var entity = document.querySelector('[sound]');
+        entity.components.sound.playSound();        
+    });
+
+    // 도움말 ux에서 확인 버튼 누를때 처리
+    document.getElementById('helpokbutton').addEventListener('click', function () {
+        if ( gameMode === 'titlehelp') {
+            document.getElementById('firstux').style.display = 'block';
+            document.getElementById('secondux').style.display = 'none';
+            gameMode = 'titlemode';
+        }
 
         var entity = document.querySelector('[sound]');
         entity.components.sound.playSound();        
