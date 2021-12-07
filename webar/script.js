@@ -89,9 +89,10 @@ var setModel = function (model, entity) {
     if ( modelIndex == 1 ) {
         entity.setAttribute('solchr', '');
     }
-
+/*
     const div = document.querySelector('.instructions');
     div.innerText = model.info;
+*/    
 };
 
 function renderPlaces(places) {
