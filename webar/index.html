@@ -39,7 +39,7 @@
       
         tick: function (time) {
 					var move = this.el.object3D.rotation;
-					move.x = move.x + 0.1;
+					move.x = move.x + 0.01;
 					this.el.object3D.rotation = move;
 					console.log('monster1 move : ' + move);
         }
@@ -62,14 +62,15 @@
 
 			  <a-entity class="target" target="healthPoints: 10" geometry="primitive: box" material="color: teal" position="0 0 -4" hit-handler></a-entity>
 			  
+				<!-- 회전축 -->
 			  <a-entity id="firstmonster" position="0 0 0" monster1>
 					<a-entity gltf-model="url(./assets/sol_v02.glb)" position="0 0 -4" scale="0.5 0.5 0.5" rotation="0 180 0"></a-entity>
 				</a-entity>
-			  <a-entity gltf-model="url(./assets/sol_v02.glb)" position="0 4 0" scale="0.5 0.5 0.5" rotation="0 180 0"></a-entity>
-			  <a-entity gltf-model="url(./assets/sol_v02.glb)" position="0 -4 0" scale="0.5 0.5 0.5" rotation="0 180 0"></a-entity>
-			  <a-entity gltf-model="url(./assets/sol_v02.glb)" position="4 0 -4" scale="0.5 0.5 0.5" rotation="0 180 0"></a-entity>
-			  <a-entity gltf-model="url(./assets/sol_v02.glb)" position="-4 0 -4" scale="0.5 0.5 0.5" rotation="0 180 0"></a-entity>
-			  <a-entity gltf-model="url(./assets/sol_v02.glb)" position="4 4 -4" scale="0.5 0.5 0.5" rotation="0 180 0"></a-entity>
+			  <a-entity gltf-model="url(./assets/sol_v02.glb)" position="0 0 -5" scale="0.5 0.5 0.5" rotation="0 180 0"></a-entity>
+			  <a-entity gltf-model="url(./assets/sol_v02.glb)" position="0 0 -6" scale="0.5 0.5 0.5" rotation="0 180 0"></a-entity>
+			  <a-entity gltf-model="url(./assets/sol_v02.glb)" position="0 0 -7" scale="0.5 0.5 0.5" rotation="0 180 0"></a-entity>
+			  <a-entity gltf-model="url(./assets/sol_v02.glb)" position="0 0 -8" scale="0.5 0.5 0.5" rotation="0 180 0"></a-entity>
+			  <a-entity gltf-model="url(./assets/sol_v02.glb)" position="0 0 -9" scale="0.5 0.5 0.5" rotation="0 180 0"></a-entity>
 
 <!--				
 				<a-assets>
@@ -113,7 +114,7 @@
 							<a-entity id="firstux2" mixin="gamehelp" visible="true"></a-entity>
 						</a-entity>
 -->
-					<a-entity text="value: version 0.0.7.3" position="0 1.0 -2.1"></a-entity>
+					<a-entity text="value: version 0.0.7.4" position="0 1.0 -2.1"></a-entity>
 					<a-entity id="gun" shooter geometry="primitive: box; width: 0.1; height: 0.1; depth: 0.3" material="color: red" click-to-shoot position="0 -1 -1"></a-entity>			  
 				</a-entity>
 				<a-entity sound="src: #background"></a-entity>
