@@ -32,10 +32,10 @@ init: function () {
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
     button.innerText = '﹖';
+/*
 
     let places = staticLoadPlaces();
     renderPlaces(places);
-/*
     const ui = document.getElementById('firstux');
     ui.setAttribute('visible', true);
 */
