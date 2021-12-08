@@ -19,29 +19,20 @@
 </head>
 
 <script>
-	AFRAME.registerComponent('solchr', {
-        init: function () {
-					console.log('sol appear');
-        },
-      
-        tick: function (time) {
-					var move = this.el.object3D.position;
-					move.x = move.x + 0.01;
-					this.el.object3D.position = move;
-					console.log('sol move : ' + move);
-        }
-      });	
-
 	AFRAME.registerComponent('monster1', {
         init: function () {
-					console.log('sol appear');
+//					console.log('sol appear');
+
+					this.random_x = ((Math.random() * 2) - 1)/10;
+					this.random_y = ((Math.random() * 2) - 1)/10;
         },
       
         tick: function (time) {
 					var move = this.el.object3D.rotation;
-					move.x = move.x + 0.01;
+					move.x = move.x + this.random_x;
+					move.y = move.y + this.random_y;
 					this.el.object3D.rotation = move;
-					console.log('monster1 move : ' + move);
+//					console.log('monster1 move : ' + move);
         }
 	});
 </script>
@@ -114,7 +105,7 @@
 							<a-entity id="firstux2" mixin="gamehelp" visible="true"></a-entity>
 						</a-entity>
 -->
-					<a-entity text="value: version 0.0.7.4" position="0 1.0 -2.1"></a-entity>
+					<a-entity text="value: version 0.0.7.5" position="0 1.0 -2.1"></a-entity>
 					<a-entity id="gun" shooter geometry="primitive: box; width: 0.1; height: 0.1; depth: 0.3" material="color: red" click-to-shoot position="0 -1 -1"></a-entity>			  
 				</a-entity>
 				<a-entity sound="src: #background"></a-entity>
