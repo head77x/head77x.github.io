@@ -5,29 +5,26 @@ init: function () {
     document.body.addEventListener('mousedown', () => { this.el.emit('shoot'); });
 }
 });
-/*
+
 AFRAME.registerComponent('hit-handler', {
-dependencies: ['material'],
 
 init: function () {
-    var color;
     var el = this.el;
 
-    color = new THREE.Color();
-    color.set('#666');
-    el.components.material.material.color.copy(color);
     el.addEventListener('hit', () => {
-    color.addScalar(0.05);
-    el.components.material.material.color.copy(color);
+        console.log('hitted');
     });
 
     el.addEventListener('die', () => {
-    color.setRGB(1, 0, 0);
-    el.components.material.material.color.copy(color);
+        console.log('die!');
+
+        document.getElementById('gameux').style.display = 'none';
+        document.getElementById('quizux').style.display = 'block';
+        gameMode = 'quizready';
     });
 }
 });
-*/
+
 
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
@@ -43,12 +40,8 @@ window.onload = () => {
     // 첫번째 UX에서 스타트 버튼 누를때 처리
     document.getElementById('startgamebutton').addEventListener('click', function () {
         document.getElementById('firstux').style.display = 'none';
-        document.getElementById('quizux').style.display = 'block';
-        gameMode = 'quizready';
-/*
         document.getElementById('gameux').style.display = 'block';
         gameMode = 'gameready';
-*/
 
         var entity = document.querySelector('[sound]');
         entity.components.sound.playSound();        
