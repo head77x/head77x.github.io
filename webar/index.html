@@ -115,7 +115,7 @@
 							<a-entity id="firstux2" mixin="gamehelp" visible="true"></a-entity>
 						</a-entity>
 -->
-					<a-entity text="value: version 0.0.7.7" position="0 1.0 -2.1"></a-entity>
+					<a-entity text="value: version 0.0.7.8" position="0 1.0 -2.1"></a-entity>
 					<a-entity id="gun" shooter geometry="primitive: box; width: 0.1; height: 0.1; depth: 0.3" material="color: red" click-to-shoot position="0 -1 -1"></a-entity>			  
 				</a-entity>
 				<a-entity sound="src: #background"></a-entity>
@@ -155,6 +155,19 @@
 
 			<div id="shootbutton" style="position:absolute; display: flex; width:105px; height:39; top: 80%; left: 30%;">
 				<img src="./assets/third_qa/ok_button.png"/>    
+			</div>
+		</div>
+		<!-- 퀴즈 UX 화면 --> 
+		<div id="quizux" style="display: none;">
+			<img style="position:absolute; display: flex; width:100%; height:50%; top: 30%; left: 0;" src="./assets/third_qa/quiz_back.png"/>
+
+			<p style="position:absolute; display: flex; width:90%; height:50%; top: 32%; left: 10px;">안녕하세요? 이것은 퀴즈입니까?</p>
+
+			<div id="obutton" style="position:absolute; display: flex; width:117px; height:45; top: 90%; left: 30%;">
+				<img src="./assets/third_qa/O_button.png"/>    
+			</div>
+			<div id="xbutton" style="position:absolute; display: flex; width:117px; height:45; top: 90%; right: 30%;">
+				<img src="./assets/third_qa/X_button.png"/>    
 			</div>
 		</div>
 

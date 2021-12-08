@@ -43,8 +43,12 @@ window.onload = () => {
     // 첫번째 UX에서 스타트 버튼 누를때 처리
     document.getElementById('startgamebutton').addEventListener('click', function () {
         document.getElementById('firstux').style.display = 'none';
+        document.getElementById('quizux').style.display = 'block';
+        gameMode = 'quizready';
+/*
         document.getElementById('gameux').style.display = 'block';
         gameMode = 'gameready';
+*/
 
         var entity = document.querySelector('[sound]');
         entity.components.sound.playSound();        
