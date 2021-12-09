@@ -74,7 +74,10 @@ window.onload = () => {
         console.log('shoot');
     });
 
-    
+    document.querySelector('a-scene').addEventListener('loaded', function () {
+        document.getElementById('firstux').style.display = 'block';
+    });
+
 };
 
 function staticLoadPlaces() {
