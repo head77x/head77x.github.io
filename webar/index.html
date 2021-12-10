@@ -49,15 +49,12 @@
 				<audio id="background" src="./assets/sound/background.mp3" preload="auto"></audio>
 		  	</a-assets>		
 
-			  <a-entity 
+				<a-entity 
 					id="bulletTemplate" 
 					bullet 
+					gltf-model="url(./assets/arrow.gltf)"
+					scale="5.0 5.0 5.0"
 				>
-					<a-entity 
-						gltf-model="url(./assets/arrow.gltf)"
-						scale="5.0 5.0 5.0"
-					>
-					</a-entity>
 				</a-entity>
 <!--
 			  <a-entity class="target" target="healthPoints: 10" geometry="primitive: box" material="color: teal" position="0 0 -4" hit-handler></a-entity>
@@ -65,24 +62,25 @@
 
 				<!-- 회전축 -->
 			  <a-entity id="firstmonster" position="0 0 0" monster1>
-					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/solchar.gltf)" position="0 0 -4" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: fly; loop: repeat;"></a-entity>
+					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/solchar.gltf)" position="0 0 -4" scale="0.5 0.5 0.5" rotation="0 0 0" hit-handler animation-mixer="clip: fly; loop: repeat;"></a-entity>
 				</a-entity>
-				  <a-entity id="secondmonster" position="0 0 0" monster1>
-					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/solchar.gltf)" position="0 0 -4" scale="0.5 0.5 0.5" rotation="0 0 0"  animation-mixer="clip: fly; loop: repeat;"></a-entity>
+<!--
+			  <a-entity id="secondmonster" position="0 0 0" monster1>
+					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/solchar.gltf)" position="0 0 -4" scale="0.5 0.5 0.5" rotation="0 0 0" hit-handler animation-mixer="clip: fly; loop: repeat;"></a-entity>
 				</a-entity>
 				<a-entity id="thirdmonster" position="0 0 0" monster1>
-					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/solchar.gltf)" position="0 0 -4" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: fly; loop: repeat;"></a-entity>
+					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/solchar.gltf)" position="0 0 -4" scale="0.5 0.5 0.5" rotation="0 0 0" hit-handler animation-mixer="clip: fly; loop: repeat;"></a-entity>
 				</a-entity>
 				<a-entity id="forthmonster" position="0 0 0" monster1>
-					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/solchar.gltf)" position="0 0 -4" scale="0.5 0.5 0.5" rotation="0 0 0"  animation-mixer="clip: fly; loop: repeat;"></a-entity>
+					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/solchar.gltf)" position="0 0 -4" scale="0.5 0.5 0.5" rotation="0 0 0" hit-handler animation-mixer="clip: fly; loop: repeat;"></a-entity>
 				</a-entity>
 				<a-entity id="fifthmonster" position="0 0 0" monster1>
-					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/solchar.gltf)" position="0 0 -4" scale="0.5 0.5 0.5" rotation="0 0 0"  animation-mixer="clip: fly; loop: repeat;"></a-entity>
+					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/solchar.gltf)" position="0 0 -4" scale="0.5 0.5 0.5" rotation="0 0 0" hit-handler animation-mixer="clip: fly; loop: repeat;"></a-entity>
 				</a-entity>
 				<a-entity id="sixthmonster" position="0 0 0" monster1>
-					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/solchar.gltf)" position="0 0 -4" scale="0.5 0.5 0.5" rotation="0 0 0"  animation-mixer="clip: fly; loop: repeat;"></a-entity>
+					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/solchar.gltf)" position="0 0 -4" scale="0.5 0.5 0.5" rotation="0 0 0" hit-handler animation-mixer="clip: fly; loop: repeat;"></a-entity>
 				</a-entity>
-
+-->				
 <!--				
 				<a-assets>
 					<img id="shinhanlogoimg" src="./assets/first_start/solquiz_logo.png"/>    
@@ -125,7 +123,7 @@
 							<a-entity id="firstux2" mixin="gamehelp" visible="true"></a-entity>
 						</a-entity>
 -->
-					<a-entity text="value: version 0.1.1.9" position="0 1.0 -2.1"></a-entity>
+					<a-entity text="value: version 0.1.2.0" position="0 1.0 -2.1"></a-entity>
 					<a-entity 
 						id="gun" 
 						shooter 
