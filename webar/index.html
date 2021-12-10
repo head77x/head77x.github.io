@@ -22,7 +22,7 @@
 	AFRAME.registerComponent('monster1', {
         init: function () {
 					this.random_x = ((Math.random() * 2) - 1)/10;
-					this.random_y = ((Math.random() * 2) - 1);
+					this.random_y = ((Math.random() * 90) - 45);
 
 					var move = this.el.object3D.rotation;
 					move.y = THREE.Math.degToRad(this.random_y);
