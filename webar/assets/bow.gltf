@@ -709,7 +709,7 @@
                     }
                 }
             ],
-            "name" : "shoot",
+            "name" : "ready",
             "samplers" : [
                 {
                     "input" : 69,
@@ -932,7 +932,7 @@
                     }
                 }
             ],
-            "name" : "ready",
+            "name" : "shoot",
             "samplers" : [
                 {
                     "input" : 89,
