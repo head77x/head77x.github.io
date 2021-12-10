@@ -12,11 +12,11 @@ init: function () {
     var el = this.el;
 
     el.addEventListener('hit', () => {
-        console.log('hitted' + el);
+        console.log('hitted' + el.id);
     });
 
     el.addEventListener('die', () => {
-        console.log('die!' + el);
+        console.log('die!' + el.id);
 
         document.getElementById('gameux').style.display = 'none';
         document.getElementById('quizux').style.display = 'block';
