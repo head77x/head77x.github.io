@@ -19,10 +19,10 @@
 </head>
 
 <script>
-	AFRAME.registerComponent('monster1', {
+	AFRAME.registerComponent('molymove', {
         init: function () {
 					this.random_x = ((Math.random() * 2) - 1)/10;
-					this.random_z = ((Math.random() * 90) - 45);
+					this.random_z = 30;
 
 					var move = this.el.object3D.rotation;
 					move.z = THREE.Math.degToRad(this.random_z);
@@ -32,9 +32,90 @@
 				},
       
         tick: function (time) {
-			this.el.object3D.rotateX(THREE.Math.degToRad(this.random_x));
+					this.el.object3D.rotateX(THREE.Math.degToRad(this.random_x));
         }
 	});
+	AFRAME.registerComponent('rinomove', {
+        init: function () {
+					this.random_x = ((Math.random() * 2) - 1)/10;
+					this.random_z = -30;
+
+					var move = this.el.object3D.rotation;
+					move.z = THREE.Math.degToRad(this.random_z);
+					this.el.object3D.rotation = move;
+
+					console.log('move dir : ' + this.random_x + "," + this.random_z);
+				},
+      
+        tick: function (time) {
+					this.el.object3D.rotateX(THREE.Math.degToRad(this.random_x));
+        }
+	});
+	AFRAME.registerComponent('suemove', {
+        init: function () {
+					this.random_x = ((Math.random() * 2) - 1)/10;
+					this.random_z = 15;
+
+					var move = this.el.object3D.rotation;
+					move.z = THREE.Math.degToRad(this.random_z);
+					this.el.object3D.rotation = move;
+
+					console.log('move dir : ' + this.random_x + "," + this.random_z);
+				},
+      
+        tick: function (time) {
+					this.el.object3D.rotateX(THREE.Math.degToRad(this.random_x));
+        }
+	});
+	AFRAME.registerComponent('lulamove', {
+        init: function () {
+					this.random_x = ((Math.random() * 2) - 1)/10;
+					this.random_z = -45;
+
+					var move = this.el.object3D.rotation;
+					move.z = THREE.Math.degToRad(this.random_z);
+					this.el.object3D.rotation = move;
+
+					console.log('move dir : ' + this.random_x + "," + this.random_z);
+				},
+      
+        tick: function (time) {
+					this.el.object3D.rotateX(THREE.Math.degToRad(this.random_x));
+        }
+	});
+	AFRAME.registerComponent('doremove', {
+        init: function () {
+					this.random_x = ((Math.random() * 2) - 1)/10;
+					this.random_z = 60;
+
+					var move = this.el.object3D.rotation;
+					move.z = THREE.Math.degToRad(this.random_z);
+					this.el.object3D.rotation = move;
+
+					console.log('move dir : ' + this.random_x + "," + this.random_z);
+				},
+      
+        tick: function (time) {
+					this.el.object3D.rotateX(THREE.Math.degToRad(this.random_x));
+        }
+	});
+	AFRAME.registerComponent('solmove', {
+        init: function () {
+					this.random_x = ((Math.random() * 2) - 1)/10;
+					this.random_z = 0;
+
+					var move = this.el.object3D.rotation;
+					move.z = THREE.Math.degToRad(this.random_z);
+					this.el.object3D.rotation = move;
+
+					console.log('move dir : ' + this.random_x + "," + this.random_z);
+				},
+      
+        tick: function (time) {
+					this.el.object3D.rotateX(THREE.Math.degToRad(this.random_x));
+        }
+	});
+
 </script>
 
 
@@ -61,22 +142,22 @@
 -->
 
 				<!-- 회전축 -->
-			  <a-entity id="firstmonster" position="0 0 0" monster1>
+			  <a-entity id="firstmonster" position="0 0 0" solmove>
 					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/solchar.gltf)" position="0 0 -4" scale="0.5 0.5 0.5" rotation="0 0 0" hit-handler animation-mixer="clip: fly; loop: repeat;"></a-entity>
 				</a-entity>
-			  <a-entity id="secondmonster" position="0 0 0" monster1>
+			  <a-entity id="secondmonster" position="0 0 0" molymove>
 					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/solchar.gltf)" position="0 0 -4" scale="0.5 0.5 0.5" rotation="0 0 0" hit-handler animation-mixer="clip: fly; loop: repeat;"></a-entity>
 				</a-entity>
-				<a-entity id="thirdmonster" position="0 0 0" monster1>
+				<a-entity id="thirdmonster" position="0 0 0" rinomove>
 					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/solchar.gltf)" position="0 0 -4" scale="0.5 0.5 0.5" rotation="0 0 0" hit-handler animation-mixer="clip: fly; loop: repeat;"></a-entity>
 				</a-entity>
-				<a-entity id="forthmonster" position="0 0 0" monster1>
+				<a-entity id="forthmonster" position="0 0 0" suemove>
 					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/solchar.gltf)" position="0 0 -4" scale="0.5 0.5 0.5" rotation="0 0 0" hit-handler animation-mixer="clip: fly; loop: repeat;"></a-entity>
 				</a-entity>
-				<a-entity id="fifthmonster" position="0 0 0" monster1>
+				<a-entity id="fifthmonster" position="0 0 0" lulamove>
 					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/solchar.gltf)" position="0 0 -4" scale="0.5 0.5 0.5" rotation="0 0 0" hit-handler animation-mixer="clip: fly; loop: repeat;"></a-entity>
 				</a-entity>
-				<a-entity id="sixthmonster" position="0 0 0" monster1>
+				<a-entity id="sixthmonster" position="0 0 0" doremove>
 					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/solchar.gltf)" position="0 0 -4" scale="0.5 0.5 0.5" rotation="0 0 0" hit-handler animation-mixer="clip: fly; loop: repeat;"></a-entity>
 				</a-entity>
 <!--				
@@ -121,7 +202,7 @@
 							<a-entity id="firstux2" mixin="gamehelp" visible="true"></a-entity>
 						</a-entity>
 -->
-					<a-entity text="value: version 0.1.2.8" position="0 1.0 -2.1"></a-entity>
+					<a-entity text="value: version 0.1.2.9" position="0 1.0 -2.1"></a-entity>
 					<a-entity 
 						id="gun" 
 						shooter 
