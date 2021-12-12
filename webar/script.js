@@ -77,6 +77,9 @@ AFRAME.registerComponent('brandon-shoot', {
     shootone() {
         let scene = document.querySelector('a-scene');
         let model = document.createElement('a-entity');
+        
+        model.setAttribute('gltf-model', 'url(./assets/arrow.gltf)');
+
 /*        
         let dir = new THREE.Vector3( 0, 0, -1 );
 
