@@ -68,6 +68,8 @@ AFRAME.registerComponent('brandon-shoot', {
     
         model.setAttribute('gltf-model', 'url(./assets/arrow.gltf)');
 
+        model.setAttribute('arrowshoot', '');
+
         scene.appendChild(model);
 
         console.log('shoot');
