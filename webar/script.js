@@ -98,6 +98,10 @@ AFRAME.registerComponent('brandon-shoot', {
         scene.appendChild(model);
 
         console.log('shoot : ' + rot.y);
+    },
+
+    tick: function() {
+        this.el.object3D.rotateY(1);
     }
 });
     
