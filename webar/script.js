@@ -7,7 +7,6 @@ init: function () {
 });
 
 AFRAME.registerComponent('hit-handler', {
-
 init: function () {
     var el = this.el;
 
@@ -28,6 +27,32 @@ init: function () {
 }
 });
 
+AFRAME.registerComponent('brandon-hit', {
+    init: function () {
+        var el = this.el;
+/*    
+        el.addEventListener('hit', () => {
+            console.log('hitted');
+            color = new THREE.Color();
+            color.setRGB(1, 0, 0);
+            el.components.material.material.color.copy(color);        
+        });
+    
+        el.addEventListener('die', () => {
+            console.log('die!');
+    
+            document.getElementById('gameux').style.display = 'none';
+            document.getElementById('quizux').style.display = 'block';
+            gameMode = 'quizready';
+        });
+*/
+    },
+    tick: function(time) {
+        console.log( 'position changed : ' + JSON.parse(this.el.object3D.position) );
+    },
+
+    });
+    
 
 window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
