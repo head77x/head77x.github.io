@@ -79,16 +79,15 @@ AFRAME.registerComponent('brandon-shoot', {
         let model = document.createElement('a-entity');
         let dir = new THREE.Vector3( 0, 0, 1 );
 
-        model.setAttribute('scale', this.el.object3D.scale);
-
-        model.setAttribute('position', this.el.object3D.position);
-    
         model.setAttribute('gltf-model', 'url(./assets/arrow.gltf)');
 
         let rot = this.el.object3D.getWorldDirection(dir);
 
         model.object3D.rotateY(rot.x);
-        model.object3D.rotateX(rot.y);
+        model.object3D.rotateX(-rot.y);
+
+        model.object3D.scale = this.el.object3D.scale;
+        model.object3D.position = this.el.object3D.position;
 
         model.setAttribute('arrowshoot', '');
 
