@@ -77,13 +77,13 @@ AFRAME.registerComponent('brandon-shoot', {
     shootone() {
         let scene = document.querySelector('a-scene');
         let model = document.createElement('a-entity');
-        let dir = new THREE.Vector3( 0, 0, 0 );
+        let dir = new THREE.Vector3( 0, 0, -1 );
 
         model.setAttribute('gltf-model', 'url(./assets/arrow.gltf)');
 
         model.object3D.scale = this.el.object3D.scale;
 
-        let pos = new THREE.Vector3( 0, 0, 0 );
+        let pos = new THREE.Vector3( this.el.object3D.position.x, this.el.object3D.position.y, this.el.object3D.position.z );
 
         let posi = this.el.object3D.getWorldPosition(pos);
         model.object3D.position = posi;
