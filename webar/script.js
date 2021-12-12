@@ -39,7 +39,7 @@ window.onload = () => {
     const ui = document.getElementById('firstux');
     ui.setAttribute('visible', true);
 */
-
+/*
     var tex = new THREE.TextureLoader().load('./assets/lambert1_baseColor.png');
     tex.flipY = false; // for glTF models.
 
@@ -54,7 +54,7 @@ window.onload = () => {
             }
         });
     });
-
+*/
     // 첫번째 UX에서 스타트 버튼 누를때 처리
     document.getElementById('startgamebutton').addEventListener('click', function () {
         document.getElementById('firstux').style.display = 'none';
