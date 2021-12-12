@@ -75,6 +75,9 @@ AFRAME.registerComponent('brandon-shoot', {
         let model = document.createElement('a-entity');
 
         model.setAttribute('scale', this.el.object3D.scale);
+
+        camrot.y = 5;
+
         model.setAttribute('rotation', camrot);
 
         console.log('camrot : ' + camrot.y);
