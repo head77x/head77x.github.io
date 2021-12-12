@@ -48,7 +48,7 @@ AFRAME.registerComponent('brandon-hit', {
 */
     },
     tick: function(time) {
-        console.log( 'position changed : ' + JSON.parse(this.el.object3D.position) );
+        console.log( 'position changed : ' + this.el.object3D.position );
     },
 
     });
