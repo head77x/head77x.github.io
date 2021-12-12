@@ -72,7 +72,7 @@ AFRAME.registerComponent('brandon-shoot', {
 
         scene.appendChild(model);
 
-        console.log('shoot');
+        console.log('shoot' + this.el.object3D.position.y);
     }
 });
     
