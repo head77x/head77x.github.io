@@ -45,7 +45,13 @@ window.onload = () => {
 
     document.getElementById('gun').addEventListener('model-loaded', function (e) {
         e.detail.model.traverse(function(node) {
-            if (node.isMesh) node.material.map = tex;
+            if (node.isMesh) { 
+                node.material.map = tex;
+
+                node.material.shader="flat";
+
+                console.log('texture changed : ' + tex);
+            }
         });
     });
 
