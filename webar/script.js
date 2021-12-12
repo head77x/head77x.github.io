@@ -78,7 +78,7 @@ AFRAME.registerComponent('brandon-shoot', {
         let scene = document.querySelector('a-scene');
         let model = document.createElement('a-entity');
 
-        let rot = this.el.object3D.getWorldDirection(new Vector3(0,0,0));
+        let rot = this.el.object3D.getWorldDirection({x:0,y:0,z:1});
 
         model.rotateY(rot.y);
 
