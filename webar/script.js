@@ -81,7 +81,7 @@ AFRAME.registerComponent('brandon-shoot', {
 
         let rot = this.el.object3D.getWorldDirection(dir);
 
-        model.object3D.rotateY(rot.y);
+        model.object3D.rotateY(rot.x);
 
         model.setAttribute('scale', this.el.object3D.scale);
 
