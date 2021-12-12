@@ -27,10 +27,17 @@
 				restart: function(whattime) {
 					this.direction = this.el.object3D.rotation;
 					this.moveSpeed = -0.05;
+					this.initflag = true;
 				},
       
         tick: function (time) {
-    			this.el.object3D.translateZ(this.moveSpeed);
+					if ( this.initflag ) {
+						let scene = document.querySelector('a-scene');
+						scene.appendChild(this.el);
+						this.initflag = false;
+					} else {
+						this.el.object3D.translateZ(this.moveSpeed);
+					}
         }
 	});
 
@@ -381,7 +388,7 @@
 							<a-entity id="firstux2" mixin="gamehelp" visible="true"></a-entity>
 						</a-entity>
 -->
-					<a-entity text="value: version 0.2.1.7" position="0 1.0 -2.1"></a-entity>
+					<a-entity text="value: version 0.2.1.8" position="0 1.0 -2.1"></a-entity>
 				</a-entity>
 				<a-entity 
 					id="gun" 
