@@ -47,6 +47,7 @@
         init: function () {
 					this.random_x = 1;//((Math.random() * 2) - 1)/10;
 					this.random_z = 30;
+					this.initflag = true;
 
 					var move = this.el.object3D.rotation;
 					move.z = THREE.Math.degToRad(this.random_z);
@@ -56,8 +57,12 @@
         tick: function (time) {
 					this.el.object3D.rotateX(THREE.Math.degToRad(this.random_x));
 
+					if ( this.initflag ) {
+						this.starttime = time;
+						this.initflag = false;
+					} else {
 					// 3초 이상 지났으면 정상 움직임으로 바꿔줌
-					if ( time > 3000 ) {
+					if ( time - this.starttime > 3000 ) {
 						this.el.object3D.visible = false;
 //						this.el.setAttribute('moveanywhere', '');
 //						this.el.removeAttribute('molystart');
@@ -66,12 +71,14 @@
 						document.getElementById('rinomodel').setAttribute('rinostart','');
 
 					}
+					}	
         }
 	});
 	AFRAME.registerComponent('rinostart', {
         init: function () {
 					this.random_x = 1;//((Math.random() * 2) - 1)/10;
 					this.random_z = -30;
+					this.initflag = true;
 
 					var move = this.el.object3D.rotation;
 					move.z = THREE.Math.degToRad(this.random_z);
@@ -82,15 +89,16 @@
       
         tick: function (time) {
 						this.el.object3D.rotateX(THREE.Math.degToRad(this.random_x));
-
+					if ( this.initflag ) {
+						this.starttime = time;
+						this.initflag = false;
 						console.log(time);
-					// 3초 이상 지났으면 정상 움직임으로 바꿔줌
-					if ( time > 3000 ) {
+					} else {
 //						this.el.object3D.visible = false;
 //						this.el.setAttribute('moveanywhere', '');
 //						this.el.removeAttribute('molystart');
 					}
-        }
+				}
 	});
 	AFRAME.registerComponent('suemove', {
         init: function () {
@@ -252,7 +260,7 @@
 							<a-entity id="firstux2" mixin="gamehelp" visible="true"></a-entity>
 						</a-entity>
 -->
-					<a-entity text="value: version 0.1.4.4" position="0 1.0 -2.1"></a-entity>
+					<a-entity text="value: version 0.1.4.5" position="0 1.0 -2.1"></a-entity>
 					<a-entity 
 						id="gun" 
 						shooter 
