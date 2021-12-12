@@ -60,9 +60,6 @@
 					if ( this.initflag ) {
 						this.starttime = time;
 						this.initflag = false;
-						var entity = document.getElementById('misssound');
-						entity.components.sound.playSound();        
-
 					} else {
 						if ( time - this.starttime > 1800 ) {
 							// 리노 에니메이션 시작
@@ -94,9 +91,6 @@
 					if ( this.initflag ) {
 						this.starttime = time;
 						this.initflag = false;
-						var entity = document.getElementById('misssound');
-						entity.components.sound.playSound();        
-
 					} else {
 						if ( time - this.starttime > 800 ) {
 							// 리노 에니메이션 시작
@@ -126,9 +120,6 @@
 					if ( this.initflag ) {
 						this.starttime = time;
 						this.initflag = false;
-
-						var entity = document.getElementById('misssound');
-						entity.components.sound.playSound();        
 					} else {
 						if ( time - this.starttime > 1200 ) {
 							// 리노 에니메이션 시작
@@ -160,9 +151,6 @@
 					if ( this.initflag ) {
 						this.starttime = time;
 						this.initflag = false;
-						var entity = document.getElementById('misssound');
-						entity.components.sound.playSound();        
-
 					} else {
 						if ( time - this.starttime > 400 ) {
 							// 리노 에니메이션 시작
@@ -193,9 +181,6 @@
 					if ( this.initflag ) {
 						this.starttime = time;
 						this.initflag = false;
-						var entity = document.getElementById('misssound');
-						entity.components.sound.playSound();        
-
 					} else {
 						if ( time - this.starttime > 1200 ) {
 							// 리노 에니메이션 시작
@@ -228,9 +213,6 @@
 					if ( this.initflag ) {
 						this.starttime = time;
 						this.initflag = false;
-						var entity = document.getElementById('misssound');
-						entity.components.sound.playSound();        
-
 					} else {
 						if ( time - this.starttime > 3000 ) {
 							this.el.object3D.visible = false;
@@ -337,7 +319,7 @@
 							<a-entity id="firstux2" mixin="gamehelp" visible="true"></a-entity>
 						</a-entity>
 -->
-					<a-entity text="value: version 0.1.4.7" position="0 1.0 -2.1"></a-entity>
+					<a-entity text="value: version 0.1.4.8" position="0 1.0 -2.1"></a-entity>
 					<a-entity 
 						id="gun" 
 						shooter 
@@ -345,6 +327,7 @@
 						scale="4.0 4.0 4.0" 
 						animation-mixer="clip: shoot; loop: repeat;" 
 						click-to-shoot 
+						visible="false"
 						position="0 -0.6 -1">
 					</a-entity>			  
 				</a-entity>
