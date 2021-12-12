@@ -86,9 +86,9 @@ AFRAME.registerComponent('brandon-shoot', {
 
         model.setAttribute('arrowshoot', '');
 
-        this.el.appendChild(model);
+        scene.appendChild(model);
 
-        console.log('shoot' + this.el.object3D.position.y);
+        console.log('shoot : ' + this.el.object3D.getWorldDirection());
     }
 });
     
