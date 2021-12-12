@@ -63,7 +63,13 @@ AFRAME.registerComponent('brandon-shoot', {
         let model = document.createElement('a-entity');
 
         model.setAttribute('scale', this.el.object3D.scale);
-        model.setAttribute('rotation', this.el.object3D.rotation);
+//        model.setAttribute('rotation', this.el.object3D.rotation);
+
+        let qua = this.el.object3D.getWorldQuaternion();
+        model.object3D.setRotationFromQuaternion(qua);
+
+        console.log('quater : ' + qua);
+
         model.setAttribute('position', this.el.object3D.position);
     
         model.setAttribute('gltf-model', 'url(./assets/arrow.gltf)');
