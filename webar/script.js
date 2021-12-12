@@ -48,7 +48,7 @@ AFRAME.registerComponent('brandon-hit', {
 */
     },
     tick: function(time) {
-        console.log( 'position changed : ' + this.el.object3D.position );
+//        console.log( 'position changed : ' + this.el.object3D.position );
     },
 
     });
@@ -69,6 +69,8 @@ AFRAME.registerComponent('brandon-shoot', {
         model.setAttribute('gltf-model', 'url(./assets/arrow.gltf)');
 
         scene.appendChild(model);
+
+        console.log('shoot');
     }
 });
     
