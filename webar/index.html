@@ -239,6 +239,10 @@
 										entity.components.sound.playSound();        
 
 										document.getElementById('countdowndetail').innerText = "It's Catch Time!";
+
+										// 게임 UX 표시
+						        document.getElementById('gameux').style.display = 'block';
+						        document.getElementById('gun').object3D.visible = true;
 									} else {
 										var entity = document.getElementById('countdownsound');
 										entity.components.sound.playSound();        
@@ -349,7 +353,7 @@
 							<a-entity id="firstux2" mixin="gamehelp" visible="true"></a-entity>
 						</a-entity>
 -->
-					<a-entity text="value: version 0.1.6.6" position="0 1.0 -2.1"></a-entity>
+					<a-entity text="value: version 0.1.6.7" position="0 1.0 -2.1"></a-entity>
 					<a-entity 
 						id="gun" 
 						shooter 
