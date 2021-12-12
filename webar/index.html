@@ -60,11 +60,17 @@
 					if ( this.initflag ) {
 						this.starttime = time;
 						this.initflag = false;
+						var entity = document.getElementById('misssound');
+						entity.components.sound.playSound();        
+
 					} else {
 						if ( time - this.starttime > 1800 ) {
 							// 리노 에니메이션 시작
-							this.el.object3D.visible = false;
 							document.getElementById('rinomodel').setAttribute('rinostart','');
+						}
+						if ( time - this.starttime > 3000 ) {
+							this.el.object3D.visible = false;
+							document.getElementById('molymodel').removeAttribute('molystart');
 						}
 					}	
         }
@@ -88,11 +94,17 @@
 					if ( this.initflag ) {
 						this.starttime = time;
 						this.initflag = false;
+						var entity = document.getElementById('misssound');
+						entity.components.sound.playSound();        
+
 					} else {
 						if ( time - this.starttime > 800 ) {
 							// 리노 에니메이션 시작
-							this.el.object3D.visible = false;
 							document.getElementById('suemodel').setAttribute('suestart','');
+						}
+						if ( time - this.starttime > 3000 ) {
+							this.el.object3D.visible = false;
+							document.getElementById('rinomodel').removeAttribute('rinostart');
 						}
 					}	
 				}
@@ -114,11 +126,17 @@
 					if ( this.initflag ) {
 						this.starttime = time;
 						this.initflag = false;
+
+						var entity = document.getElementById('misssound');
+						entity.components.sound.playSound();        
 					} else {
 						if ( time - this.starttime > 1200 ) {
 							// 리노 에니메이션 시작
-							this.el.object3D.visible = false;
 							document.getElementById('lulamodel').setAttribute('lulastart','');
+						}
+						if ( time - this.starttime > 3000 ) {
+							this.el.object3D.visible = false;
+							document.getElementById('suemodel').removeAttribute('suestart');
 						}
 					}	
         }
@@ -142,11 +160,17 @@
 					if ( this.initflag ) {
 						this.starttime = time;
 						this.initflag = false;
+						var entity = document.getElementById('misssound');
+						entity.components.sound.playSound();        
+
 					} else {
 						if ( time - this.starttime > 400 ) {
 							// 리노 에니메이션 시작
-							this.el.object3D.visible = false;
 							document.getElementById('doremodel').setAttribute('dorestart','');
+						}
+						if ( time - this.starttime > 3000 ) {
+							this.el.object3D.visible = false;
+							document.getElementById('lulamodel').removeAttribute('lulastart');
 						}
 					}	
         }
@@ -169,12 +193,19 @@
 					if ( this.initflag ) {
 						this.starttime = time;
 						this.initflag = false;
+						var entity = document.getElementById('misssound');
+						entity.components.sound.playSound();        
+
 					} else {
 						if ( time - this.starttime > 1200 ) {
 							// 리노 에니메이션 시작
-							this.el.object3D.visible = false;
 							document.getElementById('solmodel').setAttribute('solstart','');
 						}
+						if ( time - this.starttime > 3000 ) {
+							this.el.object3D.visible = false;
+							document.getElementById('doremodel').removeAttribute('dorestart');
+						}
+
 					}	
         }
 	});
@@ -197,11 +228,15 @@
 					if ( this.initflag ) {
 						this.starttime = time;
 						this.initflag = false;
+						var entity = document.getElementById('misssound');
+						entity.components.sound.playSound();        
+
 					} else {
-						if ( time - this.starttime > 1800 ) {
-							// 리노 에니메이션 시작
+						if ( time - this.starttime > 3000 ) {
 							this.el.object3D.visible = false;
+							document.getElementById('solmodel').removeAttribute('solstart');
 						}
+
 					}	
 
         }
@@ -302,7 +337,7 @@
 							<a-entity id="firstux2" mixin="gamehelp" visible="true"></a-entity>
 						</a-entity>
 -->
-					<a-entity text="value: version 0.1.4.6" position="0 1.0 -2.1"></a-entity>
+					<a-entity text="value: version 0.1.4.7" position="0 1.0 -2.1"></a-entity>
 					<a-entity 
 						id="gun" 
 						shooter 
@@ -314,6 +349,7 @@
 					</a-entity>			  
 				</a-entity>
 				<a-entity id="bgm" sound="src: #background"></a-entity>
+				<a-entity id="misssound" sound="src: #miss"></a-entity>
 			</a-camera>
 </a-scene>
 <!--
