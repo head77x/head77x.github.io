@@ -80,17 +80,13 @@ AFRAME.registerComponent('brandon-shoot', {
 
         model.setAttribute('scale', this.el.object3D.scale);
 
-        model.object3D.setRotationFromQuaternion(camrot);
-
-        console.log('camrot : ' + camrot.y);
-
         model.setAttribute('position', this.el.object3D.position);
     
         model.setAttribute('gltf-model', 'url(./assets/arrow.gltf)');
 
         model.setAttribute('arrowshoot', '');
 
-        scene.appendChild(model);
+        this.el.appendChild(model);
 
         console.log('shoot' + this.el.object3D.position.y);
     }
