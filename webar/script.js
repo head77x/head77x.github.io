@@ -65,12 +65,7 @@ AFRAME.registerComponent('brandon-shoot', {
 
         model.setAttribute('scale', this.el.object3D.scale);
 
-        let myrot = this.el.object3D.rotation;
-        myrot.y = 5;
-
-        model.setAttribute('rotation', myrot);
-
-        console.log('myrot : ' + myrot.y);
+        model.object3D.rotateY(5);
 
         model.setAttribute('position', this.el.object3D.position);
     
