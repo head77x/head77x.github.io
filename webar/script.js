@@ -1,5 +1,20 @@
 var gameMode = 'titlemode';
 
+var camrot;
+
+AFRAME.registerComponent('camrot', {
+    init: function () {
+            },
+    tick: function (time) {
+        var quaternion = new THREE.Quaternion();
+    
+        return function () {
+          camrot = this.el.object3D.getWorldQuaternion(quaternion);
+          // position and rotation now contain vector and quaternion in world space.
+        };
+    }
+
+});
 
 AFRAME.registerComponent('click-to-shoot', {
 init: function () {
@@ -65,8 +80,10 @@ AFRAME.registerComponent('brandon-shoot', {
 
         model.setAttribute('scale', this.el.object3D.scale);
 
-        model.object3D.rotateY(this.el.object3D.rotation.y);
-        
+        model.object3D.setRotationFromQuaternion(camrot);
+
+        console.log('camrot : ' + camrot.y);
+
         model.setAttribute('position', this.el.object3D.position);
     
         model.setAttribute('gltf-model', 'url(./assets/arrow.gltf)');
