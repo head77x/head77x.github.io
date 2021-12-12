@@ -78,6 +78,10 @@ AFRAME.registerComponent('brandon-shoot', {
         let scene = document.querySelector('a-scene');
         let model = document.createElement('a-entity');
 
+        let rot = this.el.object3D.getWorldDirection(new Vector3(0,0,0));
+
+        model.rotateY(rot.y);
+
         model.setAttribute('scale', this.el.object3D.scale);
 
         model.setAttribute('position', this.el.object3D.position);
@@ -88,7 +92,7 @@ AFRAME.registerComponent('brandon-shoot', {
 
         scene.appendChild(model);
 
-        console.log('shoot : ' + this.el.object3D.getWorldDirection());
+        console.log('shoot : ' + rot.y);
     }
 });
     
