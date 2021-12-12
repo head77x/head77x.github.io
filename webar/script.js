@@ -61,14 +61,10 @@ AFRAME.registerComponent('brandon-shoot', {
     shootone() {
         let scene = document.querySelector('a-scene');
         let model = document.createElement('a-entity');
+        let rot = document.getElementById('camera1').object3D.rotation;
 
         model.setAttribute('scale', this.el.object3D.scale);
-//        model.setAttribute('rotation', this.el.object3D.rotation);
-
-        let qua = this.el.object3D.getWorldQuaternion();
-        model.object3D.setRotationFromQuaternion(qua);
-
-        console.log('quater : ' + qua);
+        model.setAttribute('rotation', rot);
 
         model.setAttribute('position', this.el.object3D.position);
     
