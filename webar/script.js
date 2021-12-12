@@ -61,7 +61,7 @@ window.onload = () => {
         document.getElementById('gameux').style.display = 'block';
         gameMode = 'gameready';
 
-        var entity = document.querySelector('[sound]');
+        var entity = document.getElementById('bgm');
         entity.components.sound.playSound();        
     });
 
@@ -71,7 +71,7 @@ window.onload = () => {
         document.getElementById('helpux').style.display = 'block';
         gameMode = 'titlehelp';
 
-        var entity = document.querySelector('[sound]');
+        var entity = document.getElementById('bgm');
         entity.components.sound.playSound();        
     });
 
@@ -82,9 +82,6 @@ window.onload = () => {
             document.getElementById('helpux').style.display = 'none';
             gameMode = 'titlemode';
         }
-
-        var entity = document.querySelector('[sound]');
-        entity.components.sound.playSound();        
     });
 
     // 게임 ux에서 화살 버튼 누를때
