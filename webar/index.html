@@ -222,31 +222,28 @@
 					} else {
 						// Entry#12. 2초후에 카운트 다운 시작
 						if ( time - this.starttime > 2000 ) {
+
+							console.log('initialized');
+							document.getElementById('countdowntext').innerText = "3!";
+							document.getElementById('countdowntext').style.display = "block";
+							this.counter = 3;
+							this.intervalId = setInterval(function() {
+									this.counter--;
+									console.log(this.counter);
+									if ( this.counter === 0 ) {
+										clearInterval(this.intervalId);
+										document.getElementById('countdowntext').innerText = "It's Catch Time!";
+									} else {
+										document.getElementById('countdowntext').innerText = counter+"!";
+									}
+								}, 1000);
+
 							this.el.object3D.visible = false;
-							document.getElementById('countdowntext').setAttribute('countdown','');
 							document.getElementById('solmodel').removeAttribute('solstart');
 						}
 					}	
 
         }
-	});
-	AFRAME.registerComponent('countdown', {
-        init: function () {
-					console.log('initialized');
-					document.getElementById('countdowntext').innerText = "3!";
-					document.getElementById('countdowntext').style.display = "block";
-					this.counter = 3;
-					this.intervalId = setInterval(function() {
-							this.counter--;
-							console.log(this.counter);
-							if ( this.counter === 0 ) {
-								clearInterval(this.intervalId);
-								document.getElementById('countdowntext').innerText = "It's Catch Time!";
-							} else {
-								document.getElementById('countdowntext').innerText = counter+"!";
-							}
-						}, 1000);
-					}
 	});
 </script>
 
@@ -343,7 +340,7 @@
 							<a-entity id="firstux2" mixin="gamehelp" visible="true"></a-entity>
 						</a-entity>
 -->
-					<a-entity text="value: version 0.1.5.6" position="0 1.0 -2.1"></a-entity>
+					<a-entity text="value: version 0.1.5.7" position="0 1.0 -2.1"></a-entity>
 					<a-entity 
 						id="gun" 
 						shooter 
