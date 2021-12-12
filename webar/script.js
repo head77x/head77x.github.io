@@ -98,7 +98,7 @@ AFRAME.registerComponent('brandon-shoot', {
 
         this.el.appendChild(model);
 
-        console.log('shoot : ' + rot.y);
+//        console.log('shoot : ' + rot.y);
     },
 });
     
