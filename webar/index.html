@@ -45,7 +45,7 @@
 
 	AFRAME.registerComponent('molystart', {
         init: function () {
-					this.random_x = 1;//((Math.random() * 2) - 1)/10;
+					this.random_x = 0.5;//((Math.random() * 2) - 1)/10;
 					this.random_z = 30;
 					this.initflag = true;
 
@@ -61,22 +61,17 @@
 						this.starttime = time;
 						this.initflag = false;
 					} else {
-					// 3초 이상 지났으면 정상 움직임으로 바꿔줌
-					if ( time - this.starttime > 3000 ) {
-						this.el.object3D.visible = false;
-//						this.el.setAttribute('moveanywhere', '');
-//						this.el.removeAttribute('molystart');
-
-						// 몰리 에니메이션 시작
-						document.getElementById('rinomodel').setAttribute('rinostart','');
-
-					}
+						if ( time - this.starttime > 1800 ) {
+							// 리노 에니메이션 시작
+							this.el.object3D.visible = false;
+							document.getElementById('rinomodel').setAttribute('rinostart','');
+						}
 					}	
         }
 	});
 	AFRAME.registerComponent('rinostart', {
         init: function () {
-					this.random_x = 1;//((Math.random() * 2) - 1)/10;
+					this.random_x = 0.5;//((Math.random() * 2) - 1)/10;
 					this.random_z = -30;
 					this.initflag = true;
 
@@ -88,38 +83,51 @@
 				},
       
         tick: function (time) {
-						this.el.object3D.rotateX(THREE.Math.degToRad(this.random_x));
+					this.el.object3D.rotateX(THREE.Math.degToRad(this.random_x));
+
 					if ( this.initflag ) {
 						this.starttime = time;
 						this.initflag = false;
-						console.log(time);
 					} else {
-//						this.el.object3D.visible = false;
-//						this.el.setAttribute('moveanywhere', '');
-//						this.el.removeAttribute('molystart');
-					}
+						if ( time - this.starttime > 800 ) {
+							// 리노 에니메이션 시작
+							this.el.object3D.visible = false;
+							document.getElementById('suemodel').setAttribute('suestart','');
+						}
+					}	
 				}
 	});
-	AFRAME.registerComponent('suemove', {
+	AFRAME.registerComponent('suestart', {
         init: function () {
 					this.random_x = 2;//((Math.random() * 2) - 1)/10;
 					this.random_z = 15;
+					this.initflag = true;
 
 					var move = this.el.object3D.rotation;
 					move.z = THREE.Math.degToRad(this.random_z);
 					this.el.object3D.rotation = move;
-
-					console.log('move dir : ' + this.random_x + "," + this.random_z);
 				},
       
         tick: function (time) {
 					this.el.object3D.rotateX(THREE.Math.degToRad(this.random_x));
+
+					if ( this.initflag ) {
+						this.starttime = time;
+						this.initflag = false;
+					} else {
+						if ( time - this.starttime > 1200 ) {
+							// 리노 에니메이션 시작
+							this.el.object3D.visible = false;
+							document.getElementById('lulamodel').setAttribute('lulastart','');
+						}
+					}	
         }
 	});
-	AFRAME.registerComponent('lulamove', {
+	AFRAME.registerComponent('lulastart', {
         init: function () {
 					this.random_x = 2;//((Math.random() * 2) - 1)/10;
 					this.random_z = -45;
+					this.initflag = true;
 
 					var move = this.el.object3D.rotation;
 					move.z = THREE.Math.degToRad(this.random_z);
@@ -130,12 +138,24 @@
       
         tick: function (time) {
 					this.el.object3D.rotateX(THREE.Math.degToRad(this.random_x));
+
+					if ( this.initflag ) {
+						this.starttime = time;
+						this.initflag = false;
+					} else {
+						if ( time - this.starttime > 400 ) {
+							// 리노 에니메이션 시작
+							this.el.object3D.visible = false;
+							document.getElementById('doremodel').setAttribute('dorestart','');
+						}
+					}	
         }
 	});
-	AFRAME.registerComponent('doremove', {
+	AFRAME.registerComponent('dorestart', {
         init: function () {
 					this.random_x = 2;//((Math.random() * 2) - 1)/10;
 					this.random_z = 60;
+					this.initflag = true;
 
 					var move = this.el.object3D.rotation;
 					move.z = THREE.Math.degToRad(this.random_z);
@@ -146,12 +166,23 @@
       
         tick: function (time) {
 					this.el.object3D.rotateX(THREE.Math.degToRad(this.random_x));
+					if ( this.initflag ) {
+						this.starttime = time;
+						this.initflag = false;
+					} else {
+						if ( time - this.starttime > 1200 ) {
+							// 리노 에니메이션 시작
+							this.el.object3D.visible = false;
+							document.getElementById('solmodel').setAttribute('solstart','');
+						}
+					}	
         }
 	});
-	AFRAME.registerComponent('solmove', {
+	AFRAME.registerComponent('solstart', {
         init: function () {
 					this.random_x = 2;//((Math.random() * 2) - 1)/10;
 					this.random_z = 0;
+					this.initflag = true;
 
 					var move = this.el.object3D.rotation;
 					move.z = THREE.Math.degToRad(this.random_z);
@@ -162,6 +193,17 @@
       
         tick: function (time) {
 					this.el.object3D.rotateX(THREE.Math.degToRad(this.random_x));
+
+					if ( this.initflag ) {
+						this.starttime = time;
+						this.initflag = false;
+					} else {
+						if ( time - this.starttime > 1800 ) {
+							// 리노 에니메이션 시작
+							this.el.object3D.visible = false;
+						}
+					}	
+
         }
 	});
 
@@ -260,7 +302,7 @@
 							<a-entity id="firstux2" mixin="gamehelp" visible="true"></a-entity>
 						</a-entity>
 -->
-					<a-entity text="value: version 0.1.4.5" position="0 1.0 -2.1"></a-entity>
+					<a-entity text="value: version 0.1.4.6" position="0 1.0 -2.1"></a-entity>
 					<a-entity 
 						id="gun" 
 						shooter 
