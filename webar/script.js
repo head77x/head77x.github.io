@@ -52,6 +52,25 @@ AFRAME.registerComponent('brandon-hit', {
     },
 
     });
+
+AFRAME.registerComponent('brandon-shoot', {
+    init: function () {
+        document.body.addEventListener('mousedown', () => { this.shootone(); });
+    },
+
+    shootone() {
+        let scene = document.querySelector('a-scene');
+        let model = document.createElement('a-entity');
+
+//        model.setAttribute('scale', model.scale);
+        model.setAttribute('rotation', this.el.object3D.rotation);
+        model.setAttribute('position', this.el.object3D.model.position);
+    
+        model.setAttribute('gltf-model', 'url(./assets/arrow.gltf)');
+
+        scene.appendChild(model);
+    }
+});
     
 
 window.onload = () => {
