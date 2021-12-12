@@ -1,5 +1,17 @@
 var gameMode = 'titlemode';
 
+var camrot;
+
+AFRAME.registerComponent('camrot', {
+    init: function () {
+        camrot = this.el.object3D.rotation;
+            },
+    tick: function (time) {
+        camrot = this.el.object3D.rotation;
+    }
+
+});
+
 AFRAME.registerComponent('click-to-shoot', {
 init: function () {
     document.body.addEventListener('mousedown', () => { this.el.emit('shoot'); });
@@ -61,10 +73,11 @@ AFRAME.registerComponent('brandon-shoot', {
     shootone() {
         let scene = document.querySelector('a-scene');
         let model = document.createElement('a-entity');
-        let rot = document.getElementById('camera1').object3D.rotation;
 
         model.setAttribute('scale', this.el.object3D.scale);
-        model.setAttribute('rotation', rot);
+        model.setAttribute('rotation', camrot);
+
+        console.log('camrot : ' + camrot.y);
 
         model.setAttribute('position', this.el.object3D.position);
     
