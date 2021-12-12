@@ -65,8 +65,8 @@ AFRAME.registerComponent('brandon-shoot', {
 
         model.setAttribute('scale', this.el.object3D.scale);
 
-        model.object3D.rotateY(1);
-
+        model.object3D.rotateY(this.el.object3D.rotation.y);
+        
         model.setAttribute('position', this.el.object3D.position);
     
         model.setAttribute('gltf-model', 'url(./assets/arrow.gltf)');
