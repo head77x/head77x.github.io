@@ -233,6 +233,19 @@
 									if ( this.counter === 0 ) {
 										document.getElementById('countdowntext').style.display = "none";
 										clearInterval(this.intervalId);
+
+										document.getElementById('molymodel').object3D.visible = true;
+										document.getElementById('molymodel').setAttribute('moveanywhere','');
+										document.getElementById('rinomodel').object3D.visible = true;
+										document.getElementById('rinomodel').setAttribute('moveanywhere','');
+										document.getElementById('suemodel').object3D.visible = true;
+										document.getElementById('suemodel').setAttribute('moveanywhere','');
+										document.getElementById('lulamodel').object3D.visible = true;
+										document.getElementById('lulamodel').setAttribute('moveanywhere','');
+										document.getElementById('doremodel').object3D.visible = true;
+										document.getElementById('doremodel').setAttribute('moveanywhere','');
+										document.getElementById('solmodel').object3D.visible = true;
+										document.getElementById('solmodel').setAttribute('moveanywhere','');
 									} else
 									if ( this.counter === 1 ) {
 										var entity = document.getElementById('startbell');
@@ -353,7 +366,7 @@
 							<a-entity id="firstux2" mixin="gamehelp" visible="true"></a-entity>
 						</a-entity>
 -->
-					<a-entity text="value: version 0.1.6.7" position="0 1.0 -2.1"></a-entity>
+					<a-entity text="value: version 0.1.6.8" position="0 1.0 -2.1"></a-entity>
 					<a-entity 
 						id="gun" 
 						shooter 
