@@ -172,11 +172,6 @@ window.onload = () => {
         }
     });
 
-    // 게임 ux에서 화살 버튼 누를때
-    document.getElementById('shootbutton').addEventListener('click', function () {
-        console.log('shoot');
-    });
-
     document.querySelector('a-scene').addEventListener('loaded', function () {
         document.getElementById('firstux').style.display = 'block';
     });
