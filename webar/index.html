@@ -258,6 +258,7 @@
 									console.log(this.counter);
 									if ( this.counter === 0 ) {	// Entry#13 - UX표시 된 후 게임 시작
 										document.getElementById('countdowntext').style.display = "none";
+										document.getElementById('count4').style.display = 'none';
 										clearInterval(this.intervalId);
 
 										document.getElementById('molymodel').object3D.visible = true;
@@ -277,7 +278,8 @@
 										var entity = document.getElementById('startbell');
 										entity.components.sound.playSound();        
 
-										document.getElementById('countdowndetail').innerText = "It's Catch Time!";
+										document.getElementById('count1').style.display = 'none';
+										document.getElementById('count4').style.display = 'block';
 
 										// 게임 UX 표시
 						        document.getElementById('gameux').style.display = 'block';
@@ -286,7 +288,10 @@
 										var entity = document.getElementById('countdownsound');
 										entity.components.sound.playSound();        
 
-										document.getElementById('countdowndetail').innerText = (this.counter-1)+"!";
+										document.getElementById('count'+this.counter).style.display = 'none';
+										if ( this.counter != 4 ) {
+											document.getElementById('count'+(this.counter-1)).style.display = 'block';
+										}
 									}
 								}, 1000);
 
@@ -392,7 +397,7 @@
 							<a-entity id="firstux2" mixin="gamehelp" visible="true"></a-entity>
 						</a-entity>
 -->
-					<a-entity text="value: version 0.2.6.4" position="0 1.0 -2.1"></a-entity>
+					<a-entity text="value: version 0.2.6.5" position="0 1.0 -2.1"></a-entity>
 				</a-entity>
 				<a-entity 
 					id="gun" 
@@ -440,8 +445,12 @@
 			</div>
 		</div>
 
+		<!-- 카운트다운 화면 -->
 		<div id="countdowntext" style="display: none;">
-			<p id="countdowndetail" style="color: white; font-size: 100px; text-align: center; align-items: center; justify-content: center; width:90%;">3!</p>
+			<img id="count1" style="position:absolute; display: flex; width:20vw; left:40vw; top:45vh; display: none;" src="./assets/first_start/1.png"/>
+			<img id="count2" style="position:absolute; display: flex; width:20vw; left:40vw; top:45vh; display: none;" src="./assets/first_start/2.png"/>
+			<img id="count3" style="position:absolute; display: flex; width:20vw; left:40vw; top:45vh; display: none;" src="./assets/first_start/3.png"/>
+			<img id="count4" style="position:absolute; display: flex; width:80vw; left:10vw; top:40vh; display: none;" src="./assets/first_start/catch.png"/>
 		</div>
 
 		<!-- 게임 UX 화면 --> 
