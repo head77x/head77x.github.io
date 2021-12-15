@@ -181,8 +181,7 @@ window.onload = () => {
 
     // 최초 로딩 완료후 UX표시
     document.querySelector('a-scene').addEventListener('loaded', function () {
-//        document.getElementById('firstux').style.display = 'block';
-        document.getElementById('gameux').style.display = 'block';
+        document.getElementById('firstux').style.display = 'block';
     });
 
 
