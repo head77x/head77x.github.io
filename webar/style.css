@@ -29,10 +29,11 @@ textbutton {
 .whatbutton {
     position:absolute; 
     display: flex; 
-    width:10vw; 
-    height:60px;
+    width:100vw; 
+    height:300px;
     left: 0; 
     top: 20vw;
+    z-index: 999999;
 }
 
 .instructions {
