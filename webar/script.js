@@ -167,7 +167,7 @@ window.onload = () => {
         var entity = document.getElementById('bgm');
         entity.components.sound.playSound();        
     });
-/*
+
     // 도움말 ux에서 확인 버튼 누를때 처리
     document.getElementById('helpokbutton').addEventListener('click', function () {
         if ( gameMode === 'titlehelp') {
@@ -176,9 +176,6 @@ window.onload = () => {
             gameMode = 'titlemode';
         }
     });
-*/
-	
-
 
     // 최초 로딩 완료후 UX표시
     document.querySelector('a-scene').addEventListener('loaded', function () {
