@@ -26,6 +26,14 @@ textbutton {
     outline: none;
 }
 
+whatbutton {
+    position:absolute; 
+    display: flex; 
+    width:10vw; 
+    left: 0; 
+    top: 20vw;
+}
+
 .instructions {
     position: fixed;
     top: 5%;
