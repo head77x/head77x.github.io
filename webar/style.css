@@ -11,7 +11,7 @@
     right: 0;
 }
 
-button {
+textbutton {
     display: flex;
     align-items: center;
     justify-content: center;
