@@ -147,7 +147,7 @@ window.onload = () => {
 */
 
     // 첫번째 UX에서 스타트 버튼 누를때 처리
-    document.getElementById('startgamebutton').addEventListener('click', function () {
+    document.getElementById('homebutton').addEventListener('click', function () {
         document.getElementById('firstux').style.display = 'none';
 
         // 몰리 에니메이션 시작
