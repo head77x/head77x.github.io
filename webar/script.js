@@ -71,7 +71,7 @@ AFRAME.registerComponent('brandon-hit', {
 
 AFRAME.registerComponent('brandon-shoot', {
     init: function () {
-        document.body.addEventListener('mousedown', () => { this.shootone(); });
+//        document.body.addEventListener('mousedown', () => { this.shootone(); });
     },
 
     shootone() {
