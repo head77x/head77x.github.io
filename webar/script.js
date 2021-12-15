@@ -136,6 +136,7 @@ window.onload = () => {
         });
     });
 */
+
     // 첫번째 UX에서 스타트 버튼 누를때 처리
     document.getElementById('startgamebutton').addEventListener('click', function () {
         document.getElementById('firstux').style.display = 'none';
@@ -166,13 +167,6 @@ window.onload = () => {
         }
     });
 
-    // 게임 UX에서 처음으로 돌아가기 버튼 누를때 처리
-    document.getElementById('homebutton').addEventListener('click', function () {
-        document.getElementById('confirmhome').style.display = 'block';
-
-				console.log('clicked here !!!');
-    });
-    
     // 최초 로딩 완료후 UX표시
     document.querySelector('a-scene').addEventListener('loaded', function () {
         document.getElementById('firstux').style.display = 'block';
