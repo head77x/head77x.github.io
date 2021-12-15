@@ -392,7 +392,7 @@
 							<a-entity id="firstux2" mixin="gamehelp" visible="true"></a-entity>
 						</a-entity>
 -->
-					<a-entity text="value: version 0.2.8.2" position="0 1.0 -2.1"></a-entity>
+					<a-entity text="value: version 0.2.8.3" position="0 1.0 -2.1"></a-entity>
 				</a-entity>
 				<a-entity 
 					id="gun" 
@@ -481,9 +481,20 @@
 			<img style="position:absolute; display: flex; width:84px; height:84px; top: calc(50vh - 42px); left: calc(50vw - 42px);" src="./assets/second_game/crosshair.png"/>
 
 			<img style="position:absolute; display: flex; width:84px; height:84px; top: calc(50vh - 42px); left: calc(50vw - 42px);" src="./assets/butterfly-flying.gif"/>
-
-			
 		</div>
+		<!-- 홈으로 가기 확인 UX 화면 --> 
+		<div id="confirmhome" style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; z-index: 100; opacity: 0.5; background-color: rgb(0, 0, 0); display: none;">
+			<img style="position:absolute; display: flex; width:90vw; top: 3vh; left: 5vw;" src="./assets/second_game/tohome_box.png"/>
+
+			<div id="tohomeok">
+				<img style="position:absolute; display: flex; width: 20vw; left: 30vw; bottom: 10vh; " src="./assets/forth_finish/ok_button_on.png"/>    
+			</div>
+			<div id="tohomecancel">
+				<img style="position:absolute; display: flex; width: 20vw; left: 60vw; bottom: 10vh; " src="./assets/forth_finish/cancel_button_on.png"/>    
+			</div>
+		</div>
+
+
 		<!-- 퀴즈 UX 화면 --> 
 		<div id="quizux" style="display: none;">
 			<img style="position:absolute; display: flex; width:100%; height:50%; top: 30%; left: 0;" src="./assets/third_qa/quiz_back.png"/>

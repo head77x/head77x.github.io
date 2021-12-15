@@ -143,12 +143,6 @@ window.onload = () => {
         // 몰리 에니메이션 시작
         document.getElementById('molymodel').setAttribute('molystart','');
 
-//        document.getElementById('gameux').style.display = 'block';
-//        gameMode = 'gameready';
-
-        
-
-
         var entity = document.getElementById('bgm');
         entity.components.sound.playSound();        
     });
@@ -172,9 +166,18 @@ window.onload = () => {
         }
     });
 
+    // 게임 UX에서 처음으로 돌아가기 버튼 누를때 처리
+    document.getElementById('homebutton').addEventListener('click', function () {
+        document.getElementById('confirmhome').style.display = 'block';
+    });
+    
+    // 최초 로딩 완료후 UX표시
     document.querySelector('a-scene').addEventListener('loaded', function () {
         document.getElementById('firstux').style.display = 'block';
     });
+
+
+
 
 };
 
