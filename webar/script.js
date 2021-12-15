@@ -71,7 +71,7 @@ AFRAME.registerComponent('brandon-hit', {
 
 AFRAME.registerComponent('brandon-shoot', {
     init: function () {
-//        document.body.addEventListener('mousedown', () => { this.shootone(); });
+        document.body.addEventListener('mousedown', () => { this.shootone(); });
     },
 
     shootone() {
@@ -168,10 +168,10 @@ window.onload = () => {
     });
 
 		// 게임 UX에서 처음으로 돌아가기 버튼 누를때 처리
-		document.getElementById('whathomebutton').addEventListener('click', function () {
-			document.getElementById('confirmhome').style.display = 'block';
-
+		console.log('what obj ' + document.getElementById('whathomebutton') );
+		document.getElementById('whathomebutton').addEventListener('mousedown', function () {
 			console.log('clicked here !!!');
+			document.getElementById('confirmhome').style.display = 'block';
 		});
 	
 
