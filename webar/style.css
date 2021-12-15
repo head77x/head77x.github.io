@@ -26,7 +26,7 @@ textbutton {
     outline: none;
 }
 
-whatbutton {
+.whatbutton {
     position:absolute; 
     display: flex; 
     width:10vw; 
