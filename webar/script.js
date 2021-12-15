@@ -120,6 +120,10 @@ function init(){
 		});
 };
 
+function clickhomebutton(){
+	console.log('is this clicked');
+}
+
 window.onload = () => {
 /*
     const button = document.querySelector('button[data-action="change"]');

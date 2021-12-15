@@ -396,7 +396,7 @@
 							<a-entity id="firstux2" mixin="gamehelp" visible="true"></a-entity>
 						</a-entity>
 -->
-					<a-entity text="value: version 0.3.0.9" position="0 1.0 -2.1"></a-entity>
+					<a-entity text="value: version 0.3.1.0" position="0 1.0 -2.1"></a-entity>
 				</a-entity>
 				<a-entity 
 					id="gun" 
@@ -454,9 +454,9 @@
 
 		<!-- 게임 UX 화면 --> 
 		<div id="gameux" style="display: none;">
-			<div id="whathomebutton">
+			<button id="whathomebutton" onclick="clickhomebutton()">
 				<img style="position:absolute; display: flex; width:10vw; left: 0; top: 20vw;" src="./assets/second_game/home_button_on.png"/>
-			</div>
+			</button>
 <!--
 			<img style="position:absolute; display: flex; width: 100vw; left:0; top: 0;" src="./assets/second_game/topbar_back.png"/>
 			<div id="helpbutton">
