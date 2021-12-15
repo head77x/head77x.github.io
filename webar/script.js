@@ -109,6 +109,16 @@ AFRAME.registerComponent('brandon-shoot', {
     },
 });
     
+document.addEventListener('DOMContentLoaded', init, false);
+
+function init(){
+		// 게임 UX에서 처음으로 돌아가기 버튼 누를때 처리
+		console.log('what obj ' + document.getElementById('whathomebutton') );
+		document.getElementById('whathomebutton').addEventListener('mousedown', function () {
+			console.log('clicked here !!!');
+			document.getElementById('confirmhome').style.display = 'block';
+		});
+};
 
 window.onload = () => {
 /*
@@ -167,12 +177,6 @@ window.onload = () => {
         }
     });
 
-		// 게임 UX에서 처음으로 돌아가기 버튼 누를때 처리
-		console.log('what obj ' + document.getElementById('whathomebutton') );
-		document.getElementById('whathomebutton').addEventListener('mousedown', function () {
-			console.log('clicked here !!!');
-			document.getElementById('confirmhome').style.display = 'block';
-		});
 	
 
 
