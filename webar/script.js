@@ -115,7 +115,7 @@ function init(){
 		// 게임 UX에서 처음으로 돌아가기 버튼 누를때 처리
 		console.log('what obj ' + document.getElementById('whathomebutton') );
 		document.getElementById('whathomebutton').addEventListener('click', function () {
-			console.log('clicked here !!!');
+			document.getElementById('whathomebutton').style.display = 'none';
 		});
 };
 
