@@ -276,14 +276,6 @@
 						        document.getElementById('gun').object3D.visible = true;
 
 
-										// 게임 UX에서 처음으로 돌아가기 버튼 누를때 처리
-										document.getElementById('homebutton').addEventListener('click', function () {
-											document.getElementById('confirmhome').style.display = 'block';
-
-											console.log('clicked here !!!');
-										});
-									
-
 									} else
 									if ( this.counter === 1 ) {		// Entry#13 - 카운트다운 끝나고 UX표시
 										var entity = document.getElementById('startbell');
@@ -402,7 +394,7 @@
 							<a-entity id="firstux2" mixin="gamehelp" visible="true"></a-entity>
 						</a-entity>
 -->
-					<a-entity text="value: version 0.2.8.8" position="0 1.0 -2.1"></a-entity>
+					<a-entity text="value: version 0.2.8.9" position="0 1.0 -2.1"></a-entity>
 				</a-entity>
 				<a-entity 
 					id="gun" 
@@ -461,7 +453,7 @@
 		<!-- 게임 UX 화면 --> 
 		<div id="gameux" style="display: none;">
 			<img style="position:absolute; display: flex; width: 100vw; left:0; top: 0;" src="./assets/second_game/topbar_back.png"/>
-			<div id="homebutton">
+			<div id="whathomebutton">
 				<img style="position:absolute; display: flex; width:10vw; left: 0; top: 20vw;" src="./assets/second_game/home_button_on.png"/>
 			</div>
 			<div id="helpbutton">
