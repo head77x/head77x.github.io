@@ -357,9 +357,9 @@ AFRAME.registerComponent('gyro-camera', {
         var yawRotation = THREE.Math.radToDeg(this.lookControls.yawObject.rotation.y);
         var offset = (heading - (cameraRotation - yawRotation)) % 360;
         this.lookControls.yawObject.rotation.y = THREE.Math.degToRad(offset);
-
+/*
         const div = document.querySelector('.instructions');
         div.innerText = "heading : " + JSON.stringify(this.lookControls.yawObject.rotation.y);
-
+*/
     },
 });
