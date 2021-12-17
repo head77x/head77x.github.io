@@ -67,7 +67,7 @@ AFRAME.registerComponent('brandon-hit', {
 */
     },
     tick: function(time) {
-        if ( this.checker.childNodes.length > 0 )
+        if ( this.checker.childNodes.length > 1 )
         {
             this.checker.childNodes.forEach(this.checkpos);
             console.log( 'position changed : ' + this.checker.childNodes.length );
@@ -75,7 +75,10 @@ AFRAME.registerComponent('brandon-hit', {
     },
 
     checkpos: function(item) {
-        console.log('arrow position : ' + item );
+        if ( item === this.checker )
+            console.log('arrow wrong : ' + item );
+        else
+            console.log('arrow position : ' + item );
     }
 
     });
