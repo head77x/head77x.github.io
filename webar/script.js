@@ -71,7 +71,12 @@ AFRAME.registerComponent('brandon-hit', {
         {
             this.checker.childNodes.forEach((who, index, sourceArr) => {
                 if ( who.object3D != null && this.el.object3D != null ) {
-                    if ( this.el.object3D.position.distanceTo( who.object3D.position ) < 1 )
+                    var arrowpos;
+                    who.object3D.getWorldPosition(arrowpos);
+
+                    console.log('arrowpos: ' + arrowpos.x + ":" + arrowpos.y + ":" + arrowpos.z);
+
+                    if ( this.el.object3D.position.distanceTo( arrowpos ) < 2 )
                         console.log('hitted!!!!');
                 }
             });
