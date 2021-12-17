@@ -2,6 +2,8 @@ var gameMode = 'titlemode';
 
 var camrot;
 
+var arrowlist = [];
+
 AFRAME.registerComponent('camrot', {
     init: function () {
             },
@@ -45,7 +47,8 @@ init: function () {
 
 AFRAME.registerComponent('brandon-hit', {
     init: function () {
-        var el = this.el;
+        this.mydamage = 2;
+        this.checker = document.getElementById('gun');
 /*    
         el.addEventListener('hit', () => {
             console.log('hitted');
@@ -64,8 +67,13 @@ AFRAME.registerComponent('brandon-hit', {
 */
     },
     tick: function(time) {
+        this.checker.childNodes.forEach(this.checkpos);
 //        console.log( 'position changed : ' + this.el.object3D.position );
     },
+
+    checkpos: function(item) {
+        console.log('arrow position : ' + item.object3D.position.z );
+    }
 
     });
 
