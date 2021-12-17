@@ -74,9 +74,9 @@ AFRAME.registerComponent('brandon-hit', {
                     var arrowpos = new THREE.Vector3( who.object3D.position.x, who.object3D.position.y, who.object3D.position.z );
                     who.object3D.getWorldPosition(arrowpos);
 
-                    console.log('arrowpos: ' + arrowpos.x + ":" + arrowpos.y + ":" + arrowpos.z);
+                    console.log('arrowpos: ' +  this.el.object3D.position.distanceTo( arrowpos ));
 
-                    if ( this.el.object3D.position.distanceTo( arrowpos ) < 2 )
+                    if ( this.el.object3D.position.distanceTo( arrowpos ) < 1 )
                         console.log('hitted!!!!');
                 }
             });
