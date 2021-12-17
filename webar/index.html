@@ -90,11 +90,11 @@
 					} else {
 						if ( time - this.starttime > 1800 ) {
 							// Entry#2. 1.8초후 리노캐릭터 생성 
-							document.getElementById('rinomodel').setAttribute('rinostart','');
+							document.getElementById('rinostart').setAttribute('rinostart','');
 						}
 						if ( time - this.starttime > 3000 ) {
 							this.el.object3D.visible = false;
-							document.getElementById('molymodel').removeAttribute('molystart');
+							document.getElementById('molystart').removeAttribute('molystart');
 						}
 					}	
         }
@@ -122,11 +122,11 @@
 					} else {
 						// Entry#4. 0.8초 후에 슈캐릭터 생성 
 						if ( time - this.starttime > 800 ) {
-							document.getElementById('suemodel').setAttribute('suestart','');
+							document.getElementById('suestart').setAttribute('suestart','');
 						}
 						if ( time - this.starttime > 3000 ) {
 							this.el.object3D.visible = false;
-							document.getElementById('rinomodel').removeAttribute('rinostart');
+							document.getElementById('rinostart').removeAttribute('rinostart');
 						}
 					}	
 				}
@@ -152,11 +152,11 @@
 					} else {
 					// Entry#6. 1.2초후에 루루라라 캐릭터 생성
 					if ( time - this.starttime > 1200 ) {
-							document.getElementById('lulamodel').setAttribute('lulastart','');
+							document.getElementById('lulastart').setAttribute('lulastart','');
 						}
 						if ( time - this.starttime > 3000 ) {
 							this.el.object3D.visible = false;
-							document.getElementById('suemodel').removeAttribute('suestart');
+							document.getElementById('suestart').removeAttribute('suestart');
 						}
 					}	
         }
@@ -184,11 +184,11 @@
 					} else {
 						// Entry#8. 0.4초후 도레미캐릭터 생성 
 						if ( time - this.starttime > 400 ) {
-							document.getElementById('doremodel').setAttribute('dorestart','');
+							document.getElementById('dorestart').setAttribute('dorestart','');
 						}
 						if ( time - this.starttime > 3000 ) {
 							this.el.object3D.visible = false;
-							document.getElementById('lulamodel').removeAttribute('lulastart');
+							document.getElementById('lulastart').removeAttribute('lulastart');
 						}
 					}	
         }
@@ -215,11 +215,11 @@
 					} else {
 						// Entry#10. 1.2초후 솔 캐릭터 생성
 						if ( time - this.starttime > 1200 ) {
-							document.getElementById('solmodel').setAttribute('solstart','');
+							document.getElementById('solstart').setAttribute('solstart','');
 						}
 						if ( time - this.starttime > 3000 ) {
 							this.el.object3D.visible = false;
-							document.getElementById('doremodel').removeAttribute('dorestart');
+							document.getElementById('dorestart').removeAttribute('dorestart');
 						}
 
 					}	
@@ -392,7 +392,7 @@
 							<a-entity id="firstux2" mixin="gamehelp" visible="true"></a-entity>
 						</a-entity>
 -->
-					<a-entity text="value: version 0.3.5.1" position="0 1.0 -2.1"></a-entity>
+					<a-entity text="value: version 0.3.5.2" position="0 1.0 -2.1"></a-entity>
 				</a-entity>
 				<a-entity 
 					id="gun" 
@@ -404,7 +404,26 @@
 					visible="false"
 					position="0 -0.6 -1">
 				</a-entity>			  
-			<a-entity id="bgm" sound="src: #background"></a-entity>
+				<a-entity id="solstart" position="0 0 0" visible="false">
+					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/chr/sol_v03.gltf)" position="0 0 -5" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: sol.001; loop: repeat;"></a-entity>
+				</a-entity>
+				  <a-entity id="molystart" position="0 0 0" visible="false">
+					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/chr/moli_v01.gltf)" position="0 0 -6" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: moli.001; loop: repeat;"></a-entity>
+				</a-entity>
+				<a-entity id="rinostart" position="0 0 0" visible="false">
+					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/chr/rino_v01.gltf)" position="0 0 -6" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: rino.001; loop: repeat;"></a-entity>
+				</a-entity>
+				<a-entity id="suestart" position="0 0 0" visible="false">
+					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/chr/shoo_v01.gltf)" position="0 0 -6" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: shoo.001; loop: repeat; startframe: 450; duration: 2;"></a-entity>
+				</a-entity>
+				<a-entity id="lulastart" position="0 0 0" visible="false">
+					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/chr/Lululala_v02.gltf)" position="0 0 -6" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: lulu.001; loop: repeat;"></a-entity>
+				</a-entity>
+				<a-entity id="dorestart" position="0 0 0" visible="false">
+					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/chr/doremi_v01.gltf)" position="0 0 -6" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: doremi.001; loop: repeat;"></a-entity>
+				</a-entity>
+
+				<a-entity id="bgm" sound="src: #background"></a-entity>
 				<a-entity id="misssound" sound="src: #miss"></a-entity>
 				<a-entity id="countdownsound" sound="src: #countdown"></a-entity>
 				<a-entity id="startbell" sound="src: #startsound"></a-entity>

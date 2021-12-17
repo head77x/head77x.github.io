@@ -140,8 +140,16 @@ window.onload = () => {
     document.getElementById('startgamebutton').addEventListener('click', function () {
         document.getElementById('firstux').style.display = 'none';
 
+
+        document.getElementById('molystart').object3D.visible = true;
+        document.getElementById('rinostart').object3D.visible = true;
+        document.getElementById('suestart').object3D.visible = true;
+        document.getElementById('lulastart').object3D.visible = true;
+        document.getElementById('dorestart').object3D.visible = true;
+        document.getElementById('solstart').object3D.visible = true;
+
         // 몰리 에니메이션 시작
-        document.getElementById('molymodel').setAttribute('molystart','');
+        document.getElementById('molystart').setAttribute('molystart','');
 
         var entity = document.getElementById('bgm');
         entity.components.sound.playSound();        
