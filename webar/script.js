@@ -75,10 +75,8 @@ AFRAME.registerComponent('brandon-hit', {
     },
 
     checkpos: function(item) {
-        if ( item === this.checker )
-            console.log('arrow wrong : ' + item );
-        else
-            console.log('arrow position : ' + item );
+        if ( item.object3D != null )
+            console.log('arrow position : ' + item.object3D.position.z );
     }
 
     });
