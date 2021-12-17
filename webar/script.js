@@ -69,16 +69,13 @@ AFRAME.registerComponent('brandon-hit', {
     tick: function(time) {
         if ( this.checker.childNodes.length > 1 )
         {
-            this.checker.childNodes.forEach(this.checkpos);
-            console.log( 'position changed : ' + this.checker.childNodes.length );
-        }
+            this.checker.childNodes.forEach((who, index, sourceArr) => {
+                if ( who.object3D != null && this.el.object3D != null ) {
+                    console.log( 'distance : ' + this.el.object3D.position.distanceTo( who.object3D.position ));
+                }
+            });
+       }
     },
-
-    checkpos: function(item) {
-        if ( item.object3D != null && this.el.object3D != null ) {
-            console.log( 'distance : ' + this.el.object3D.position.distanceTo( item.object3D.position ));
-        }
-    }
 
     });
 
