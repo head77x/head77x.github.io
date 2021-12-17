@@ -71,7 +71,7 @@ AFRAME.registerComponent('brandon-hit', {
         {
             this.checker.childNodes.forEach((who, index, sourceArr) => {
                 if ( who.object3D != null && this.el.object3D != null ) {
-                    var arrowpos;
+                    var arrowpos = new THREE.Vector3( who.object3D.position.x, who.object3D.position.y, who.object3D.position.z );
                     who.object3D.getWorldPosition(arrowpos);
 
                     console.log('arrowpos: ' + arrowpos.x + ":" + arrowpos.y + ":" + arrowpos.z);
