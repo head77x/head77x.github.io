@@ -75,8 +75,9 @@ AFRAME.registerComponent('brandon-hit', {
     },
 
     checkpos: function(item) {
-        if ( item.object3D != null )
-            console.log('arrow position : ' + item.object3D.position.z );
+        if ( item.object3D != null ) {
+            console.log( 'distance : ' + this.el.object3D.position.distanceTo( item.object3D.position ));
+        }
     }
 
     });
