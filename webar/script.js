@@ -71,7 +71,8 @@ AFRAME.registerComponent('brandon-hit', {
         {
             this.checker.childNodes.forEach((who, index, sourceArr) => {
                 if ( who.object3D != null && this.el.object3D != null ) {
-                    console.log( 'distance : ' + this.el.object3D.position.distanceTo( who.object3D.position ));
+                    if ( this.el.object3D.position.distanceTo( who.object3D.position ) < 1 )
+                        console.log('hitted!!!!');
                 }
             });
        }
