@@ -4644,6 +4644,8 @@
                 }
             ],
             "name" : "doremi",
+            "startTime": 0.00,
+            "endTime": 2.00,         
             "samplers" : [
                 {
                     "input" : 147,
@@ -5875,6 +5877,8 @@
                 }
             ],
             "name" : "doremi.001",
+            "startTime": 0.00,
+            "endTime": 2.00,         
             "samplers" : [
                 {
                     "input" : 250,
@@ -7106,6 +7110,8 @@
                 }
             ],
             "name" : "doremi.003",
+            "startTime": 0.00,
+            "endTime": 2.00,         
             "samplers" : [
                 {
                     "input" : 353,
@@ -8875,6 +8881,8 @@
                 }
             ],
             "name" : "doremi",
+            "startTime": 0.00,
+            "endTime": 2.00,         
             "samplers" : [
                 {
                     "input" : 147,
