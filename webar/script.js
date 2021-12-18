@@ -13,6 +13,15 @@ var quizs = [
 
 var quizidx = 0;
 
+const axios = require('axios');
+
+const getqr = async () => {
+  try {
+    return await axios.get('https://game.digilog-xr.com/app/gameQr');
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 AFRAME.registerComponent('camrot', {
     init: function () {
@@ -93,7 +102,7 @@ AFRAME.registerComponent('brandon-hit', {
                     var mypos = new THREE.Vector3( this.el.object3D.position.x, this.el.object3D.position.y, this.el.object3D.position.z );
                     this.el.object3D.getWorldPosition(mypos);
 
-                    console.log('arrowpos: ' +  mypos.distanceTo( arrowpos ));
+//                    console.log('arrowpos: ' +  mypos.distanceTo( arrowpos ));
 
                     if ( mypos.distanceTo( arrowpos ) < 1 ) {
 
@@ -573,10 +582,13 @@ window.onload = () => {
 			document.getElementById('congratux').style.display = 'none';
 			document.getElementById('qrux').style.display = 'block';
 
+			const qrdata = await getqr();
+			console.log(qrdata.data.message);
+		
 			var qrcode = new QRCode(document.getElementById("qrcode"), {
-				text: "https://www.naver.com",
-				width: 256,
-				height: 256,
+				text: qrdata.data.message,
+				width: 200,
+				height: 200,
 				colorDark : "#000000",
 				colorLight : "#ffffff",
 				correctLevel : QRCode.CorrectLevel.H
