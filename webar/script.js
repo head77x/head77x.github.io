@@ -27,6 +27,7 @@ AFRAME.registerComponent('camrot', {
 
 });
 
+/*
 AFRAME.registerComponent('click-to-shoot', {
 init: function () {
     document.body.addEventListener('mousedown', () => { this.el.emit('shoot'); });
@@ -53,6 +54,7 @@ init: function () {
     });
 }
 });
+*/
 
 AFRAME.registerComponent('brandon-hit', {
 		schema: {
