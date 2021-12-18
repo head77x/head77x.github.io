@@ -14,8 +14,8 @@ var quizs = [
 var quizidx = 0;
 
 function showQR() {
-	fetch('https://game.digilog-xr.com/app/gameQr')
-	.then(function (response) {
+	$.ajax("https://game.digilog-xr.com/app/gameQr")
+	.done(function(response) {
 		console.log("qr return : " + JSON.stringify(response));
 
 		document.getElementById('congratux').style.display = 'none';
@@ -29,6 +29,9 @@ function showQR() {
 			colorLight : "#ffffff",
 			correctLevel : QRCode.CorrectLevel.H
 		});
+	})
+	.fail(function(error) {
+		console.log(error);
 	});
 }
 
