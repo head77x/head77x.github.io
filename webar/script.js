@@ -14,15 +14,6 @@ var quizs = [
 var quizidx = 0;
 
 
-var qrcode = new QRCode(document.getElementById("qrcode"), {
-	text: "http://jindo.dev.naver.com/collie",
-	width: 128,
-	height: 128,
-	colorDark : "#000000",
-	colorLight : "#ffffff",
-	correctLevel : QRCode.CorrectLevel.H
-});
-
 AFRAME.registerComponent('camrot', {
     init: function () {
             },
@@ -581,6 +572,16 @@ window.onload = () => {
     document.getElementById('gotoqr').addEventListener('click', function () {
 			document.getElementById('congratux').style.display = 'none';
 			document.getElementById('qrux').style.display = 'block';
+
+			var qrcode = new QRCode(document.getElementById("qrcode"), {
+				text: "https://www.naver.com",
+				width: 128,
+				height: 128,
+				colorDark : "#000000",
+				colorLight : "#ffffff",
+				correctLevel : QRCode.CorrectLevel.H
+			});
+			
 		});
 
     // 게임 초기 화면으로 가기
