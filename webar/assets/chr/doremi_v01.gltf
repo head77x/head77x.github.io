@@ -5877,8 +5877,8 @@
                 }
             ],
             "name" : "doremi.001",
-            "startTime": 0.00,
-            "endTime": 2.00,         
+            "startTime": 4.50,
+            "endTime": 6.00,         
             "samplers" : [
                 {
                     "input" : 250,
