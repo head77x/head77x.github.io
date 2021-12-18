@@ -575,8 +575,8 @@ window.onload = () => {
 
 			var qrcode = new QRCode(document.getElementById("qrcode"), {
 				text: "https://www.naver.com",
-				width: 128,
-				height: 128,
+				width: 256,
+				height: 256,
 				colorDark : "#000000",
 				colorLight : "#ffffff",
 				correctLevel : QRCode.CorrectLevel.H
