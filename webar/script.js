@@ -14,6 +14,7 @@ var quizs = [
 var quizidx = 0;
 
 function showQR() {
+/*	
 	$.ajax("https://game.digilog-xr.com/app/gameQr")
 	.done(function(response) {
 		console.log("qr return : " + response.result.qrString);
@@ -33,6 +34,18 @@ function showQR() {
 	.fail(function(error) {
 		console.log(error);
 	});
+*/	
+document.getElementById('congratux').style.display = 'none';
+document.getElementById('qrux').style.display = 'block';
+
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	text: 'https://www.naver.com',
+	width: 200,
+	height: 200,
+	colorDark : "#000000",
+	colorLight : "#ffffff",
+	correctLevel : QRCode.CorrectLevel.H
+});
 }
 
 AFRAME.registerComponent('camrot', {
