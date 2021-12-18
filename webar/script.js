@@ -13,30 +13,28 @@ var quizs = [
 
 var quizidx = 0;
 
-const axios = require('axios');
-
-const getqr = async () => {
-  try {
-    return await axios.get('https://game.digilog-xr.com/app/gameQr');
-  } catch (error) {
-    console.error(error);
-  }
-};
-
-async function showQR() {
+function showQR() {
 	document.getElementById('congratux').style.display = 'none';
 	document.getElementById('qrux').style.display = 'block';
 
-	const qrdata = await getqr();
-	console.log(qrdata.data.message);
-
-	var qrcode = new QRCode(document.getElementById("qrcode"), {
-		text: qrdata.data.message,
-		width: 200,
-		height: 200,
-		colorDark : "#000000",
-		colorLight : "#ffffff",
-		correctLevel : QRCode.CorrectLevel.H
+	axios.get('https://game.digilog-xr.com/app/gameQr')
+	.then(function (response) {
+		console.log("qr return : " + response);
+	
+		var qrcode = new QRCode(document.getElementById("qrcode"), {
+			text: qrdata.data.message,
+			width: 200,
+			height: 200,
+			colorDark : "#000000",
+			colorLight : "#ffffff",
+			correctLevel : QRCode.CorrectLevel.H
+		});
+			 // response  
+	}).catch(function (error) {
+		console.log('get qr error : ' + error);
+			// 오류발생시 실행
+	}).then(function() {
+			// 항상 실행
 	});
 }
 
