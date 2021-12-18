@@ -16,13 +16,13 @@ var quizidx = 0;
 function showQR() {
 	$.ajax("https://game.digilog-xr.com/app/gameQr")
 	.done(function(response) {
-		console.log("qr return : " + JSON.stringify(response));
+		console.log("qr return : " + response.result.qrString);
 
 		document.getElementById('congratux').style.display = 'none';
 		document.getElementById('qrux').style.display = 'block';
 		
 		var qrcode = new QRCode(document.getElementById("qrcode"), {
-			text: response.qrString,
+			text: response.result.qrString,
 			width: 200,
 			height: 200,
 			colorDark : "#000000",
