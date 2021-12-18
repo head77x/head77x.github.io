@@ -39,7 +39,7 @@ document.getElementById('congratux').style.display = 'none';
 document.getElementById('qrux').style.display = 'block';
 
 var qrcode = new QRCode(document.getElementById("qrcode"), {
-	text: 'https://www.naver.com',
+	text: "https://www.naver.com",
 	width: 200,
 	height: 200,
 	colorDark : "#000000",
