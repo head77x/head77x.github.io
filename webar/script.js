@@ -23,6 +23,23 @@ const getqr = async () => {
   }
 };
 
+async function showQR() {
+	document.getElementById('congratux').style.display = 'none';
+	document.getElementById('qrux').style.display = 'block';
+
+	const qrdata = await getqr();
+	console.log(qrdata.data.message);
+
+	var qrcode = new QRCode(document.getElementById("qrcode"), {
+		text: qrdata.data.message,
+		width: 200,
+		height: 200,
+		colorDark : "#000000",
+		colorLight : "#ffffff",
+		correctLevel : QRCode.CorrectLevel.H
+	});
+}
+
 AFRAME.registerComponent('camrot', {
     init: function () {
             },
@@ -579,21 +596,7 @@ window.onload = () => {
 
     // QR 화면으로 가기
     document.getElementById('gotoqr').addEventListener('click', function () {
-			document.getElementById('congratux').style.display = 'none';
-			document.getElementById('qrux').style.display = 'block';
-
-			const qrdata = await getqr();
-			console.log(qrdata.data.message);
-		
-			var qrcode = new QRCode(document.getElementById("qrcode"), {
-				text: qrdata.data.message,
-				width: 200,
-				height: 200,
-				colorDark : "#000000",
-				colorLight : "#ffffff",
-				correctLevel : QRCode.CorrectLevel.H
-			});
-			
+			showQR();
 		});
 
     // 게임 초기 화면으로 가기
