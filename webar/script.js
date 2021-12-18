@@ -14,13 +14,13 @@ var quizs = [
 var quizidx = 0;
 
 function showQR() {
-	document.getElementById('congratux').style.display = 'none';
-	document.getElementById('qrux').style.display = 'block';
-
 	fetch('https://game.digilog-xr.com/app/gameQr')
 	.then(function (response) {
-		console.log("qr return : " + response);
-	
+		console.log("qr return : " + JSON.stringify(response));
+
+		document.getElementById('congratux').style.display = 'none';
+		document.getElementById('qrux').style.display = 'block';
+		
 		var qrcode = new QRCode(document.getElementById("qrcode"), {
 			text: response.qrString,
 			width: 200,
