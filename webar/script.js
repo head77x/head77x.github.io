@@ -536,6 +536,19 @@ window.onload = () => {
 			}
 		});
 
+    // 퀴즈 정답화면에서 OK 버튼 눌러, 다음진행
+    document.getElementById('oknext').addEventListener('click', function () {
+			document.getElementById('quizcorrect').style.display = 'none';
+			document.getElementById('gameux').style.display = 'block';
+		});
+
+    // 퀴즈 오답화면에서 다시 시도 버튼 눌러, 다시 퀴즈 맞추기 진행 
+    document.getElementById('okbefore').addEventListener('click', function () {
+			document.getElementById('quizincorrect').style.display = 'none';
+			document.getElementById('quizux').style.display = 'block';
+		});
+
+
     // 최초 로딩 완료후 UX표시
     document.querySelector('a-scene').addEventListener('loaded', function () {
         document.getElementById('firstux').style.display = 'block';
