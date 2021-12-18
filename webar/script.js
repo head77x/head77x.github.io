@@ -556,7 +556,7 @@ window.onload = () => {
 		});
 
     // QR 화면으로 가기
-    document.getElementById('gotoqu').addEventListener('click', function () {
+    document.getElementById('gotoqr').addEventListener('click', function () {
 			document.getElementById('congratux').style.display = 'none';
 			document.getElementById('qrux').style.display = 'block';
 		});
