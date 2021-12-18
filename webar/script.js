@@ -3,12 +3,12 @@ var gameMode = 'titlemode';
 var camrot;
 
 var quizs = [ 
-	{ text: "OX퀴즈\n\n\n\n디지로그 서소문에서 세무, 부동산, 해외투자 전문가와 상담을 무료로 제공하고 있다.", correct: 0 },
-	{ text: "상상 갤러리에서 취미로 그렸던 작품, 가족이나 연인, 친구와의 소중한 추억을 전시할 수 있다.", correct: 0 },
-	{ text: "어디서든 예쁘게 사진 찍고 해시태그 #신한은행 #디지로그 #서소문과 함께 본인 인스타 계정에 업로드 하면 자판기에서 선물을 받을 수 있다.", correct: 0 },
-	{ text: "디지로그 서소문에는 원하는 시간에 원하는 상담을 받을 수 있는 상담 예약서비스가 없다.", correct: 1 },
-	{ text: "매주 수요일 오후 12시30분 부터 신한은행의 유명한 강사(오건영 부부장, 우병탁 세무사 등)의 명강의를 유투브와 디지로그 서소문 스튜디오에서 들을 수 없다.", correct: 1 },
-	{ text: "디지로그 서소문에서는 금융과 비금융의 결합된 다양한 전시회(캠핑카, 전기차, 오토바이 등) AR체험을 통해 새로운 고객 경험을 제공하고 있다.", correct: 0 },
+	{ text: "OX퀴즈\n\n\n디지로그 서소문에서 세무, 부동산, 해외투자 전문가와 상담을 무료로 제공하고 있다.", correct: 0, result: "정답입니다!\n\n\n디지로그 서소문에서 세무, 부동산, 해외투자 전문가와 상담을 무료로 제공하고 있습니다!" },
+	{ text: "상상 갤러리에서 취미로 그렸던 작품, 가족이나 연인, 친구와의 소중한 추억을 전시할 수 있다.", correct: 0, result: "정답입니다!\n\n\n상상 갤러리에서 취미로 그렸던 작품, 가족이나 연인, 친구와의 소중한 추억을 전시할 수 있습니다!" },
+	{ text: "어디서든 예쁘게 사진 찍고 해시태그 #신한은행 #디지로그 #서소문과 함께 본인 인스타 계정에 업로드 하면 자판기에서 선물을 받을 수 있다.", correct: 0, result: "정답입니다!\n\n\n어디서든 예쁘게 사진 찍고 해시태그 #신한은행 #디지로그 #서소문과 함께 본인 인스타 계정에 업로드 하면 자판기에서 선물을 받을 수 있습니다!" },
+	{ text: "디지로그 서소문에는 원하는 시간에 원하는 상담을 받을 수 있는 상담 예약서비스가 없다.", correct: 1, result: "정답입니다!\n\n\n디지로그 서소문에는 원하는 시간에 원하는 상담을 받을 수 있는 상담 예약서비스가 있습니다!" },
+	{ text: "매주 수요일 오후 12시30분 부터 신한은행의 유명한 강사(오건영 부부장, 우병탁 세무사 등)의 명강의를 유투브와 디지로그 서소문 스튜디오에서 들을 수 없다.", correct: 1, result: "정답입니다!\n\n\n매주 수요일 오후 12시30분 부터 신한은행의 유명한 강사(오건영 부부장, 우병탁 세무사 등)의 명강의를 유투브와 디지로그 서소문 스튜디오에서 들을 수 있습니다!" },
+	{ text: "디지로그 서소문에서는 금융과 비금융의 결합된 다양한 전시회(캠핑카, 전기차, 오토바이 등) AR체험을 통해 새로운 고객 경험을 제공하고 있다.", correct: 0, result: "정답입니다!\n\n\n디지로그 서소문에서는 금융과 비금융의 결합된 다양한 전시회(캠핑카, 전기차, 오토바이 등) AR체험을 통해 새로운 고객 경험을 제공하고 있습니다!" },
 ];
 
 var quizidx = 0;
@@ -95,6 +95,11 @@ AFRAME.registerComponent('brandon-hit', {
                     console.log('arrowpos: ' +  mypos.distanceTo( arrowpos ));
 
                     if ( mypos.distanceTo( arrowpos ) < 1 ) {
+
+											// 맞는 소리
+											var entity = document.getElementById('hitheart');
+											entity.components.sound.playSound();        
+
 											this.openquiz();
                     }
                 }
@@ -107,6 +112,10 @@ AFRAME.registerComponent('brandon-hit', {
 
 			document.getElementById('quiztext').innerText = quizs[quizidx].text;
 			gameMode = 'quizready';
+
+			// 시계 똑딱이는 소리
+			var entity = document.getElementById('ticktock');
+			entity.components.sound.playSound();        
 		}
 
     });
@@ -502,6 +511,30 @@ window.onload = () => {
         document.getElementById('confirmhome').style.display = 'block';
         document.getElementById('gameux').style.display = 'none';
     });
+
+    // 퀴즈 화면에서 O 버튼 누를때 처리
+    document.getElementById('obutton').addEventListener('click', function () {
+			document.getElementById('quizux').style.display = 'none';
+
+			if ( quizs[quizidx].correct === 0 )	{// O 눌렀을때 0이면 정답
+				document.getElementById('quizcorrect').style.display = 'block';
+				document.getElementById('resulttext').innerText = quizs[quizidx].result;
+			} else {
+				document.getElementById('quizincorrect').style.display = 'block';
+			}
+		});
+
+    // 퀴즈 화면에서 X 버튼 누를때 처리
+    document.getElementById('xbutton').addEventListener('click', function () {
+			document.getElementById('quizux').style.display = 'none';
+
+			if ( quizs[quizidx].correct === 1 )	{// X 눌렀을때 1이면 정답
+				document.getElementById('quizcorrect').style.display = 'block';
+				document.getElementById('resulttext').innerText = quizs[quizidx].result;
+			} else {
+				document.getElementById('quizincorrect').style.display = 'block';
+			}
+		});
 
     // 최초 로딩 완료후 UX표시
     document.querySelector('a-scene').addEventListener('loaded', function () {

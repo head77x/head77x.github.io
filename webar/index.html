@@ -109,7 +109,7 @@
 							<a-entity id="firstux2" mixin="gamehelp" visible="true"></a-entity>
 						</a-entity>
 -->
-					<a-entity text="value: version 0.3.8.2" position="0 1.0 -2.1"></a-entity>
+					<a-entity text="value: version 0.3.8.3" position="0 1.0 -2.1"></a-entity>
 				</a-entity>
 				<a-entity 
 					id="gun" 
@@ -140,10 +140,12 @@
 					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/chr/doremi_v01.gltf)" position="0 0 -6" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: doremi.001; loop: repeat;"></a-entity>
 				</a-entity>
 
-				<a-entity id="bgm" sound="src: #background"></a-entity>
-				<a-entity id="misssound" sound="src: #miss"></a-entity>
-				<a-entity id="countdownsound" sound="src: #countdown"></a-entity>
-				<a-entity id="startbell" sound="src: #startsound"></a-entity>
+				<a-sound id="bgm" sound="src: #background" loop="true"></a-sound>
+				<a-sound id="misssound" sound="src: #miss"></a-sound>
+				<a-sound id="countdownsound" sound="src: #countdown"></a-sound>
+				<a-sound id="startbell" sound="src: #startsound"></a-sound>
+				<a-sound id="hitheart" sound="src: #hitted"></a-sound>
+				<a-sound id="ticktock" sound="src: #timeclick" loop="true"></a-sound>
 			</a-camera>
 </a-scene>
 <!--
@@ -239,6 +241,32 @@
 			</div>
 			<div id="xbutton" >
 				<img style="position:absolute; display: flex; width:30vw; bottom: 8vh; left: 60vw;" src="./assets/third_qa/X_button.png"/>    
+			</div>
+		</div>
+
+		<!-- 퀴즈 맞은 UX 화면 --> 
+		<div id="quizcorrect" style="display: none;">
+			<div style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; opacity: 0.5; background-color: rgb(0, 0, 0);"></div>
+			<img style="position:absolute; display: flex; width:100vw; height:50%; top: 30%; left: 0;" src="./assets/third_qa/quiz_back.png"/>
+
+			<p id="resulttext" style="position:absolute; display: flex; text-align:center; align-items: center; width:70vw; top: 33.8vh; left: 14vw; font-size: x-large; font-weight: bold; color:white;"> </p>
+
+			<div id="oknext" >
+				<img style="position:absolute; display: flex; width:40vw; bottom: 8vh; left: 30vw;" src="./assets/third_qa/ok_button2.png"/>    
+			</div>
+		</div>
+
+		<!-- 퀴즈 틀린 UX 화면 --> 
+		<div id="quizincorrect" style="display: none;">
+			<div style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; opacity: 0.5; background-color: rgb(0, 0, 0);"></div>
+			<img style="position:absolute; display: flex; width:100vw; height:50%; top: 30%; left: 0;" src="./assets/third_qa/quiz_back.png"/>
+
+			<p id="wrongtext" style="position:absolute; display: flex; text-align:center; align-items: center; width:70vw; top: 33.8vh; left: 14vw; font-size: x-large; font-weight: bold; color:white;">
+				틀렸습니다<br><br>다시 한 번 잘 생각해봐주세요.
+			</p>
+
+			<div id="okbefore" >
+				<img style="position:absolute; display: flex; width:40vw; bottom: 8vh; left: 30vw;" src="./assets/third_qa/retry_button.png"/>    
 			</div>
 		</div>
 
