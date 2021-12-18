@@ -519,7 +519,13 @@ window.onload = () => {
 			if ( quizs[quizidx].correct === 0 )	{// O 눌렀을때 0이면 정답
 				document.getElementById('quizcorrect').style.display = 'block';
 				document.getElementById('resulttext').innerText = quizs[quizidx].result;
+
+				// 정답 소리
+				document.getElementById('correctsound').components.sound.playSound();
 			} else {
+				// 오답 소리
+				document.getElementById('wrongsound').components.sound.playSound();
+
 				document.getElementById('quizincorrect').style.display = 'block';
 			}
 		});
@@ -531,7 +537,12 @@ window.onload = () => {
 			if ( quizs[quizidx].correct === 1 )	{// X 눌렀을때 1이면 정답
 				document.getElementById('quizcorrect').style.display = 'block';
 				document.getElementById('resulttext').innerText = quizs[quizidx].result;
+				// 정답 소리
+				document.getElementById('correctsound').components.sound.playSound();
 			} else {
+				// 오답 소리
+				document.getElementById('wrongsound').components.sound.playSound();
+				
 				document.getElementById('quizincorrect').style.display = 'block';
 			}
 		});
@@ -539,20 +550,21 @@ window.onload = () => {
     // 퀴즈 정답화면에서 OK 버튼 눌러, 다음진행
     document.getElementById('oknext').addEventListener('click', function () {
 			document.getElementById('quizcorrect').style.display = 'none';
-			document.getElementById('gameux').style.display = 'block';
-		});
-
-    // 퀴즈 오답화면에서 다시 시도 버튼 눌러, 다시 퀴즈 맞추기 진행 
-    document.getElementById('okbefore').addEventListener('click', function () {
-			document.getElementById('quizincorrect').style.display = 'none';
 
 			quizidx = quizidx + 1;
 
 			if ( quizidx >= 1 )	{ // 모든 퀴즈 맞췄으면...
 				document.getElementById('congratux').style.display = 'block';
 			} else {	// 아니면 계속 진행
-				document.getElementById('quizux').style.display = 'block';
+				document.getElementById('gameux').style.display = 'block';
 			}
+
+		});
+
+    // 퀴즈 오답화면에서 다시 시도 버튼 눌러, 다시 퀴즈 맞추기 진행 
+    document.getElementById('okbefore').addEventListener('click', function () {
+			document.getElementById('quizincorrect').style.display = 'none';
+			document.getElementById('quizux').style.display = 'block';
 		});
 
     // QR 화면으로 가기
