@@ -9,6 +9,7 @@
     <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
     <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
 	<script src="aframe-super-shooter-kit.min.js"></script>
+	<script src="./qrcode.min.js"></script>
     <script>
         THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
     </script>
@@ -109,7 +110,7 @@
 							<a-entity id="firstux2" mixin="gamehelp" visible="true"></a-entity>
 						</a-entity>
 -->
-					<a-entity text="value: version 0.3.8.8" position="0 1.0 -2.1"></a-entity>
+					<a-entity text="value: version 0.3.8.9" position="0 1.0 -2.1"></a-entity>
 				</a-entity>
 				<a-entity 
 					id="gun" 
@@ -287,7 +288,9 @@
 		<div id="qrux" style="display: none;">
 			<img style="position:absolute; display: flex; height:100vh; width:100vw; top: 0; left:0;" src="./assets/first_start/intro_bg.png"/>
 			<img style="position:absolute; display: flex; width:90vw; top: 3vh; left: 5vw;" src="./assets/forth_finish/qr_back.png"/>
-			
+
+			<div id="qrcode" style="position:absolute; display: flex; width:50vw; top: 10vh; left: 25vw;"></div>
+
 			<div id="restarthome" >
 				<img style="position:absolute; display: flex; width:40vw; bottom: 8vh; left: 30vw;" src="./assets/forth_finish/check_button_on.png"/>    
 			</div>

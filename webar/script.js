@@ -13,6 +13,16 @@ var quizs = [
 
 var quizidx = 0;
 
+
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	text: "http://jindo.dev.naver.com/collie",
+	width: 128,
+	height: 128,
+	colorDark : "#000000",
+	colorLight : "#ffffff",
+	correctLevel : QRCode.CorrectLevel.H
+});
+
 AFRAME.registerComponent('camrot', {
     init: function () {
             },
@@ -542,7 +552,7 @@ window.onload = () => {
 			} else {
 				// 오답 소리
 				document.getElementById('wrongsound').components.sound.playSound();
-				
+
 				document.getElementById('quizincorrect').style.display = 'block';
 			}
 		});
