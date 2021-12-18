@@ -105,7 +105,7 @@ AFRAME.registerComponent('brandon-hit', {
 			document.getElementById('gameux').style.display = 'none';
 			document.getElementById('quizux').style.display = 'block';
 
-			document.getElementById('gameux').innerText = quizs[quizidx].text;
+			document.getElementById('quiztext').innerText = quizs[quizidx].text;
 			gameMode = 'quizready';
 		}
 
