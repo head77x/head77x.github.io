@@ -545,7 +545,26 @@ window.onload = () => {
     // 퀴즈 오답화면에서 다시 시도 버튼 눌러, 다시 퀴즈 맞추기 진행 
     document.getElementById('okbefore').addEventListener('click', function () {
 			document.getElementById('quizincorrect').style.display = 'none';
-			document.getElementById('quizux').style.display = 'block';
+
+			quizidx = quizidx + 1;
+
+			if ( quizidx >= 1 )	{ // 모든 퀴즈 맞췄으면...
+				document.getElementById('congratux').style.display = 'block';
+			} else {	// 아니면 계속 진행
+				document.getElementById('quizux').style.display = 'block';
+			}
+		});
+
+    // QR 화면으로 가기
+    document.getElementById('gotoqu').addEventListener('click', function () {
+			document.getElementById('congratux').style.display = 'none';
+			document.getElementById('qrux').style.display = 'block';
+		});
+
+    // 게임 초기 화면으로 가기
+    document.getElementById('restarthome').addEventListener('click', function () {
+			document.getElementById('qrux').style.display = 'none';
+			document.getElementById('firstux').style.display = 'block';
 		});
 
 

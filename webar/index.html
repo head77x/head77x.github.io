@@ -109,7 +109,7 @@
 							<a-entity id="firstux2" mixin="gamehelp" visible="true"></a-entity>
 						</a-entity>
 -->
-					<a-entity text="value: version 0.3.8.4" position="0 1.0 -2.1"></a-entity>
+					<a-entity text="value: version 0.3.8.5" position="0 1.0 -2.1"></a-entity>
 				</a-entity>
 				<a-entity 
 					id="gun" 
@@ -256,20 +256,26 @@
 			</div>
 		</div>
 
-		<!-- 퀴즈 틀린 UX 화면 --> 
-		<div id="quizincorrect" style="display: none;">
+		<!-- 축하 UX 화면 --> 
+		<div id="congratux" style="display: none;">
 			<div style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; opacity: 0.5; background-color: rgb(0, 0, 0);"></div>
-			<img style="position:absolute; display: flex; width:100vw; height:50%; top: 30%; left: 0;" src="./assets/third_qa/quiz_back.png"/>
+			<img style="position:absolute; display: flex; width:100vw; height:50%; top: 20%; left: 0;" src="./assets/forth_finish/finish_back_img.png"/>
+			<img style="position:absolute; display: flex; width:100vw; height:50%; top: 30%; left: 0;" src="./assets/forth_finish/finish_back.png"/>
 
-			<p id="wrongtext" style="position:absolute; display: flex; text-align:center; align-items: center; width:70vw; top: 33.8vh; left: 14vw; font-size: x-large; font-weight: bold; color:white;">
-				틀렸습니다<br><br>다시 한 번 잘 생각해봐주세요.
-			</p>
-
-			<div id="okbefore" >
-				<img style="position:absolute; display: flex; width:40vw; bottom: 8vh; left: 30vw;" src="./assets/third_qa/retry_button.png"/>    
+			<div id="gotoqr" >
+				<img style="position:absolute; display: flex; width:40vw; bottom: 8vh; left: 30vw;" src="./assets/forth_finish/check_button_on.png"/>    
 			</div>
 		</div>
 
+		<!-- 최종 QR 화면 --> 
+		<div id="qrux" style="display: none;">
+			<img style="position:absolute; display: flex; height:100vh; width:100vw; top: 0; left:0;" src="./assets/first_start/intro_bg.png"/>
+			<img style="position:absolute; display: flex; width:90vw; top: 3vh; left: 5vw;" src="./assets/forth_finish/qr_back.png"/>
+			
+			<div id="restarthome" >
+				<img style="position:absolute; display: flex; width:40vw; bottom: 8vh; left: 30vw;" src="./assets/forth_finish/check_button_on.png"/>    
+			</div>
+		</div>
 		
 	</div>
 
