@@ -22,7 +22,7 @@ function showQR() {
 		console.log("qr return : " + response);
 	
 		var qrcode = new QRCode(document.getElementById("qrcode"), {
-			text: response.data.message,
+			text: response.qrString,
 			width: 200,
 			height: 200,
 			colorDark : "#000000",
