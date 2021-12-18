@@ -2,7 +2,16 @@ var gameMode = 'titlemode';
 
 var camrot;
 
-var arrowlist = [];
+var quizs = [ 
+	{ text: "디지로그 서소문에서 세무, 부동산, 해외투자 전문가와 상담을 무료로 제공하고 있다.", correct: 0 },
+	{ text: "상상 갤러리에서 취미로 그렸던 작품, 가족이나 연인, 친구와의 소중한 추억을 전시할 수 있다.", correct: 0 },
+	{ text: "어디서든 예쁘게 사진 찍고 해시태그 #신한은행 #디지로그 #서소문과 함께 본인 인스타 계정에 업로드 하면 자판기에서 선물을 받을 수 있다.", correct: 0 },
+	{ text: "디지로그 서소문에는 원하는 시간에 원하는 상담을 받을 수 있는 상담 예약서비스가 없다.", correct: 1 },
+	{ text: "매주 수요일 오후 12시30분 부터 신한은행의 유명한 강사(오건영 부부장, 우병탁 세무사 등)의 명강의를 유투브와 디지로그 서소문 스튜디오에서 들을 수 없다.", correct: 1 },
+	{ text: "디지로그 서소문에서는 금융과 비금융의 결합된 다양한 전시회(캠핑카, 전기차, 오토바이 등) AR체험을 통해 새로운 고객 경험을 제공하고 있다.", correct: 0 },
+];
+
+var quizidx = 0;
 
 AFRAME.registerComponent('camrot', {
     init: function () {
@@ -46,6 +55,10 @@ init: function () {
 });
 
 AFRAME.registerComponent('brandon-hit', {
+		schema: {
+			chrnum: {type: 'number', default: 1}
+		},
+	
     init: function () {
         this.mydamage = 2;
         this.checker = document.getElementById('gun');
@@ -79,12 +92,20 @@ AFRAME.registerComponent('brandon-hit', {
 
                     console.log('arrowpos: ' +  mypos.distanceTo( arrowpos ));
 
-                    if ( mypos.distanceTo( arrowpos ) < 1 )
-                        console.log('hitted!!!!');
+                    if ( mypos.distanceTo( arrowpos ) < 1 ) {
+											this.openquiz();
+                    }
                 }
             });
        }
     },
+		openquiz: function() {
+			document.getElementById('gameux').style.display = 'none';
+			document.getElementById('quizux').style.display = 'block';
+
+			document.getElementById('gameux').innerText = quizs[quizidx].text;
+			gameMode = 'quizready';
+		}
 
     });
 
@@ -127,6 +148,287 @@ AFRAME.registerComponent('brandon-shoot', {
 //        console.log('shoot : ' + rot.y);
     },
 });
+
+
+AFRAME.registerComponent('arrowshoot', {
+	init: function () {
+		this.restart(0);
+	},
+
+	restart: function(whattime) {
+		this.direction = this.el.object3D.rotation;
+		this.moveSpeed = -0.01;
+		this.initflag = true;
+	},
+
+	tick: function (time) {
+		if ( this.initflag ) {
+			this.starttime = time;
+			this.initflag = false;
+		} else {
+			this.el.object3D.translateZ(this.moveSpeed);
+			this.el.object3D.translateY(0.001);
+
+			if ( time - this.starttime > 2000 ) {
+				this.el.remove();
+			}
+		}
+	}
+});
+
+AFRAME.registerComponent('moveanywhere', {
+	init: function () {
+		this.restart(0);
+	},
+
+	restart: function(whattime) {
+		this.random_x = ((Math.random() * 2) - 1)/2.0;
+		this.random_z = ((Math.random() * 90) - 45);
+		this.random_time = whattime + ((Math.random() * 5) * 1000) + 1000;
+
+		var move = this.el.object3D.rotation;
+		move.z = THREE.Math.degToRad(this.random_z);
+		this.el.object3D.rotation = move;
+	},
+
+	tick: function (time) {
+		this.el.object3D.rotateX(THREE.Math.degToRad(this.random_x));
+
+		if ( time > this.random_time ) {
+			this.restart(time);
+		}
+	}
+});
+
+AFRAME.registerComponent('molystart', {
+	init: function () {
+		this.random_x = 0.5;//((Math.random() * 2) - 1)/10;
+		this.random_z = 30;
+		this.initflag = true;
+
+		var move = this.el.object3D.rotation;
+		move.z = THREE.Math.degToRad(this.random_z);
+		this.el.object3D.rotation = move;
+	},
+
+	tick: function (time) {
+		this.el.object3D.rotateX(THREE.Math.degToRad(this.random_x));
+
+		// Entry#1. 시작버튼 누르면 몰리캐릭터가 2시방향으로 날아감
+		if ( this.initflag ) {
+			this.starttime = time;
+			this.initflag = false;
+		} else {
+			if ( time - this.starttime > 1800 ) {
+				// Entry#2. 1.8초후 리노캐릭터 생성 
+				document.getElementById('rinostart').setAttribute('rinostart','');
+			}
+			if ( time - this.starttime > 3000 ) {
+				this.el.object3D.visible = false;
+				document.getElementById('molystart').removeAttribute('molystart');
+			}
+		}	
+	}
+});
+AFRAME.registerComponent('rinostart', {
+	init: function () {
+		this.random_x = 0.5;//((Math.random() * 2) - 1)/10;
+		this.random_z = -30;
+		this.initflag = true;
+
+		var move = this.el.object3D.rotation;
+		move.z = THREE.Math.degToRad(this.random_z);
+		this.el.object3D.rotation = move;
+
+		console.log('move dir : ' + this.random_x + "," + this.random_z);
+	},
+
+	tick: function (time) {
+		this.el.object3D.rotateX(THREE.Math.degToRad(this.random_x));
+
+		// Entry#3. 리노캐릭터가 10시방향으로 날아감
+		if ( this.initflag ) {
+			this.starttime = time;
+			this.initflag = false;
+		} else {
+			// Entry#4. 0.8초 후에 슈캐릭터 생성 
+			if ( time - this.starttime > 800 ) {
+				document.getElementById('suestart').setAttribute('suestart','');
+			}
+			if ( time - this.starttime > 3000 ) {
+				this.el.object3D.visible = false;
+				document.getElementById('rinostart').removeAttribute('rinostart');
+			}
+		}	
+	}
+});
+AFRAME.registerComponent('suestart', {
+	init: function () {
+		this.random_x = 0.5;//((Math.random() * 2) - 1)/10;
+		this.random_z = 15;
+		this.initflag = true;
+
+		var move = this.el.object3D.rotation;
+		move.z = THREE.Math.degToRad(this.random_z);
+		this.el.object3D.rotation = move;
+	},
+
+	tick: function (time) {
+		this.el.object3D.rotateX(THREE.Math.degToRad(this.random_x));
+
+		// Entry#5. 슈캐릭터 1시 방향으로 날아감
+		if ( this.initflag ) {
+			this.starttime = time;
+			this.initflag = false;
+		} else {
+		// Entry#6. 1.2초후에 루루라라 캐릭터 생성
+		if ( time - this.starttime > 1200 ) {
+				document.getElementById('lulastart').setAttribute('lulastart','');
+			}
+			if ( time - this.starttime > 3000 ) {
+				this.el.object3D.visible = false;
+				document.getElementById('suestart').removeAttribute('suestart');
+			}
+		}	
+	}
+});
+AFRAME.registerComponent('lulastart', {
+	init: function () {
+		this.random_x = 0.5;//((Math.random() * 2) - 1)/10;
+		this.random_z = -45;
+		this.initflag = true;
+
+		var move = this.el.object3D.rotation;
+		move.z = THREE.Math.degToRad(this.random_z);
+		this.el.object3D.rotation = move;
+
+		console.log('move dir : ' + this.random_x + "," + this.random_z);
+	},
+
+	tick: function (time) {
+		this.el.object3D.rotateX(THREE.Math.degToRad(this.random_x));
+
+		// Entry#7. 루루라라캐릭터 9시 방향으로 날아감
+		if ( this.initflag ) {
+			this.starttime = time;
+			this.initflag = false;
+		} else {
+			// Entry#8. 0.4초후 도레미캐릭터 생성 
+			if ( time - this.starttime > 400 ) {
+				document.getElementById('dorestart').setAttribute('dorestart','');
+			}
+			if ( time - this.starttime > 3000 ) {
+				this.el.object3D.visible = false;
+				document.getElementById('lulastart').removeAttribute('lulastart');
+			}
+		}	
+	}
+});
+AFRAME.registerComponent('dorestart', {
+	init: function () {
+		this.random_x = 0.5;//((Math.random() * 2) - 1)/10;
+		this.random_z = 60;
+		this.initflag = true;
+
+		var move = this.el.object3D.rotation;
+		move.z = THREE.Math.degToRad(this.random_z);
+		this.el.object3D.rotation = move;
+
+		console.log('move dir : ' + this.random_x + "," + this.random_z);
+	},
+
+	tick: function (time) {
+		this.el.object3D.rotateX(THREE.Math.degToRad(this.random_x));
+		// Entry#9. 도레미캐릭터가 4시 방향으로 날아감
+		if ( this.initflag ) {
+			this.starttime = time;
+			this.initflag = false;
+		} else {
+			// Entry#10. 1.2초후 솔 캐릭터 생성
+			if ( time - this.starttime > 1200 ) {
+				document.getElementById('solstart').setAttribute('solstart','');
+			}
+			if ( time - this.starttime > 3000 ) {
+				this.el.object3D.visible = false;
+				document.getElementById('dorestart').removeAttribute('dorestart');
+			}
+
+		}	
+	}
+});
+AFRAME.registerComponent('solstart', {
+	init: function () {
+		this.random_x = 0.5;//((Math.random() * 2) - 1)/10;
+		this.random_z = 0;
+		this.initflag = true;
+
+		var move = this.el.object3D.rotation;
+		move.z = THREE.Math.degToRad(this.random_z);
+		this.el.object3D.rotation = move;
+
+		console.log('move dir : ' + this.random_x + "," + this.random_z);
+	},
+
+	tick: function (time) {
+		this.el.object3D.rotateX(THREE.Math.degToRad(this.random_x));
+
+		// Entry#11. 솔캐릭터 위쪽으로 날아감
+		if ( this.initflag ) {
+			this.starttime = time;
+			this.initflag = false;
+		} else {
+			// Entry#12. 2초후에 카운트 다운 시작
+			if ( time - this.starttime > 2000 ) {
+				document.getElementById('countdowntext').style.display = "block";
+				this.counter = 5;
+				this.intervalId = setInterval(() => {
+						this.counter--;
+						console.log(this.counter);
+						if ( this.counter === 0 ) {	// Entry#13 - UX표시 된 후 게임 시작
+							document.getElementById('countdowntext').style.display = "none";
+							document.getElementById('count4').style.display = 'none';
+							clearInterval(this.intervalId);
+
+							document.getElementById('molymodel').object3D.visible = true;
+							document.getElementById('molymodel').setAttribute('moveanywhere','');
+							document.getElementById('rinomodel').object3D.visible = true;
+							document.getElementById('rinomodel').setAttribute('moveanywhere','');
+							document.getElementById('suemodel').object3D.visible = true;
+							document.getElementById('suemodel').setAttribute('moveanywhere','');
+							document.getElementById('lulamodel').object3D.visible = true;
+							document.getElementById('lulamodel').setAttribute('moveanywhere','');
+							document.getElementById('doremodel').object3D.visible = true;
+							document.getElementById('doremodel').setAttribute('moveanywhere','');
+							document.getElementById('solmodel').object3D.visible = true;
+							document.getElementById('solmodel').setAttribute('moveanywhere','');
+
+							// 게임 UX 표시
+							document.getElementById('gameux').style.display = 'block';
+							document.getElementById('gun').object3D.visible = true;
+						} else
+						if ( this.counter === 1 ) {		// Entry#13 - 카운트다운 끝나고 UX표시
+							var entity = document.getElementById('startbell');
+							entity.components.sound.playSound();        
+
+							document.getElementById('count1').style.display = 'none';
+							document.getElementById('count4').style.display = 'block';
+						} else {
+							var entity = document.getElementById('countdownsound');
+							entity.components.sound.playSound();        
+
+							document.getElementById('count'+this.counter).style.display = 'none';
+							document.getElementById('count'+(this.counter-1)).style.display = 'block';
+						}
+					}, 1000);
+
+				this.el.object3D.visible = false;
+				document.getElementById('solstart').removeAttribute('solstart');
+			}
+		}	
+
+	}
+});
+
     
 window.onload = () => {
 /*
