@@ -67,3 +67,11 @@ startbutton {
     top: 0;
     left: 0;
 }
+
+.qrcode {
+    position:absolute;
+    display: flex; 
+    width: 40vw; 
+    top: 8vh; 
+    left: calc(50vw - 128px);    
+}
