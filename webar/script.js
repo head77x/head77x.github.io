@@ -19,10 +19,10 @@ function showQR() {
 
 	fetch('https://game.digilog-xr.com/app/gameQr')
 	.then(function (response) {
-		console.log("qr return : " + response.json());
+		console.log("qr return : " + response);
 	
 		var qrcode = new QRCode(document.getElementById("qrcode"), {
-			text: qrdata.data.message,
+			text: response.data.message,
 			width: 200,
 			height: 200,
 			colorDark : "#000000",
