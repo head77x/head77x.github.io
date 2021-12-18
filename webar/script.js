@@ -17,9 +17,9 @@ function showQR() {
 	document.getElementById('congratux').style.display = 'none';
 	document.getElementById('qrux').style.display = 'block';
 
-	axios.get('https://game.digilog-xr.com/app/gameQr')
+	fetch('https://game.digilog-xr.com/app/gameQr')
 	.then(function (response) {
-		console.log("qr return : " + response);
+		console.log("qr return : " + response.json());
 	
 		var qrcode = new QRCode(document.getElementById("qrcode"), {
 			text: qrdata.data.message,
@@ -29,12 +29,6 @@ function showQR() {
 			colorLight : "#ffffff",
 			correctLevel : QRCode.CorrectLevel.H
 		});
-			 // response  
-	}).catch(function (error) {
-		console.log('get qr error : ' + error);
-			// 오류발생시 실행
-	}).then(function() {
-			// 항상 실행
 	});
 }
 
