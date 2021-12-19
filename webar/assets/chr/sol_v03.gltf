@@ -354,7 +354,7 @@
             ],
             "translation" : [
                 0.3594074249267578,
-                -0.14559206366539001,
+                -0.1702755093574524,
                 -0.006048252340406179
             ]
         },
@@ -373,8 +373,8 @@
             ],
             "translation" : [
                 0.3455844819545746,
-                -0.14230674505233765,
-                0.22722108662128448
+                -0.1702759712934494,
+                0.22722110152244568
             ]
         },
         {
@@ -10543,6 +10543,9 @@
             "doubleSided" : true,
             "name" : "sol",
             "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0
+                },
                 "metallicFactor" : 0.5,
                 "roughnessFactor" : 0.858578622341156
             }
@@ -10596,6 +10599,19 @@
                     "material" : 0
                 }
             ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "Sol",
+            "uri" : "Sol.jpg"
         }
     ],
     "skins" : [
@@ -19529,6 +19545,12 @@
             "buffer" : 0,
             "byteLength" : 1800,
             "byteOffset" : 2942524
+        }
+    ],
+    "samplers" : [
+        {
+            "magFilter" : 9729,
+            "minFilter" : 9987
         }
     ],
     "buffers" : [
