@@ -60,7 +60,7 @@
 						scale="0.5 0.5 0.5" 
 						rotation="0 0 0" 
 						brandon-hit 
-						animation-mixer="clip: sol.001; loop: repeat; startFrame: 450; duration: 0.5;"></a-entity>
+						animation-mixer="clip: sol.001; loop: repeat; duration: 3.5;"></a-entity>
 				</a-entity>
 			  <a-entity id="molymodel" position="0 0 0" visible="false">
 					<a-entity class="target" 
@@ -70,7 +70,7 @@
 						scale="0.5 0.5 0.5" 
 						rotation="0 0 0" 
 						brandon-hit 
-						animation-mixer="clip: moli.001; loop: repeat; startFrame: 450; duration: 0.5;"></a-entity>
+						animation-mixer="clip: moli.001; loop: repeat; duration: 3.5;"></a-entity>
 				</a-entity>
 				<a-entity id="rinomodel" position="0 0 0" visible="false">
 					<a-entity class="target" 
@@ -79,7 +79,7 @@
 						position="0 0 -6" 
 						scale="0.5 0.5 0.5" 
 						rotation="0 0 0" 
-						brandon-hit animation-mixer="clip: rino.001; loop: repeat; startFrame: 450; duration: 0.5;"></a-entity>
+						brandon-hit animation-mixer="clip: rino.001; loop: repeat; duration: 3.5;"></a-entity>
 				</a-entity>
 				<a-entity id="suemodel" position="0 0 0" visible="false">
 					<a-entity class="target" 
@@ -89,7 +89,7 @@
 						scale="0.5 0.5 0.5" 
 						rotation="0 0 0" 
 						brandon-hit 
-						animation-mixer="clip: shoo.001; loop: repeat; startFrame: 450; duration: 0.5;"></a-entity>
+						animation-mixer="clip: shoo.001; loop: repeat; duration: 3.5;"></a-entity>
 				</a-entity>
 				<a-entity id="lulamodel" position="0 0 0" visible="false">
 					<a-entity class="target" 
@@ -99,7 +99,7 @@
 						scale="0.5 0.5 0.5" 
 						rotation="0 0 0" 
 						brandon-hit 
-						animation-mixer="clip: lulu.001; loop: repeat;  startFrame: 450; duration: 0.5;"></a-entity>
+						animation-mixer="clip: lulu.001; loop: repeat; duration: 3.5;"></a-entity>
 				</a-entity>
 				<a-entity id="doremodel" position="0 0 0" visible="false">
 					<a-entity class="target" 
@@ -109,7 +109,7 @@
 						scale="0.5 0.5 0.5" 
 						rotation="0 0 0" 
 						brandon-hit 
-						animation-mixer="clip: doremi.001; loop: repeat;  startFrame: 450; duration: 0.5;"></a-entity>
+						animation-mixer="clip: doremi.001; loop: repeat; duration: 3.5;"></a-entity>
 				</a-entity>
 <!--				
 				<a-assets>
@@ -153,14 +153,14 @@
 							<a-entity id="firstux2" mixin="gamehelp" visible="true"></a-entity>
 						</a-entity>
 -->
-					<a-entity text="value: version 0.4.3.3 position="0 1.0 -2.1"></a-entity>
+					<a-entity text="value: version 0.4.3.5" position="0 1.0 -2.1"></a-entity>
 				</a-entity>
 				<a-entity 
 					id="gun" 
 					shooter 
 					gltf-model="url(./assets/bow_anim.glb)" 
 					scale="4.0 4.0 4.0" 
-					animation-mixer 
+					animation-mixer="clip: bowshot.001; loop: repeat; duration: 3.5;" 
 					brandon-shoot
 					visible="false"
 					position="0 -0.6 -1">
