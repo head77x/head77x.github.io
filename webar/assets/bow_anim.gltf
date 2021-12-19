@@ -711,7 +711,7 @@
             ],
             "name" : "bowshot",
             "startTime": 0.00,
-            "endTime": 2.00,         
+            "endTime": 10.00,         
             "samplers" : [
                 {
                     "input" : 69,
@@ -936,7 +936,7 @@
             ],
             "name" : "bowshot.001",
             "startTime": 0.00,
-            "endTime": 2.00,         
+            "endTime": 10.00,         
             "samplers" : [  
                 {
                     "input" : 89,
