@@ -4644,6 +4644,7 @@
                 }
             ],
             "name" : "doremi",
+            "frameRate": 30.0,
             "startTime": 0.00,
             "endTime": 2.00,         
             "samplers" : [
@@ -5877,8 +5878,9 @@
                 }
             ],
             "name" : "doremi.001",
-            "startTime": 4.50,
-            "endTime": 6.00,         
+            "frameRate": 30.0,
+            "startTime": 0.00,
+            "endTime": 2.00,         
             "samplers" : [
                 {
                     "input" : 250,
@@ -7110,6 +7112,7 @@
                 }
             ],
             "name" : "doremi.003",
+            "frameRate": 30.0,
             "startTime": 0.00,
             "endTime": 2.00,         
             "samplers" : [
@@ -8881,6 +8884,7 @@
                 }
             ],
             "name" : "doremi",
+            "frameRate": 30.0,
             "startTime": 0.00,
             "endTime": 2.00,         
             "samplers" : [
