@@ -710,7 +710,6 @@
                 }
             ],
             "name" : "bowshot",
-            "frameRate": 30.0,
             "startTime": 0.00,
             "endTime": 2.00,         
             "samplers" : [
@@ -936,7 +935,6 @@
                 }
             ],
             "name" : "bowshot.001",
-            "frameRate": 30.0,
             "startTime": 0.00,
             "endTime": 2.00,         
             "samplers" : [  
