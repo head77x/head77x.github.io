@@ -155,8 +155,8 @@ AFRAME.registerComponent('brandon-hit', {
 
 AFRAME.registerComponent('brandon-shoot', {
     init: function () {
-        document.getElementById('clickbow').addEventListener('mousedown', () => { this.makeone(); });
-        document.getElementById('clickbow').addEventListener('mouseup', () => { this.shootone(); });
+        document.body.addEventListener('touchstart', () => { this.makeone(); });
+        document.body.addEventListener('touchend', () => { this.shootone(); });
     },
 
 		makeone() {
