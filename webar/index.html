@@ -39,14 +39,6 @@
 				<audio id="countdown" src="./assets/sound/countdown.mp3" preload="auto"></audio>
 				<audio id="hitted" src="./assets/sound/hitted.mp3" preload="auto"></audio>
 		  	</a-assets>		
-
-				<a-entity 
-					id="bulletTemplate" 
-					bullet 
-					gltf-model="url(./assets/arrow.gltf)"
-					scale="5.0 5.0 5.0"
-				>
-				</a-entity>
 <!--
 			  <a-entity class="target" target="healthPoints: 10" geometry="primitive: box" material="color: teal" position="0 0 -4" hit-handler></a-entity>
 -->
@@ -154,7 +146,7 @@
 							<a-entity id="firstux2" mixin="gamehelp" visible="true"></a-entity>
 						</a-entity>
 -->
-					<a-entity text="value: version 0.4.6.7" position="0 1.0 -2.1"></a-entity>
+					<a-entity text="value: version 0.4.6.9" position="0 1.0 -2.1"></a-entity>
 				</a-entity>
 				<a-entity 
 					id="bow"
@@ -163,13 +155,23 @@
 					scale="0.05 0.05 0.05" 
 					rotation="0 0 0"
 					animation-mixer="clip: ready2; loop: repeat; duration: 1;"
-					brandon-shoot
 					visible="false"
 					>
+					<a-entity 
+						id="arrowmodel" 
+						bullet 
+						gltf-model="url(./assets/arrow.gltf)"
+						scale="5.0 5.0 5.0"
+						position="0 -0.6 -1"
+						rotation="0 0 0"
+							>
+						</a-entity>
+
 				</a-entity>			  
 				<a-entity
 					id="gun" 
 					position="0 -0.6 -1"
+					brandon-shoot
 					></a-entity>
 <!--				<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/bow_anim05.gltf)" position="0 0 -5" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: bowani; loop: repeat; duration: 5;"></a-entity> -->
 				<a-entity id="solstart" position="0 0 0" visible="false">
