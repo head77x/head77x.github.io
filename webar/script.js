@@ -448,7 +448,7 @@ AFRAME.registerComponent('solstart', {
 
 							// 게임 UX 표시
 							document.getElementById('gameux').style.display = 'block';
-							document.getElementById('gun').object3D.visible = true;
+							document.getElementById('bow').object3D.visible = true;
 						} else
 						if ( this.counter === 1 ) {		// Entry#13 - 카운트다운 끝나고 UX표시
 							var entity = document.getElementById('startbell');
