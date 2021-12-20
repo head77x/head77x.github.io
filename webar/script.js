@@ -155,40 +155,27 @@ AFRAME.registerComponent('brandon-hit', {
 
 AFRAME.registerComponent('brandon-shoot', {
     init: function () {
-        document.body.addEventListener('mousedown', () => { this.shootone(); });
+        document.body.addEventListener('mousedown', () => { this.makeone(); });
+        document.body.addEventListener('mouseup', () => { this.shootone(); });
     },
 
+		makeone() {
+			let scene = document.querySelector('a-scene');
+			model = document.createElement('a-entity');
+			
+			model.setAttribute('gltf-model', 'url(./assets/arrow.gltf)');
+
+			model.object3D.scale = this.el.object3D.scale;
+			model.object3D.position = this.el.object3D.position;
+			model.object3D.rotation = this.el.object3D.rotation;
+
+			this.model = model;
+
+			this.el.appendChild(model);
+		},
+
     shootone() {
-        let scene = document.querySelector('a-scene');
-        let model = document.createElement('a-entity');
-        
-        model.setAttribute('gltf-model', 'url(./assets/arrow.gltf)');
-
-/*        
-        let dir = new THREE.Vector3( 0, 0, -1 );
-
-        model.setAttribute('gltf-model', 'url(./assets/arrow.gltf)');
-
-        model.object3D.scale = this.el.object3D.scale;
-
-        let pos = new THREE.Vector3( this.el.object3D.position.x, this.el.object3D.position.y, this.el.object3D.position.z );
-
-        let posi = this.el.object3D.getWorldPosition(pos);
-        model.object3D.position = posi;
-
-        let rot = this.el.object3D.getWorldDirection(dir);
-
-        model.object3D.rotateY(rot.x);
-        model.object3D.rotateX(-rot.y);
-*/
-        model.object3D.scale = this.el.object3D.scale;
-        model.object3D.position = this.el.object3D.position;
-        model.object3D.rotation = this.el.object3D.rotation;
-
-        model.setAttribute('arrowshoot', '');
-
-        this.el.appendChild(model);
-
+        this.model.setAttribute('arrowshoot', '');
 //        console.log('shoot : ' + rot.y);
     },
 });
