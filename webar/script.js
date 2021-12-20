@@ -176,7 +176,7 @@ AFRAME.registerComponent('brandon-shoot', {
 			this.startpoint = e.changedTouches[0].clientY;
 		},
 
-		makeone(e) {
+		moveone(e) {
 			if (this.myarrow != null) {
 				let dist = (this.startpoint - e.changedTouches[0].clientY)/10.0;
 
