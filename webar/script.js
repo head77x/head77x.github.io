@@ -171,21 +171,23 @@ AFRAME.registerComponent('brandon-shoot', {
 			model.object3D.position = this.el.object3D.position;
 			model.object3D.rotation = this.el.object3D.rotation;
 
-			this.myarrow = model;
-
-			this.el.appendChild(model);
+			this.myarrow = this.el.appendChild(model);
 
 			this.startpoint = e.changedTouches[0].clientY;
 		},
 
 		makeone(e) {
-			let dist = (this.startpoint - e.changedTouches[0].clientY)/10.0;
+			if (this.myarrow != null) {
+				let dist = (this.startpoint - e.changedTouches[0].clientY)/10.0;
 
-			this.myarrow.object3D.position.z = dist;
+				this.myarrow.object3D.position.z = dist;
+			}
 		},
 
     shootone() {
+			if (this.myarrow != null) {
         this.myarrow.setAttribute('arrowshoot', '');
+			}
 //        console.log('shoot : ' + rot.y);
     },
 });
