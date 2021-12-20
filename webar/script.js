@@ -162,7 +162,7 @@ AFRAME.registerComponent('brandon-shoot', {
 
 		makeone(e) {
 			let scene = document.querySelector('a-scene');
-			model = document.createElement('a-entity');
+			let model = document.createElement('a-entity');
 			
 			model.setAttribute('gltf-model', 'url(./assets/arrow.gltf)');
 
