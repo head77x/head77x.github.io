@@ -155,11 +155,12 @@ AFRAME.registerComponent('brandon-hit', {
 
 AFRAME.registerComponent('brandon-shoot', {
     init: function () {
-        document.body.addEventListener('touchstart', () => { this.makeone(); });
+        document.body.addEventListener('touchstart', (e) => { this.makeone(e); });
+        document.body.addEventListener('touchmove', (e) => { this.moveone(e); });
         document.body.addEventListener('touchend', () => { this.shootone(); });
     },
 
-		makeone() {
+		makeone(e) {
 			let scene = document.querySelector('a-scene');
 			model = document.createElement('a-entity');
 			
@@ -172,6 +173,14 @@ AFRAME.registerComponent('brandon-shoot', {
 			this.model = model;
 
 			this.el.appendChild(model);
+
+			this.startpoint = e.changedTouches[0].clientY;
+		},
+
+		makeone(e) {
+			let dist = e.changedTouches[0].clientY - this.startpoint;
+
+			this.mode.object3D.position.z = dist;
 		},
 
     shootone() {
