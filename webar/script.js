@@ -178,9 +178,9 @@ AFRAME.registerComponent('brandon-shoot', {
 		},
 
 		makeone(e) {
-			let dist = e.changedTouches[0].clientY - this.startpoint;
+			let dist = (this.startpoint - e.changedTouches[0].clientY)/10.0;
 
-			this.mode.object3D.position.z = dist;
+			this.model.object3D.position.z = dist;
 		},
 
     shootone() {
