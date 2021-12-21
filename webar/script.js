@@ -166,12 +166,15 @@ AFRAME.registerComponent('brandon-shoot', {
 			if (this.myarrow != null) {
 				let dist = (e.changedTouches[0].clientY - this.startpoint);
 
-				if ( dist > 10 && dist <= 70 ) {
-					dist = 0.007;
-				} else if ( dist > 70 && dist <= 140 ) {
-					dist = 0.014;
-				} else if ( dist > 140 ) {
+				if ( dist > 30 && dist <= 100 ) {
+					dist = 0.01;
+					document.getElementById('bow').setAttribute("animation-mixer","clip: ready1; loop: once; duration: 0.5;");					
+				} else if ( dist > 100 && dist <= 200 ) {
 					dist = 0.02;
+					document.getElementById('bow').setAttribute("animation-mixer","clip: ready2; loop: once; duration: 0.5;");					
+				} else if ( dist > 200 ) {
+					dist = 0.03;
+					document.getElementById('bow').setAttribute("animation-mixer","clip: ready3; loop: once; duration: 0.5;");					
 				}
 
 				this.myarrow.object3D.position.z = dist;
@@ -180,6 +183,7 @@ AFRAME.registerComponent('brandon-shoot', {
 
     shootone() {
 			if (this.myarrow != null) {
+				document.getElementById('bow').setAttribute("animation-mixer","clip: shotani; loop: once; duration: 0.5;");					
         this.myarrow.setAttribute('arrowshoot', '');
 			}
 //        console.log('shoot : ' + rot.y);
