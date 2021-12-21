@@ -99,8 +99,6 @@ AFRAME.registerComponent('brandon-hit', {
     init: function () {
         this.mydamage = 2;
         this.checker = document.getElementById('gun');
-
-				console.log("what chr : " + this.data.chrnum);
     },
     tick: function(time) {
         if ( this.checker.childNodes.length > 1 )
@@ -130,6 +128,17 @@ AFRAME.registerComponent('brandon-hit', {
 		openquiz: function() {
 			document.getElementById('gameux').style.display = 'none';
 			document.getElementById('quizux').style.display = 'block';
+
+			// 해당 캐릭터에 맞는 gif 표시하기
+			for ( var i = 1; i < 7; i++ ) {
+				document.getElementById('quest' + i).style.display = 'none';				
+				document.getElementById('lose' + i).style.display = 'none';				
+				document.getElementById('win' + i).style.display = 'none';				
+			}
+
+			document.getElementById('quest' + this.data.chrnum).style.display = 'flex';				
+			document.getElementById('lose' + this.data.chrnum).style.display = 'flex';				
+			document.getElementById('win' + this.data.chrnum).style.display = 'flex';				
 
 			document.getElementById('quiztext').innerText = quizs[quizidx].text;
 			gameMode = 'quizready';
