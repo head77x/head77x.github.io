@@ -51,7 +51,7 @@
 						position="0 0 -5" 
 						scale="0.5 0.5 0.5" 
 						rotation="0 0 0" 
-						brandon-hit 
+						brandon-hit="chrnum: 1;"
 						animation-mixer="clip: fly; loop: repeat; duration: 5"></a-entity>
 				</a-entity>
 			  <a-entity id="molymodel" position="0 0 0" visible="false">
@@ -61,7 +61,7 @@
 						position="0 0 -6" 
 						scale="0.5 0.5 0.5" 
 						rotation="0 0 0" 
-						brandon-hit 
+						brandon-hit="chrnum: 2;" 
 						animation-mixer="clip: fly; loop: repeat; duration: 5;"></a-entity>
 				</a-entity>
 				<a-entity id="rinomodel" position="0 0 0" visible="false">
@@ -71,7 +71,7 @@
 						position="0 0 -6" 
 						scale="0.5 0.5 0.5" 
 						rotation="0 0 0" 
-						brandon-hit 
+						brandon-hit="chrnum: 3;" 
 						animation-mixer="clip: fly; loop: repeat; duration: 5;"></a-entity>
 				</a-entity>
 				<a-entity id="suemodel" position="0 0 0" visible="false">
@@ -81,7 +81,7 @@
 						position="0 0 -6" 
 						scale="0.5 0.5 0.5" 
 						rotation="0 0 0" 
-						brandon-hit 
+						brandon-hit="chrnum: 4;" 
 						animation-mixer="clip: fly; loop: repeat; duration: 5;"></a-entity>
 				</a-entity>
 				<a-entity id="lulamodel" position="0 0 0" visible="false">
@@ -91,7 +91,7 @@
 						position="0 0 -6" 
 						scale="0.5 0.5 0.5" 
 						rotation="0 0 0" 
-						brandon-hit 
+						brandon-hit="chrnum: 5;" 
 						animation-mixer="clip: fly; loop: repeat; duration: 5;"></a-entity>
 				</a-entity>
 				<a-entity id="doremodel" position="0 0 0" visible="false">
@@ -101,7 +101,7 @@
 						position="0 0 -6" 
 						scale="0.5 0.5 0.5" 
 						rotation="0 0 0" 
-						brandon-hit 
+						brandon-hit="chrnum: 6;" 
 						animation-mixer="clip: fly; loop: repeat; duration: 5;"></a-entity>
 				</a-entity>
 <!--				
@@ -146,7 +146,7 @@
 							<a-entity id="firstux2" mixin="gamehelp" visible="true"></a-entity>
 						</a-entity>
 -->
-					<a-entity text="value: version 0.4.8.9" position="0 1.0 -2.1"></a-entity>
+					<a-entity text="value: version 0.4.9.0" position="0 1.0 -2.1"></a-entity>
 				</a-entity>
 				<a-entity 
 					id="bow"
@@ -269,13 +269,13 @@
 		<!-- 홈으로 가기 확인 UX 화면 --> 
 		<div id="confirmhome" style="display: none;">
 			<div style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; opacity: 0.5; background-color: rgb(0, 0, 0);"></div>
-			<img style="position:absolute; display: flex; width:80vw; top: 20vw; left: 10vw;" src="./assets/third_qa/sol_notice.gif"/>
+			<img style="position:absolute; display: flex; width:100vw; top: 20vw; left: 0vw;" src="./assets/third_qa/sol_notice.gif"/>
 			<img style="position:absolute; display: flex; width:90vw; top: 35vh; left: 5vw;" src="./assets/second_game/tohome_box.png"/>
 			<div id="tohomeok">
-				<img style="position:absolute; display: flex; width: 20vw; left: 20vw; top: 60vh; " src="./assets/forth_finish/ok_button_on.png"/>    
+				<img style="position:absolute; display: flex; width: 20vw; left: 20vw; top: 65vh; " src="./assets/forth_finish/ok_button_on.png"/>    
 			</div>
 			<div id="tohomecancel">
-				<img style="position:absolute; display: flex; width: 20vw; left: 60vw; top: 60vh; " src="./assets/forth_finish/cancel_button_on.png"/>    
+				<img style="position:absolute; display: flex; width: 20vw; left: 60vw; top: 65vh; " src="./assets/forth_finish/cancel_button_on.png"/>    
 			</div>
 		</div>
 
@@ -283,8 +283,13 @@
 		<!-- 퀴즈 UX 화면 --> 
 		<div id="quizux" style="display: none;">
 			<div style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; opacity: 0.5; background-color: rgb(0, 0, 0);"></div>
-			<img style="position:absolute; display: flex; width:100vw; top: 10vw; left: 0;" src="./assets/third_qa/sol_quest.gif"/>
-			<img style="position:absolute; display: flex; width:100vw; height:50%; top: 30%; left: 0;" src="./assets/third_qa/quiz_back.png"/>
+			<img id="quest1" style="position:absolute; display: flex; width:100vw; top: 12vw; left: 0; display: none;" src="./assets/third_qa/sol_quest.gif"/>
+			<img id="quest2" style="position:absolute; display: flex; width:100vw; top: 12vw; left: 0; display: none;" src="./assets/third_qa/moli_quest.gif"/>
+			<img id="quest3" style="position:absolute; display: flex; width:100vw; top: 12vw; left: 0; display: none;" src="./assets/third_qa/rino_quest.gif"/>
+			<img id="quest4" style="position:absolute; display: flex; width:100vw; top: 12vw; left: 0; display: none;" src="./assets/third_qa/shoo_quest.gif"/>
+			<img id="quest5" style="position:absolute; display: flex; width:100vw; top: 12vw; left: 0; display: none;" src="./assets/third_qa/doremi_quest.gif"/>
+			<img id="quest6" style="position:absolute; display: flex; width:100vw; top: 12vw; left: 0; display: none;" src="./assets/third_qa/lulu_quest.gif"/>
+			<img style="position:absolute; display: flex; width:100vw; height:50%; top: 30%; left: 0; " src="./assets/third_qa/quiz_back.png"/>
 
 			<p id="quiztext" style="position:absolute; display: flex; text-align:center; align-items: center; width:70vw; top: 33.8vh; left: 14vw; font-size: x-large; font-weight: bold; color:white;"> </p>
 
@@ -299,6 +304,12 @@
 		<!-- 퀴즈 맞은 UX 화면 --> 
 		<div id="quizcorrect" style="display: none;">
 			<div style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; opacity: 0.5; background-color: rgb(0, 0, 0);"></div>
+			<img id="win1" style="position:absolute; display: flex; width:100vw; top: 12vw; left: 0; display: none;" src="./assets/third_qa/sol_win.gif"/>
+			<img id="win2" style="position:absolute; display: flex; width:100vw; top: 12vw; left: 0; display: none;" src="./assets/third_qa/moli_win.gif"/>
+			<img id="win3" style="position:absolute; display: flex; width:100vw; top: 12vw; left: 0; display: none;" src="./assets/third_qa/rino_win.gif"/>
+			<img id="win4" style="position:absolute; display: flex; width:100vw; top: 12vw; left: 0; display: none;" src="./assets/third_qa/shoo_win.gif"/>
+			<img id="win5" style="position:absolute; display: flex; width:100vw; top: 12vw; left: 0; display: none;" src="./assets/third_qa/doremi_win.gif"/>
+			<img id="win6" style="position:absolute; display: flex; width:100vw; top: 12vw; left: 0; display: none;" src="./assets/third_qa/lulu_win.gif"/>
 			<img style="position:absolute; display: flex; width:100vw; height:50%; top: 30%; left: 0;" src="./assets/third_qa/quiz_back.png"/>
 
 			<p id="resulttext" style="position:absolute; display: flex; text-align:center; align-items: center; width:70vw; top: 33.8vh; left: 14vw; font-size: x-large; font-weight: bold; color:white;"> </p>
@@ -311,6 +322,12 @@
 		<!-- 퀴즈 틀린 UX 화면 --> 
 		<div id="quizincorrect" style="display: none;">
 			<div style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; opacity: 0.5; background-color: rgb(0, 0, 0);"></div>
+			<img id="lose1" style="position:absolute; display: flex; width:100vw; top: 12vw; left: 0; display: none;" src="./assets/third_qa/sol_lose.gif"/>
+			<img id="lose2" style="position:absolute; display: flex; width:100vw; top: 12vw; left: 0; display: none;" src="./assets/third_qa/moli_lose.gif"/>
+			<img id="lose3" style="position:absolute; display: flex; width:100vw; top: 12vw; left: 0; display: none;" src="./assets/third_qa/rino_lose.gif"/>
+			<img id="lose4" style="position:absolute; display: flex; width:100vw; top: 12vw; left: 0; display: none;" src="./assets/third_qa/shoo_lose.gif"/>
+			<img id="lose5" style="position:absolute; display: flex; width:100vw; top: 12vw; left: 0; display: none;" src="./assets/third_qa/doremi_lose.gif"/>
+			<img id="lose6" style="position:absolute; display: flex; width:100vw; top: 12vw; left: 0; display: none;" src="./assets/third_qa/lulu_lose.gif"/>
 			<img style="position:absolute; display: flex; width:100vw; height:50%; top: 30%; left: 0;" src="./assets/third_qa/quiz_back.png"/>
 
 			<p id="wrongtext" style="position:absolute; display: flex; text-align:center; align-items: center; width:70vw; top: 33.8vh; left: 14vw; font-size: x-large; font-weight: bold; color:white;">

@@ -97,46 +97,32 @@ AFRAME.registerComponent('brandon-hit', {
     init: function () {
         this.mydamage = 2;
         this.checker = document.getElementById('gun');
-/*    
-        el.addEventListener('hit', () => {
-            console.log('hitted');
-            color = new THREE.Color();
-            color.setRGB(1, 0, 0);
-            el.components.material.material.color.copy(color);        
-        });
-    
-        el.addEventListener('die', () => {
-            console.log('die!');
-    
-            document.getElementById('gameux').style.display = 'none';
-            document.getElementById('quizux').style.display = 'block';
-            gameMode = 'quizready';
-        });
-*/
+
+				console.log("what scheme : " + this.schema.chrnum );
     },
     tick: function(time) {
         if ( this.checker.childNodes.length > 1 )
         {
-            this.checker.childNodes.forEach((who, index, sourceArr) => {
-                if ( who.object3D != null && this.el.object3D != null ) {
-                    var arrowpos = new THREE.Vector3( who.object3D.position.x, who.object3D.position.y, who.object3D.position.z );
-                    who.object3D.getWorldPosition(arrowpos);
+					this.checker.childNodes.forEach((who, index, sourceArr) => {
+						if ( who.object3D != null && this.el.object3D != null ) {
+								var arrowpos = new THREE.Vector3( who.object3D.position.x, who.object3D.position.y, who.object3D.position.z );
+								who.object3D.getWorldPosition(arrowpos);
 
-                    var mypos = new THREE.Vector3( this.el.object3D.position.x, this.el.object3D.position.y, this.el.object3D.position.z );
-                    this.el.object3D.getWorldPosition(mypos);
+								var mypos = new THREE.Vector3( this.el.object3D.position.x, this.el.object3D.position.y, this.el.object3D.position.z );
+								this.el.object3D.getWorldPosition(mypos);
 
 //                    console.log('arrowpos: ' +  mypos.distanceTo( arrowpos ));
 
-                    if ( mypos.distanceTo( arrowpos ) < 1 ) {
+								if ( mypos.distanceTo( arrowpos ) < 1 ) {
 
-											// 맞는 소리
-											var entity = document.getElementById('hitheart');
-											entity.components.sound.playSound();        
+									// 맞는 소리
+									var entity = document.getElementById('hitheart');
+									entity.components.sound.playSound();        
 
-											this.openquiz();
-                    }
-                }
-            });
+									this.openquiz();
+								}
+						}
+					});
        }
     },
 		openquiz: function() {
