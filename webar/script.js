@@ -161,6 +161,7 @@ AFRAME.registerComponent('brandon-shoot', {
 			this.myarrow = this.el.appendChild(model);
 
 			this.startpoint = e.changedTouches[0].clientY;
+			this.bowlevel = 0;
 		},
 
 		moveone(e) {
@@ -169,15 +170,19 @@ AFRAME.registerComponent('brandon-shoot', {
 
 				if ( dist > 30 && dist <= 100 ) {
 					dist = -0.03;
+					this.bowlevel = 1;
 					document.getElementById('bow').setAttribute("animation-mixer","clip: ready1; loop: once; duration: 0.5; clampWhenFinished: true;");					
 				} else if ( dist > 100 && dist <= 200 ) {
 					dist = -0.015;
+					this.bowlevel = 2;
 					document.getElementById('bow').setAttribute("animation-mixer","clip: ready2; loop: once; duration: 0.5; clampWhenFinished: true;");					
 				} else if ( dist > 200 ) {
 					dist = -0.005;
+					this.bowlevel = 3;
 					document.getElementById('bow').setAttribute("animation-mixer","clip: ready3; loop: once; duration: 0.5; clampWhenFinished: true;");					
 				} else {
 					dist = -0.04;
+					this.bowlevel = 0;
 					document.getElementById('bow').setAttribute("animation-mixer","clip: ready0; loop: once; duration: 0.5; clampWhenFinished: true;");					
 				}
 
@@ -188,7 +193,7 @@ AFRAME.registerComponent('brandon-shoot', {
     shootone() {
 			if (this.myarrow != null) {
 				document.getElementById('bow').setAttribute("animation-mixer","clip: shotani; loop: once; duration: 0.5;");					
-        this.myarrow.setAttribute('arrowshoot', '');
+        this.myarrow.setAttribute("arrowshoot", "shootlevel:" + this.bowlevel + ";");
 			}
 //        console.log('shoot : ' + rot.y);
     },
@@ -196,6 +201,9 @@ AFRAME.registerComponent('brandon-shoot', {
 
 
 AFRAME.registerComponent('arrowshoot', {
+	schema: {
+		shootlevel: {type: 'number', default: 1},
+	},
 	init: function () {
 		this.restart(0);
 	},
@@ -212,7 +220,7 @@ AFRAME.registerComponent('arrowshoot', {
 			this.initflag = false;
 		} else {
 			this.el.object3D.translateZ(this.moveSpeed);
-			this.el.object3D.translateY(0.001);
+			this.el.object3D.translateY(0.001 * (3 - this.data.shootlevel) );
 
 			if ( time - this.starttime > 2000 ) {
 				this.el.remove();
