@@ -75,6 +75,6 @@ startbutton {
     height: 128px;
     top: 50vh; 
     left: 50vw;    
-    margin-top: -64px;
-    margin-left: -200px;
+    margin-top: -200px;
+    margin-left: -64px;
 }
