@@ -71,7 +71,10 @@ startbutton {
 .qrcode {
     position:absolute;
     display: flex; 
-    width: 40vw; 
-    top: 8vh; 
-    left: calc(50vw - 128px);    
+    width: 128px; 
+    height: 128px;
+    top: 50vh; 
+    left: 50vw;    
+    margin-top: -64px;
+    margin-left: -64px;
 }
