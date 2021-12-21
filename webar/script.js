@@ -98,7 +98,7 @@ AFRAME.registerComponent('brandon-hit', {
         this.mydamage = 2;
         this.checker = document.getElementById('gun');
 
-				console.log("what scheme : " + this.schema.chrnum );
+				console.log("what scheme : " + JSON.stringify(this.schema.chrnum));
     },
     tick: function(time) {
         if ( this.checker.childNodes.length > 1 )
