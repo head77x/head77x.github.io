@@ -90,13 +90,15 @@ init: function () {
 */
 
 AFRAME.registerComponent('brandon-hit', {
-		schema: {type: 'number', default: 1},
+		schema: {
+			chrnum: {type: 'number', default: 1},
+		},
 			
     init: function () {
         this.mydamage = 2;
         this.checker = document.getElementById('gun');
 
-				console.log("what scheme : " + JSON.stringify(this.schema));
+				console.log("what chr : " + this.data.chrnum);
     },
     tick: function(time) {
         if ( this.checker.childNodes.length > 1 )
