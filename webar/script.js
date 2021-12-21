@@ -168,13 +168,13 @@ AFRAME.registerComponent('brandon-shoot', {
 
 				if ( dist > 30 && dist <= 100 ) {
 					dist = 0.01;
-					document.getElementById('bow').setAttribute("animation-mixer","clip: ready1; loop: once; duration: 0.5;");					
+					document.getElementById('bow').setAttribute("animation-mixer","clip: ready1; loop: once; duration: 0.5; clampWhenFinished: true;");					
 				} else if ( dist > 100 && dist <= 200 ) {
 					dist = 0.02;
-					document.getElementById('bow').setAttribute("animation-mixer","clip: ready2; loop: once; duration: 0.5;");					
+					document.getElementById('bow').setAttribute("animation-mixer","clip: ready2; loop: once; duration: 0.5; clampWhenFinished: true;");					
 				} else if ( dist > 200 ) {
 					dist = 0.03;
-					document.getElementById('bow').setAttribute("animation-mixer","clip: ready3; loop: once; duration: 0.5;");					
+					document.getElementById('bow').setAttribute("animation-mixer","clip: ready3; loop: once; duration: 0.5; clampWhenFinished: true;");					
 				}
 
 				this.myarrow.object3D.position.z = dist;
