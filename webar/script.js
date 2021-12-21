@@ -464,13 +464,13 @@ AFRAME.registerComponent('solstart', {
 							entity.components.sound.playSound();        
 
 							document.getElementById('count1').style.display = 'none';
-							document.getElementById('count4').style.display = 'block';
+							document.getElementById('count4').style.display = 'flex';
 						} else {
 							var entity = document.getElementById('countdownsound');
 							entity.components.sound.playSound();        
 
 							document.getElementById('count'+this.counter).style.display = 'none';
-							document.getElementById('count'+(this.counter-1)).style.display = 'block';
+							document.getElementById('count'+(this.counter-1)).style.display = 'flex';
 						}
 					}, 1000);
 
@@ -545,14 +545,26 @@ window.onload = () => {
             document.getElementById('firstux').style.display = 'block';
             document.getElementById('helpux').style.display = 'none';
             gameMode = 'titlemode';
-        }
+        } else {
+					document.getElementById('gameux').style.display = 'block';
+					document.getElementById('helpux').style.display = 'none';
+					gameMode = 'gamemode';
+				}
+    });
+
+    // 게임중 도움말 화면으로 가기 버튼
+    document.getElementById('gamehelpbutton').addEventListener('click', function () {
+        document.getElementById('helpux').style.display = 'block';
+        document.getElementById('gameux').style.display = 'none';
+        gameMode = 'gamehelp';
     });
 
     // 메인 화면으로 갈지 물어보는 화면
     document.getElementById('whathomebutton').addEventListener('click', function () {
-        document.getElementById('confirmhome').style.display = 'block';
-        document.getElementById('gameux').style.display = 'none';
-    });
+			document.getElementById('confirmhome').style.display = 'block';
+			document.getElementById('gameux').style.display = 'none';
+	});
+
 
     // 퀴즈 화면에서 O 버튼 누를때 처리
     document.getElementById('obutton').addEventListener('click', function () {
