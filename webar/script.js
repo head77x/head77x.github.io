@@ -220,7 +220,7 @@ AFRAME.registerComponent('arrowshoot', {
 			this.initflag = false;
 		} else {
 			this.el.object3D.translateZ(this.moveSpeed);
-			this.el.object3D.translateY(0.001 * (3 - this.data.shootlevel) );
+			this.el.object3D.translateY(0.001 * (this.data.shootlevel + 1) );
 
 			if ( time - this.starttime > 2000 ) {
 				this.el.remove();
