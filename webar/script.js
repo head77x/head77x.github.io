@@ -170,10 +170,10 @@ AFRAME.registerComponent('brandon-shoot', {
 					dist = -0.03;
 					document.getElementById('bow').setAttribute("animation-mixer","clip: ready1; loop: once; duration: 0.5; clampWhenFinished: true;");					
 				} else if ( dist > 100 && dist <= 200 ) {
-					dist = -0.02;
+					dist = -0.015;
 					document.getElementById('bow').setAttribute("animation-mixer","clip: ready2; loop: once; duration: 0.5; clampWhenFinished: true;");					
 				} else if ( dist > 200 ) {
-					dist = -0.01;
+					dist = -0.005;
 					document.getElementById('bow').setAttribute("animation-mixer","clip: ready3; loop: once; duration: 0.5; clampWhenFinished: true;");					
 				} else {
 					dist = -0.04;
