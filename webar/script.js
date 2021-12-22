@@ -129,6 +129,7 @@ AFRAME.registerComponent('brandon-hit', {
 				this.eventHandlerFn = () => { 
 					this.mydamage = 2; 
 					document.getElementById('iconimg' + this.data.chrnum).style.filter = 'brightness(10%)';
+					this.el.object3D.visible = true;
 				};
 
 				this.el.addEventListener('restore', this.eventHandlerFn);				
