@@ -287,10 +287,13 @@ AFRAME.registerComponent('arrowshoot', {
 */		
 	},
 
+/*	
 	tick: function (time) {
 		this.el.object3D.translateZ(this.moveSpeed);
 		this.el.object3D.translateY(-0.001 * (2 - this.data.shootlevel) );
 	}
+*/
+	
 });
 
 AFRAME.registerComponent('moveanywhere', {
