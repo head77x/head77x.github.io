@@ -580,10 +580,11 @@ function allResetToStart() {
 // UX 바뀔때 모든 화살 없애기
 function removeAllArrow() {
 	let pa = document.getElementById('gun');
-
+/*
 	while (pa.firstChild) {
 		pa.removeChild(pa.firstChild);
 	}
+*/	
 }
 
 // 기존 QR코드 삭제
