@@ -137,6 +137,8 @@ AFRAME.registerComponent('brandon-hit', {
 				this.el.addEventListener('restore', this.eventHandlerFn);				
     },
     tick: function(time) {
+			return;
+
         if ( gameMode === 'gamemode' && this.nohittime === false && this.mydamage > 0 && this.checker.childNodes.length > 1 )
         {
 					this.checker.childNodes.forEach((who, index, sourceArr) => {
@@ -163,11 +165,11 @@ AFRAME.registerComponent('brandon-hit', {
 										this.el.object3D.visible = false;
 										this.openquiz();
 									}
-/*
+
 									// 맞는 소리
 									var entity = document.getElementById('hitheart');
 									entity.components.sound.playSound();        
-*/
+									
 									this.el.setAttribute("animation-mixer","clip: hitted; loop: once; duration: 2;");					
 
 									setTimeout( ()=> {
