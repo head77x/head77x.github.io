@@ -142,6 +142,7 @@ AFRAME.registerComponent('brandon-hit', {
 
 			document.getElementById('quiztext').innerText = quizs[quizidx].text;
 			gameMode = 'quizready';		// 퀴즈 진행중
+			removeAllArrow();
 
 			// 시계 똑딱이는 소리
 			var entity = document.getElementById('ticktock');
@@ -525,6 +526,15 @@ function allResetToStart() {
 
 }
 
+// UX 바뀔때 모든 화살 없애기
+function removeAllArrow() {
+	let pa = document.getElementById('gun');
+
+	while (pa.firstChild) {
+		pa.removeChild(pa.firstChild);
+	}
+}
+
     
 window.onload = () => {
 /*
@@ -576,6 +586,7 @@ window.onload = () => {
     document.getElementById('gamehelpbutton').addEventListener('click', function () {
 			document.getElementById('helpux').style.display = 'block';
 			document.getElementById('gameux').style.display = 'none';
+			removeAllArrow();
 			gameMode = 'gamehelp';
 		});
 
@@ -583,6 +594,7 @@ window.onload = () => {
     document.getElementById('whathomebutton').addEventListener('click', function () {
 			document.getElementById('confirmhome').style.display = 'block';
 			document.getElementById('gameux').style.display = 'none';
+			removeAllArrow();
 			gameMode = 'askbackhome';
 		});
 
@@ -590,6 +602,7 @@ window.onload = () => {
     document.getElementById('tohomeok').addEventListener('click', function () {
 			document.getElementById('confirmhome').style.display = 'none';
 			document.getElementById('firstux').style.display = 'block';
+			removeAllArrow();
 			gameMode = 'titlemode';
 
 			allResetToStart();
