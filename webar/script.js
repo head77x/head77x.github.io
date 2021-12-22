@@ -233,7 +233,6 @@ AFRAME.registerComponent('brandon-shoot', {
 		},
 
 		moveone(e) {
-			return;
 			if ( gameMode != 'gamemode' ) return;
 
 			if (this.myarrow != null) {
@@ -262,7 +261,6 @@ AFRAME.registerComponent('brandon-shoot', {
 		},
 
     shootone() {
-			return;
 			if (this.myarrow != null) {
 				document.getElementById('bow').setAttribute("animation-mixer","clip: shotani; loop: once; duration: 0.5;");					
         this.myarrow.setAttribute("arrowshoot", "shootlevel:" + this.bowlevel + ";");
