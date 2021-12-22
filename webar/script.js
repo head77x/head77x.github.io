@@ -123,7 +123,8 @@ AFRAME.registerComponent('brandon-hit', {
 		},
 			
     init: function () {
-        this.mydamage = 2;
+				this.nohittime = false;
+				this.mydamage = 2;
         this.checker = document.getElementById('gun');
 
 				this.eventHandlerFn = () => { 
@@ -144,7 +145,7 @@ AFRAME.registerComponent('brandon-hit', {
 								who.object3D.getWorldPosition(arrowpos);
 
 								var mypos = new THREE.Vector3( this.el.object3D.position.x, this.el.object3D.position.y, this.el.object3D.position.z );
-								mypos.y -= 0.5;	// 높이 보정
+								mypos.y += 0.5;	// 높이 보정
 
 								this.el.object3D.getWorldPosition(mypos);
 
