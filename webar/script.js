@@ -238,7 +238,7 @@ AFRAME.registerComponent('brandon-shoot', {
 
 			this.myarrow = this.arrows[this.useArrow];
 			this.myarrow.object3D.position = this.el.object3D.position;
-//			this.myarrow.object3D.visible = true;
+			this.myarrow.object3D.visible = true;
 			this.useArrow = (this.useArrow + 1) % this.maxArrow;
 		},
 
