@@ -275,7 +275,7 @@ AFRAME.registerComponent('arrowshoot', {
 		this.direction = this.el.object3D.rotation;
 		this.moveSpeed = -0.01;
 		setTimeout( () => {
-			this.el.remove();
+			this.el.parentNode.removeChild(this.el);
 		}, 2000);
 	},
 
