@@ -330,8 +330,6 @@ AFRAME.registerComponent('rinostart', {
 		var move = this.el.object3D.rotation;
 		move.z = THREE.Math.degToRad(this.random_z);
 		this.el.object3D.rotation = move;
-
-		console.log('move dir : ' + this.random_x + "," + this.random_z);
 	},
 
 	tick: function (time) {
@@ -392,8 +390,6 @@ AFRAME.registerComponent('lulastart', {
 		var move = this.el.object3D.rotation;
 		move.z = THREE.Math.degToRad(this.random_z);
 		this.el.object3D.rotation = move;
-
-		console.log('move dir : ' + this.random_x + "," + this.random_z);
 	},
 
 	tick: function (time) {
@@ -424,8 +420,6 @@ AFRAME.registerComponent('dorestart', {
 		var move = this.el.object3D.rotation;
 		move.z = THREE.Math.degToRad(this.random_z);
 		this.el.object3D.rotation = move;
-
-		console.log('move dir : ' + this.random_x + "," + this.random_z);
 	},
 
 	tick: function (time) {
@@ -456,8 +450,6 @@ AFRAME.registerComponent('solstart', {
 		var move = this.el.object3D.rotation;
 		move.z = THREE.Math.degToRad(this.random_z);
 		this.el.object3D.rotation = move;
-
-		console.log('move dir : ' + this.random_x + "," + this.random_z);
 	},
 
 	tick: function (time) {
@@ -677,6 +669,10 @@ window.onload = () => {
     document.getElementById('obutton').addEventListener('click', function () {
 			document.getElementById('quizux').style.display = 'none';
 
+			// 시계 똑딱이는 소리
+			var entity = document.getElementById('ticktock');
+			entity.components.sound.stopSound();        
+
 			if ( quizs[quizidx].correct === 0 )	{// O 눌렀을때 0이면 정답
 				document.getElementById('quizcorrect').style.display = 'block';
 				document.getElementById('resulttext').innerText = quizs[quizidx].result;
@@ -694,6 +690,9 @@ window.onload = () => {
     // 퀴즈 화면에서 X 버튼 누를때 처리
     document.getElementById('xbutton').addEventListener('click', function () {
 			document.getElementById('quizux').style.display = 'none';
+			// 시계 똑딱이는 소리
+			var entity = document.getElementById('ticktock');
+			entity.components.sound.stopSound();        
 
 			if ( quizs[quizidx].correct === 1 )	{// X 눌렀을때 1이면 정답
 				document.getElementById('quizcorrect').style.display = 'block';
@@ -726,6 +725,10 @@ window.onload = () => {
     document.getElementById('okbefore').addEventListener('click', function () {
 			document.getElementById('quizincorrect').style.display = 'none';
 			document.getElementById('quizux').style.display = 'block';
+
+			// 시계 똑딱이는 소리
+			var entity = document.getElementById('ticktock');
+			entity.components.sound.playSound();        
 		});
 
     // QR 화면으로 가기

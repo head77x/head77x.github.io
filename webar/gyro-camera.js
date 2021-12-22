@@ -70,10 +70,10 @@ AFRAME.registerComponent('gyro-camera', {
 
                 document.addEventListener('touchend', function () { handler() }, false);
 
-                alert('After camera permission prompt, please tap the screen to activate geolocation.');
+                alert('AR 구동을 위해, 카메라 권한 요청 및 위치 정보 사용요청이 뜹니다. 모두 허용해주세요');
             } else {
                 var timeout = setTimeout(function () {
-                    alert('Please enable device orientation in Settings > Safari > Motion & Orientation Access.')
+                    alert('장치 모션 및 방향 정보 설정이 잠겨있습니다. 셋팅 > Safari > 카메라 및 위치 설정을 허용해주세요')
                 }, 750);
                 window.addEventListener(eventName, function () {
                     clearTimeout(timeout);
@@ -238,7 +238,7 @@ AFRAME.registerComponent('gyro-camera', {
         position.y = 0;
         position.z = 0;
 
-        console.log("object : " + JSON.stringify(position));
+//        console.log("object : " + JSON.stringify(position));
 
         // update position
         this.el.setAttribute('position', position);
@@ -356,7 +356,7 @@ AFRAME.registerComponent('gyro-camera', {
         var cameraRotation = this.el.getAttribute('rotation').y;
         var yawRotation = THREE.Math.radToDeg(this.lookControls.yawObject.rotation.y);
         var offset = (heading - (cameraRotation - yawRotation)) % 360;
-        this.lookControls.yawObject.rotation.y = THREE.Math.degToRad(offset);
+//        this.lookControls.yawObject.rotation.y = THREE.Math.degToRad(offset);
 /*
         const div = document.querySelector('.instructions');
         div.innerText = "heading : " + JSON.stringify(this.lookControls.yawObject.rotation.y);
