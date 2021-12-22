@@ -166,7 +166,11 @@ AFRAME.registerComponent('brandon-hit', {
 									var entity = document.getElementById('hitheart');
 									entity.components.sound.playSound();        
 
-									this.el.setAttribute("animation-mixer","clip: hitted; loop: once; duration: 1;");					
+									this.el.setAttribute("animation-mixer","clip: hitted; loop: once; duration: 2;");					
+
+									setTimeout( ()=> {
+										this.el.setAttribute("animation-mixer","clip: fly; loop: repeat; duration: 5;");					
+									}, 2000);
 								}
 						}
 					});
@@ -498,16 +502,22 @@ AFRAME.registerComponent('solstart', {
 							clearInterval(this.intervalId);
 
 							document.getElementById('molymodel').object3D.visible = true;
+							document.getElementById('molymodel').setAttribute("animation-mixer","clip: fly; loop: repeat; duration: 5;");					
 							document.getElementById('molymodel').setAttribute('moveanywhere','');
 							document.getElementById('rinomodel').object3D.visible = true;
+							document.getElementById('rinomodel').setAttribute("animation-mixer","clip: fly; loop: repeat; duration: 5;");					
 							document.getElementById('rinomodel').setAttribute('moveanywhere','');
 							document.getElementById('suemodel').object3D.visible = true;
+							document.getElementById('suemodel').setAttribute("animation-mixer","clip: fly; loop: repeat; duration: 5;");					
 							document.getElementById('suemodel').setAttribute('moveanywhere','');
 							document.getElementById('lulamodel').object3D.visible = true;
+							document.getElementById('lulamodel').setAttribute("animation-mixer","clip: fly; loop: repeat; duration: 5;");					
 							document.getElementById('lulamodel').setAttribute('moveanywhere','');
 							document.getElementById('doremodel').object3D.visible = true;
+							document.getElementById('doremodel').setAttribute("animation-mixer","clip: fly; loop: repeat; duration: 5;");					
 							document.getElementById('doremodel').setAttribute('moveanywhere','');
 							document.getElementById('solmodel').object3D.visible = true;
+							document.getElementById('solmodel').setAttribute("animation-mixer","clip: fly; loop: repeat; duration: 5;");					
 							document.getElementById('solmodel').setAttribute('moveanywhere','');
 
 							// 게임 UX 표시
