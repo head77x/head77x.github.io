@@ -533,6 +533,7 @@ function allResetToStart() {
 
 	document.getElementById('bow').object3D.visible = false;
 
+	quizidx = 0;
 }
 
 // UX 바뀔때 모든 화살 없애기
@@ -689,12 +690,12 @@ window.onload = () => {
 
 			quizidx = quizidx + 1;
 
-			if ( quizidx >= 1 )	{ // 모든 퀴즈 맞췄으면...
+			if ( quizidx >= 6 )	{ // 모든 퀴즈 맞췄으면...
 				document.getElementById('congratux').style.display = 'block';
 			} else {	// 아니면 계속 진행
 				document.getElementById('gameux').style.display = 'block';
+				gameMode = 'gamemode';
 			}
-
 		});
 
     // 퀴즈 오답화면에서 다시 시도 버튼 눌러, 다시 퀴즈 맞추기 진행 
