@@ -1,4 +1,4 @@
-var gameMode = 'titlemode';
+var gameMode = 'titlemode';		// 현재 게임 포커스 상태
 
 var camrot;
 
@@ -141,7 +141,7 @@ AFRAME.registerComponent('brandon-hit', {
 			document.getElementById('win' + this.data.chrnum).style.display = 'flex';				
 
 			document.getElementById('quiztext').innerText = quizs[quizidx].text;
-			gameMode = 'quizready';
+			gameMode = 'quizready';		// 퀴즈 진행중
 
 			// 시계 똑딱이는 소리
 			var entity = document.getElementById('ticktock');
@@ -159,6 +159,8 @@ AFRAME.registerComponent('brandon-shoot', {
     },
 
 		makeone(e) {
+			if ( gameMode != 'gamemode' ) return;
+
 			let scene = document.querySelector('a-scene');
 			let model = document.createElement('a-entity');
 			
@@ -493,17 +495,31 @@ AFRAME.registerComponent('solstart', {
 	}
 });
 
+// 초기 시작시에 기본 초기화 처리
+function allResetToStart() {
+	document.getElementById('solstart').object3D.position.set(0,0,0);
+	document.getElementById('molystart').object3D.position.set(0,0,0);
+	document.getElementById('rinostart').object3D.position.set(0,0,0);
+	document.getElementById('suestart').object3D.position.set(0,0,0);
+	document.getElementById('lulastart').object3D.position.set(0,0,0);
+	document.getElementById('dorestart').object3D.position.set(0,0,0);
+
+	document.getElementById('molymodel').object3D.visible = false;
+	document.getElementById('molymodel').removeAttribute('moveanywhere');
+	document.getElementById('rinomodel').object3D.visible = false;
+	document.getElementById('rinomodel').removeAttribute('moveanywhere');
+	document.getElementById('suemodel').object3D.visible = false;
+	document.getElementById('suemodel').removeAttribute('moveanywhere');
+	document.getElementById('lulamodel').object3D.visible = false;
+	document.getElementById('lulamodel').removeAttribute('moveanywhere');
+	document.getElementById('doremodel').object3D.visible = false;
+	document.getElementById('doremodel').removeAttribute('moveanywhere');
+	document.getElementById('solmodel').object3D.visible = false;
+	document.getElementById('solmodel').removeAttribute('moveanywhere');
+}
+
     
 window.onload = () => {
-/*
-    const button = document.querySelector('button[data-action="change"]');
-    button.innerText = '﹖';
-
-    let places = staticLoadPlaces();
-    renderPlaces(places);
-    const ui = document.getElementById('firstux');
-    ui.setAttribute('visible', true);
-*/
 /*
     var tex = new THREE.TextureLoader().load('./assets/lambert1_baseColor.png');
     tex.flipY = false; // for glTF models.
@@ -544,38 +560,56 @@ window.onload = () => {
     document.getElementById('helpbutton').addEventListener('click', function () {
         document.getElementById('firstux').style.display = 'none';
         document.getElementById('helpux').style.display = 'block';
-        gameMode = 'titlehelp';
+        gameMode = 'titlehelp';		// 타이틀 화면에서 도움말 보기 상태
 
         var entity = document.getElementById('bgm');
         entity.components.sound.playSound();        
     });
 
-    // 도움말 ux에서 확인 버튼 누를때 처리
-    document.getElementById('helpokbutton').addEventListener('click', function () {
-        if ( gameMode === 'titlehelp') {
-            document.getElementById('firstux').style.display = 'block';
-            document.getElementById('helpux').style.display = 'none';
-            gameMode = 'titlemode';
-        } else {
-					document.getElementById('gameux').style.display = 'block';
-					document.getElementById('helpux').style.display = 'none';
-					gameMode = 'gamemode';
-				}
-    });
-
     // 게임중 도움말 화면으로 가기 버튼
     document.getElementById('gamehelpbutton').addEventListener('click', function () {
-        document.getElementById('helpux').style.display = 'block';
-        document.getElementById('gameux').style.display = 'none';
-        gameMode = 'gamehelp';
-    });
+			document.getElementById('helpux').style.display = 'block';
+			document.getElementById('gameux').style.display = 'none';
+			gameMode = 'gamehelp';
+		});
 
     // 메인 화면으로 갈지 물어보는 화면
     document.getElementById('whathomebutton').addEventListener('click', function () {
 			document.getElementById('confirmhome').style.display = 'block';
 			document.getElementById('gameux').style.display = 'none';
-	});
+			gameMode = 'askbackhome';
+		});
 
+    // 게임 초기 화면으로 가기
+    document.getElementById('tohomeok').addEventListener('click', function () {
+			document.getElementById('confirmhome').style.display = 'none';
+			document.getElementById('firstux').style.display = 'block';
+			gameMode = 'titlemode';
+
+			allResetToStart();
+		});
+
+		// 게임 계속 진행 처리
+    document.getElementById('tohomecancel').addEventListener('click', function () {
+			document.getElementById('confirmhome').style.display = 'none';
+			document.getElementById('gameux').style.display = 'block';
+			gameMode = 'gamemode';
+		});
+
+		
+
+    // 도움말 ux에서 확인 버튼 누를때 처리
+    document.getElementById('helpokbutton').addEventListener('click', function () {
+			if ( gameMode === 'titlehelp') {		// 타이틀 화면에서 도움말 보기 상태 처리
+					document.getElementById('firstux').style.display = 'block';
+					document.getElementById('helpux').style.display = 'none';
+					gameMode = 'titlemode';
+			} else {	// 게임중 도움말 보기 상태 처리
+				document.getElementById('gameux').style.display = 'block';
+				document.getElementById('helpux').style.display = 'none';
+				gameMode = 'gamemode';
+			}
+		});
 
     // 퀴즈 화면에서 O 버튼 누를때 처리
     document.getElementById('obutton').addEventListener('click', function () {
@@ -641,6 +675,9 @@ window.onload = () => {
     document.getElementById('restarthome').addEventListener('click', function () {
 			document.getElementById('qrux').style.display = 'none';
 			document.getElementById('firstux').style.display = 'block';
+			gameMode = 'titlemode';
+
+			allResetToStart();
 		});
 
 
@@ -648,24 +685,9 @@ window.onload = () => {
     document.querySelector('a-scene').addEventListener('loaded', function () {
         document.getElementById('firstux').style.display = 'block';
     });
-
-
-
-
 };
 
-function staticLoadPlaces() {
-    return [
-        {
-            name: 'Pokèmon',
-            location: {
-                lat: 37.478545,
-                lng: 126.916387,
-            },
-        },
-    ];
-}
-
+/*
 var models = [
     {
         url: './assets/sol_v02.glb',
@@ -689,6 +711,7 @@ var models = [
         info: 'Dragonite, Lv. 99, HP 150/150',
     },
 ];
+*/
 
 var modelIndex = 0;
 var setModel = function (model, entity) {
@@ -714,7 +737,7 @@ var setModel = function (model, entity) {
     div.innerText = model.info;
 */    
 };
-
+/*
 function renderPlaces(places) {
     let scene = document.querySelector('a-scene');
 
@@ -740,3 +763,4 @@ function renderPlaces(places) {
         
     });
 }
+*/
