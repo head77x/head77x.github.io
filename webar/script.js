@@ -473,6 +473,8 @@ AFRAME.registerComponent('solstart', {
 							document.getElementById('solmodel').setAttribute('moveanywhere','');
 
 							// 게임 UX 표시
+							gameMode = 'gamemode';
+
 							document.getElementById('gameux').style.display = 'block';
 							document.getElementById('bow').object3D.visible = true;
 						} else
@@ -544,7 +546,6 @@ window.onload = () => {
     // 첫번째 UX에서 스타트 버튼 누를때 처리
     document.getElementById('startgamebutton').addEventListener('click', function () {
         document.getElementById('firstux').style.display = 'none';
-				gameMode = 'gamemode';
 
         document.getElementById('molystart').object3D.visible = true;
         document.getElementById('rinostart').object3D.visible = true;
