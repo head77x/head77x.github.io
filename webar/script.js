@@ -527,27 +527,27 @@ function allResetToStart() {
 
 	document.getElementById('molymodel').object3D.visible = false;
 	document.getElementById('molymodel').removeAttribute('moveanywhere');
-	document.getElementById('molymodel').firstChild.emit('restore');
+	document.getElementById('molihit').emit('restore');
 
 	document.getElementById('rinomodel').object3D.visible = false;
 	document.getElementById('rinomodel').removeAttribute('moveanywhere');
-	document.getElementById('rinomodel').firstChild.emit('restore');
+	document.getElementById('rinohit').emit('restore');
 
 	document.getElementById('suemodel').object3D.visible = false;
 	document.getElementById('suemodel').removeAttribute('moveanywhere');
-	document.getElementById('suemodel').firstChild.emit('restore');
+	document.getElementById('shoohit').emit('restore');
 
 	document.getElementById('lulamodel').object3D.visible = false;
 	document.getElementById('lulamodel').removeAttribute('moveanywhere');
-	document.getElementById('lulamodel').firstChild.emit('restore');
+	document.getElementById('luluhit').emit('restore');
 
 	document.getElementById('doremodel').object3D.visible = false;
 	document.getElementById('doremodel').removeAttribute('moveanywhere');
-	document.getElementById('doremodel').firstChild.emit('restore');
+	document.getElementById('dorehit').emit('restore');
 
 	document.getElementById('solmodel').object3D.visible = false;
 	document.getElementById('solmodel').removeAttribute('moveanywhere');
-	document.getElementById('solmodel').firstChild.emit('restore');
+	document.getElementById('solhit').emit('restore');
 
 	document.getElementById('bow').object3D.visible = false;
 
