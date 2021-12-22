@@ -501,12 +501,12 @@ AFRAME.registerComponent('solstart', {
 
 // 초기 시작시에 기본 초기화 처리
 function allResetToStart() {
-	document.getElementById('solstart').object3D.position.set(0,0,0);
-	document.getElementById('molystart').object3D.position.set(0,0,0);
-	document.getElementById('rinostart').object3D.position.set(0,0,0);
-	document.getElementById('suestart').object3D.position.set(0,0,0);
-	document.getElementById('lulastart').object3D.position.set(0,0,0);
-	document.getElementById('dorestart').object3D.position.set(0,0,0);
+	document.getElementById('solstart').object3D.rotation.set(0,0,0);
+	document.getElementById('molystart').object3D.rotation.set(0,0,0);
+	document.getElementById('rinostart').object3D.rotation.set(0,0,0);
+	document.getElementById('suestart').object3D.rotation.set(0,0,0);
+	document.getElementById('lulastart').object3D.rotation.set(0,0,0);
+	document.getElementById('dorestart').object3D.rotation.set(0,0,0);
 
 	document.getElementById('molymodel').object3D.visible = false;
 	document.getElementById('molymodel').removeAttribute('moveanywhere');
@@ -544,7 +544,7 @@ window.onload = () => {
     // 첫번째 UX에서 스타트 버튼 누를때 처리
     document.getElementById('startgamebutton').addEventListener('click', function () {
         document.getElementById('firstux').style.display = 'none';
-
+				gameMode = 'gamemode';
 
         document.getElementById('molystart').object3D.visible = true;
         document.getElementById('rinostart').object3D.visible = true;
