@@ -117,10 +117,12 @@ AFRAME.registerComponent('brandon-hit', {
 								who.object3D.getWorldPosition(arrowpos);
 
 								var mypos = new THREE.Vector3( this.el.object3D.position.x, this.el.object3D.position.y, this.el.object3D.position.z );
+								mypos.y += 0.5;	// 높이 보정
+
 								this.el.object3D.getWorldPosition(mypos);
 
 								if ( mypos.distanceTo( arrowpos ) < 1 ) {
-									who.remove();
+									removeAllArrow();
 
 									this.mydamage--;
 
