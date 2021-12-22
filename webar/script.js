@@ -37,6 +37,7 @@ function showQR() {
 */	
 document.getElementById('congratux').style.display = 'none';
 document.getElementById('qrux').style.display = 'block';
+removeAllQR();
 
 var qrcode = new QRCode(document.getElementById("qrcode"), {
 	text: "https://www.naver.com",
@@ -537,6 +538,15 @@ function allResetToStart() {
 // UX 바뀔때 모든 화살 없애기
 function removeAllArrow() {
 	let pa = document.getElementById('gun');
+
+	while (pa.firstChild) {
+		pa.removeChild(pa.firstChild);
+	}
+}
+
+// 기존 QR코드 삭제
+function removeAllQR() {
+	let pa = document.getElementById('qrcode');
 
 	while (pa.firstChild) {
 		pa.removeChild(pa.firstChild);
