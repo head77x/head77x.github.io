@@ -214,9 +214,9 @@ AFRAME.registerComponent('brandon-shoot', {
     },
 
 		makeone(e) {
-			if ( gameMode != 'gamemode' ) return;
+			return;
+			if ( gameMode != 'gamemode' || this.el === null || this.el.object3D === null ) return;
 
-			let scene = document.querySelector('a-scene');
 			let model = document.createElement('a-entity');
 			
 			model.setAttribute('gltf-model', 'url(./assets/arrow.gltf)');
