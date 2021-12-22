@@ -214,11 +214,10 @@ AFRAME.registerComponent('brandon-shoot', {
     },
 
 		makeone(e) {
-			return;
 			if ( gameMode != 'gamemode' || this.el === null || this.el.object3D === null ) return;
 
 			let model = document.createElement('a-entity');
-			
+/*			
 			model.setAttribute('gltf-model', 'url(./assets/arrow.gltf)');
 
 			model.object3D.scale = this.el.object3D.scale;
@@ -230,6 +229,7 @@ AFRAME.registerComponent('brandon-shoot', {
 
 			this.startpoint = e.changedTouches[0].clientY;
 			this.bowlevel = 0;
+*/			
 		},
 
 		moveone(e) {
