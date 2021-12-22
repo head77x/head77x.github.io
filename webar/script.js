@@ -100,6 +100,13 @@ AFRAME.registerComponent('brandon-hit', {
     init: function () {
         this.mydamage = 2;
         this.checker = document.getElementById('gun');
+
+				this.eventHandlerFn = () => { 
+					this.mydamage = 2; 
+					document.getElementById('iconimg' + this.data.chrnum).style.filter = 'brightness(10%)';
+				};
+
+				this.el.addEventListener('restore', this.eventHandlerFn);				
     },
     tick: function(time) {
         if ( this.checker.childNodes.length > 1 )
@@ -520,16 +527,27 @@ function allResetToStart() {
 
 	document.getElementById('molymodel').object3D.visible = false;
 	document.getElementById('molymodel').removeAttribute('moveanywhere');
+	document.getElementById('molymodel').firstChild.emit('restore');
+
 	document.getElementById('rinomodel').object3D.visible = false;
 	document.getElementById('rinomodel').removeAttribute('moveanywhere');
+	document.getElementById('rinomodel').firstChild.emit('restore');
+
 	document.getElementById('suemodel').object3D.visible = false;
 	document.getElementById('suemodel').removeAttribute('moveanywhere');
+	document.getElementById('suemodel').firstChild.emit('restore');
+
 	document.getElementById('lulamodel').object3D.visible = false;
 	document.getElementById('lulamodel').removeAttribute('moveanywhere');
+	document.getElementById('lulamodel').firstChild.emit('restore');
+
 	document.getElementById('doremodel').object3D.visible = false;
 	document.getElementById('doremodel').removeAttribute('moveanywhere');
+	document.getElementById('doremodel').firstChild.emit('restore');
+
 	document.getElementById('solmodel').object3D.visible = false;
 	document.getElementById('solmodel').removeAttribute('moveanywhere');
+	document.getElementById('solmodel').firstChild.emit('restore');
 
 	document.getElementById('bow').object3D.visible = false;
 
