@@ -14,6 +14,19 @@ var quizs = [
 var quizidx = 0;
 
 function showQR() {
+document.getElementById('congratux').style.display = 'none';
+document.getElementById('qrux').style.display = 'block';
+removeAllQR();
+
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	text: "https://www.naver.com",
+	width: 64,
+	height: 64,
+	colorDark : "#000000",
+	colorLight : "#ffffff",
+	correctLevel : QRCode.CorrectLevel.H
+});
+
 /*	
 	$.ajax("https://game.digilog-xr.com/app/gameQr")
 	.done(function(response) {
@@ -24,8 +37,8 @@ function showQR() {
 		
 		var qrcode = new QRCode(document.getElementById("qrcode"), {
 			text: response.result.qrString,
-			width: 200,
-			height: 200,
+			width: 64,
+			height: 64,
 			colorDark : "#000000",
 			colorLight : "#ffffff",
 			correctLevel : QRCode.CorrectLevel.H
@@ -35,18 +48,7 @@ function showQR() {
 		console.log(error);
 	});
 */	
-document.getElementById('congratux').style.display = 'none';
-document.getElementById('qrux').style.display = 'block';
-removeAllQR();
 
-var qrcode = new QRCode(document.getElementById("qrcode"), {
-	text: "https://www.naver.com",
-	width: 128,
-	height: 128,
-	colorDark : "#000000",
-	colorLight : "#ffffff",
-	correctLevel : QRCode.CorrectLevel.H
-});
 }
 
 AFRAME.registerComponent('camrot', {
