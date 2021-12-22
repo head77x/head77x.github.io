@@ -112,6 +112,8 @@ AFRAME.registerComponent('brandon-hit', {
 								this.el.object3D.getWorldPosition(mypos);
 
 								if ( mypos.distanceTo( arrowpos ) < 1 ) {
+									who.remove();
+
 									this.mydamage--;
 
 									if ( this.mydamage === 1 ) {
