@@ -244,10 +244,11 @@ AFRAME.registerComponent('brandon-shoot', {
 
 		moveone(e) {
 			if ( gameMode != 'gamemode' ) return;
+/*
 
 			if (this.myarrow != null) {
-				let dist = 0;//(e.changedTouches[0].clientY - this.startpoint);
-/*
+				let dist = (e.changedTouches[0].clientY - this.startpoint);
+
 				if ( dist > 30 && dist <= 100 ) {
 					dist = -0.03;
 					this.bowlevel = 1;
@@ -265,9 +266,9 @@ AFRAME.registerComponent('brandon-shoot', {
 					this.bowlevel = 0;
 					document.getElementById('bow').setAttribute("animation-mixer","clip: ready0; loop: once; duration: 0.5; clampWhenFinished: true;");					
 				}
-*/
 				this.myarrow.object3D.position.z = dist;
 			}
+*/
 		},
 
     shootone() {
