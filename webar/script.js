@@ -111,15 +111,21 @@ AFRAME.registerComponent('brandon-hit', {
 								var mypos = new THREE.Vector3( this.el.object3D.position.x, this.el.object3D.position.y, this.el.object3D.position.z );
 								this.el.object3D.getWorldPosition(mypos);
 
-//                    console.log('arrowpos: ' +  mypos.distanceTo( arrowpos ));
-
 								if ( mypos.distanceTo( arrowpos ) < 1 ) {
+									this.mydamage--;
+
+									if ( this.mydamage === 1 ) {
+										document.getElementById('iconimg' + this.data.chrnum).style.filter = 'brightness(50%)';
+									} else {
+										document.getElementById('iconimg' + this.data.chrnum).style.filter = 'brightness(100%)';
+										this.openquiz();
+									}
 
 									// 맞는 소리
 									var entity = document.getElementById('hitheart');
 									entity.components.sound.playSound();        
 
-									this.openquiz();
+									this.el.setAttribute("animation-mixer","clip: hitted; loop: once; duration: 1;");					
 								}
 						}
 					});
