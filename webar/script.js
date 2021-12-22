@@ -127,6 +127,7 @@ AFRAME.registerComponent('brandon-hit', {
         this.checker = document.getElementById('gun');
 
 				this.eventHandlerFn = () => { 
+					this.nohittime = false;
 					this.mydamage = 2; 
 					document.getElementById('iconimg' + this.data.chrnum).style.filter = 'brightness(20%)';
 					this.el.object3D.visible = true;
@@ -135,7 +136,7 @@ AFRAME.registerComponent('brandon-hit', {
 				this.el.addEventListener('restore', this.eventHandlerFn);				
     },
     tick: function(time) {
-        if ( this.mydamage > 0 && this.checker.childNodes.length > 1 )
+        if ( gameMode === 'gamemode' && this.nohittime === false && this.mydamage > 0 && this.checker.childNodes.length > 1 )
         {
 					this.checker.childNodes.forEach((who, index, sourceArr) => {
 						if ( who.object3D != null && this.el.object3D != null ) {
@@ -143,12 +144,12 @@ AFRAME.registerComponent('brandon-hit', {
 								who.object3D.getWorldPosition(arrowpos);
 
 								var mypos = new THREE.Vector3( this.el.object3D.position.x, this.el.object3D.position.y, this.el.object3D.position.z );
-								mypos.y += 0.5;	// 높이 보정
+								mypos.y -= 0.5;	// 높이 보정
 
 								this.el.object3D.getWorldPosition(mypos);
 
 								if ( mypos.distanceTo( arrowpos ) < 1 ) {
-									removeAllArrow();
+									this.nohittime = true;
 
 									this.mydamage--;
 
@@ -170,6 +171,7 @@ AFRAME.registerComponent('brandon-hit', {
 
 									setTimeout( ()=> {
 										this.el.setAttribute("animation-mixer","clip: fly; loop: repeat; duration: 5;");					
+										this.nohittime = false;
 									}, 2000);
 								}
 						}
@@ -193,7 +195,7 @@ AFRAME.registerComponent('brandon-hit', {
 
 			document.getElementById('quiztext').innerText = quizs[quizidx].text;
 			gameMode = 'quizready';		// 퀴즈 진행중
-			removeAllArrow();
+//			removeAllArrow();
 
 			// 시계 똑딱이는 소리
 			var entity = document.getElementById('ticktock');
