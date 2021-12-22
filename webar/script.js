@@ -272,27 +272,16 @@ AFRAME.registerComponent('arrowshoot', {
 		shootlevel: {type: 'number', default: 1},
 	},
 	init: function () {
-		this.restart(0);
-	},
-
-	restart: function(whattime) {
 		this.direction = this.el.object3D.rotation;
 		this.moveSpeed = -0.01;
-		this.initflag = true;
+		setTimeout( () => {
+			this.el.remove();
+		}, 2000);
 	},
 
 	tick: function (time) {
-		if ( this.initflag ) {
-			this.starttime = time;
-			this.initflag = false;
-		} else {
-			this.el.object3D.translateZ(this.moveSpeed);
-			this.el.object3D.translateY(-0.001 * (2 - this.data.shootlevel) );
-
-			if ( time - this.starttime > 2000 ) {
-				this.el.remove();
-			}
-		}
+		this.el.object3D.translateZ(this.moveSpeed);
+		this.el.object3D.translateY(-0.001 * (2 - this.data.shootlevel) );
 	}
 });
 
