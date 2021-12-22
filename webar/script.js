@@ -140,7 +140,7 @@ AFRAME.registerComponent('brandon-hit', {
         if ( gameMode === 'gamemode' && this.nohittime === false && this.mydamage > 0 && this.checker.childNodes.length > 1 )
         {
 					this.checker.childNodes.forEach((who, index, sourceArr) => {
-						if ( who.object3D != null && this.el.object3D != null ) {
+						if ( who != null && who.object3D != null && this.el.object3D != null ) {
 								var arrowpos = new THREE.Vector3( who.object3D.position.x, who.object3D.position.y, who.object3D.position.z );
 								who.object3D.getWorldPosition(arrowpos);
 
@@ -154,7 +154,7 @@ AFRAME.registerComponent('brandon-hit', {
 
 									this.mydamage--;
 
-									console.log('my damage : ' + this.mydamage);
+//									console.log('my damage : ' + this.mydamage);
 
 									if ( this.mydamage === 1 ) {
 										document.getElementById('iconimg' + this.data.chrnum).style.filter = 'brightness(50%)';
@@ -163,11 +163,11 @@ AFRAME.registerComponent('brandon-hit', {
 										this.el.object3D.visible = false;
 										this.openquiz();
 									}
-
+/*
 									// 맞는 소리
 									var entity = document.getElementById('hitheart');
 									entity.components.sound.playSound();        
-
+*/
 									this.el.setAttribute("animation-mixer","clip: hitted; loop: once; duration: 2;");					
 
 									setTimeout( ()=> {
