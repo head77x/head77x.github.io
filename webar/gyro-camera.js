@@ -62,7 +62,7 @@ AFRAME.registerComponent('gyro-camera', {
             // iOS 13+
             if (typeof DeviceOrientationEvent.requestPermission === 'function') {
                 var handler = function () {
-//                    alert('request device orientation');
+                    alert('장치 방향 권한 요청중');
                     console.log('장치 방향 권한 요청중...')
                     DeviceOrientationEvent.requestPermission();
                     document.removeEventListener('touchend', handler);
