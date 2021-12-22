@@ -246,7 +246,7 @@ AFRAME.registerComponent('brandon-shoot', {
 			if ( gameMode != 'gamemode' ) return;
 
 			if (this.myarrow != null) {
-				let dist = (e.changedTouches[0].clientY - this.startpoint);
+				let dist = 0;//(e.changedTouches[0].clientY - this.startpoint);
 /*
 				if ( dist > 30 && dist <= 100 ) {
 					dist = -0.03;
