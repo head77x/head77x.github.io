@@ -522,6 +522,9 @@ function allResetToStart() {
 	document.getElementById('doremodel').removeAttribute('moveanywhere');
 	document.getElementById('solmodel').object3D.visible = false;
 	document.getElementById('solmodel').removeAttribute('moveanywhere');
+
+	document.getElementById('bow').object3D.visible = false;
+
 }
 
     
