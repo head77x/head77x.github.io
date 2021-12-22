@@ -183,6 +183,7 @@ AFRAME.registerComponent('brandon-hit', {
 										document.getElementById('iconimg' + this.data.chrnum).style.filter = 'brightness(50%)';
 									} else {
 										document.getElementById('iconimg' + this.data.chrnum).style.filter = 'brightness(100%)';
+										this.el.object3D.visible = false;
 										this.openquiz();
 									}
 
