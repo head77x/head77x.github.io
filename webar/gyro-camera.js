@@ -104,7 +104,7 @@ AFRAME.registerComponent('gyro-camera', {
         if (this.heading === null) {
             return;
         }
-//        this._updateRotation();
+        this._updateRotation();
     },
 
     remove: function () {
