@@ -225,11 +225,11 @@ AFRAME.registerComponent('brandon-shoot', {
 			model.object3D.rotation = this.el.object3D.rotation;
 			model.object3D.position.z = -0.04;
 
-			this.myarrow = this.el.appendChild(model);
-
 			this.startpoint = e.changedTouches[0].clientY;
 			this.bowlevel = 0;
 */			
+
+			this.myarrow = this.el.appendChild(model);
 		},
 
 		moveone(e) {
