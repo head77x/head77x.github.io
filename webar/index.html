@@ -17,6 +17,7 @@
 	</script>
 	<script src="./gyro-camera.js"></script>
 	<script src="./gyro-entity-object.js"></script>
+	<script src="./html2canvas.min.js"></script>
 	<script src="./script.js"></script>
 	<link rel="stylesheet" type="text/css" href="./style.css"/>
 </head>
@@ -59,7 +60,7 @@
 						target="healthPoints: 2" 
 						gltf-model="url(./assets/chr/moli_v01.gltf)" 
 						position="0 0 -6" 
-						scale="0.3 0.3 0.3" 
+						scale="0.5 0.5 0.5" 
 						rotation="0 0 0" 
 						brandon-hit="chrnum: 2;" 
 						animation-mixer="clip: fly; loop: repeat; duration: 5;"></a-entity>
@@ -115,7 +116,7 @@
 							<a-entity id="firstux2" mixin="gamehelp" visible="true"></a-entity>
 						</a-entity>
 -->
-					<a-entity text="value: version 1.0.1" position="0 1.0 -2.1"></a-entity>
+					<a-entity text="value: version 1.0.2" position="0 1.0 -2.1"></a-entity>
 				</a-entity>
 				<a-entity 
 					id="bow"
@@ -136,22 +137,22 @@
 					></a-entity>
 <!--				<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/bow_anim05.gltf)" position="0 0 -5" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: bowani; loop: repeat; duration: 5;"></a-entity> -->
 				<a-entity id="solstart" position="0 0 0" visible="false">
-					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/chr/sol_v03.gltf)" position="0 0 -5" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: idle; loop: repeat; duration: 5;"></a-entity>
+					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/chr/sol_v03.gltf)" position="0 0 -7" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: idle; loop: repeat; duration: 5;"></a-entity>
 				</a-entity>
 				  <a-entity id="molystart" position="0 0 0" visible="false">
-					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/chr/moli_v01.gltf)" position="0 0 -6" scale="0.3 0.3 0.3" rotation="0 0 0" animation-mixer="clip: idle; loop: repeat; duration: 5;"></a-entity>
+					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/chr/moli_v01.gltf)" position="0 0 -7.5" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: idle; loop: repeat; duration: 5;"></a-entity>
 				</a-entity>
 				<a-entity id="rinostart" position="0 0 0" visible="false">
 					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/chr/rino_v01.gltf)" position="0 0 -6" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: idle; loop: repeat; duration: 5;"></a-entity>
 				</a-entity>
 				<a-entity id="suestart" position="0 0 0" visible="false">
-					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/chr/shoo_v01.gltf)" position="0 0 -6" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: idle; loop: repeat; duration: 5;"></a-entity>
+					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/chr/shoo_v01.gltf)" position="0 0 -6.5" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: idle; loop: repeat; duration: 5;"></a-entity>
 				</a-entity>
 				<a-entity id="dorestart" position="0 0 0" visible="false">
-					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/chr/doremi_v03.gltf)" position="0 0 -6" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: idle; loop: repeat; duration: 5;"></a-entity>
+					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/chr/doremi_v03.gltf)" position="0 0 -5" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: idle; loop: repeat; duration: 5;"></a-entity>
 				</a-entity>
 				<a-entity id="lulastart" position="0 0 0" visible="false">
-					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/chr/Lululala_v04.gltf)" position="0 0 -6" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: idle; loop: repeat; duration: 5;"></a-entity>
+					<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/chr/Lululala_v04.gltf)" position="0 0 -5.5" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: idle; loop: repeat; duration: 5;"></a-entity>
 				</a-entity>
 
 				<a-sound id="bgm" sound="src: #background" loop="true"></a-sound>
