@@ -137,8 +137,6 @@ AFRAME.registerComponent('brandon-hit', {
 				this.el.addEventListener('restore', this.eventHandlerFn);				
     },
     tick: function(time) {
-			return;
-
         if ( gameMode === 'gamemode' && this.nohittime === false && this.mydamage > 0 && this.checker.childNodes.length > 1 )
         {
 					this.checker.childNodes.forEach((who, index, sourceArr) => {
@@ -235,6 +233,7 @@ AFRAME.registerComponent('brandon-shoot', {
 		},
 
 		moveone(e) {
+			return;
 			if ( gameMode != 'gamemode' ) return;
 
 			if (this.myarrow != null) {
@@ -263,6 +262,7 @@ AFRAME.registerComponent('brandon-shoot', {
 		},
 
     shootone() {
+			return;
 			if (this.myarrow != null) {
 				document.getElementById('bow').setAttribute("animation-mixer","clip: shotani; loop: once; duration: 0.5;");					
         this.myarrow.setAttribute("arrowshoot", "shootlevel:" + this.bowlevel + ";");
@@ -279,21 +279,17 @@ AFRAME.registerComponent('arrowshoot', {
 	init: function () {
 		this.direction = this.el.object3D.rotation;
 		this.moveSpeed = -0.01;
-/*		
+
 		setTimeout( () => {
 			if ( this.el != null && this.el.parentNode != null )
 				this.el.parentNode.removeChild(this.el);
 		}, 2000);
-*/		
 	},
 
-/*	
 	tick: function (time) {
 		this.el.object3D.translateZ(this.moveSpeed);
 		this.el.object3D.translateY(-0.001 * (2 - this.data.shootlevel) );
 	}
-*/
-	
 });
 
 AFRAME.registerComponent('moveanywhere', {
