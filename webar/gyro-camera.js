@@ -63,7 +63,7 @@ AFRAME.registerComponent('gyro-camera', {
             if (typeof DeviceOrientationEvent.requestPermission === 'function') {
                 var handler = function () {
 //                    alert('request device orientation');
-                    console.log('Requesting device orientation permissions...')
+                    console.log('장치 방향 권한 요청중...')
                     DeviceOrientationEvent.requestPermission();
                     document.removeEventListener('touchend', handler);
                 };
