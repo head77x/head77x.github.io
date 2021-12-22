@@ -137,6 +137,7 @@ AFRAME.registerComponent('brandon-hit', {
 				this.el.addEventListener('restore', this.eventHandlerFn);				
     },
     tick: function(time) {
+			return;
         if ( gameMode === 'gamemode' && this.nohittime === false && this.mydamage > 0 && this.checker.childNodes.length > 1 )
         {
 					this.checker.childNodes.forEach((who, index, sourceArr) => {
@@ -211,26 +212,34 @@ AFRAME.registerComponent('brandon-shoot', {
         document.body.addEventListener('touchstart', (e) => { this.makeone(e); });
         document.body.addEventListener('touchmove', (e) => { this.moveone(e); });
         document.body.addEventListener('touchend', () => { this.shootone(); });
+				this.maxArrow = 20;
+				this.useArrow = 0;
+				this.arrows = [];
+
+				// 화살 미리 정해진 갯수만큼 생성
+				for ( var i = 0; i < this.maxArrow; i++ ) {
+					let model = document.createElement('a-entity');
+					model.setAttribute('gltf-model', '#arrowtemp');
+
+					model.object3D.scale = this.el.object3D.scale;
+					model.object3D.position = this.el.object3D.position;
+					model.object3D.rotation = this.el.object3D.rotation;
+					model.object3D.position.z = -0.04;
+					model.object3D.visible = false;
+
+					this.el.appendChild(model);
+
+					this.arrows.push(model);
+				}
     },
 
 		makeone(e) {
 			if ( gameMode != 'gamemode' || this.el === null || this.el.object3D === null ) return;
 
-			let model = document.createElement('a-entity');
-			model.setAttribute('gltf-model', '#arrowtemp');
-/*			
-			model.setAttribute('gltf-model', 'url(./assets/arrow.gltf)');
-
-			model.object3D.scale = this.el.object3D.scale;
-			model.object3D.position = this.el.object3D.position;
-			model.object3D.rotation = this.el.object3D.rotation;
-			model.object3D.position.z = -0.04;
-
-			this.startpoint = e.changedTouches[0].clientY;
-			this.bowlevel = 0;
-*/			
-
-			this.myarrow = this.el.appendChild(model);
+			this.myarrow = this.arrows[this.useArrow];
+			this.myarrow.object3D.position = this.el.object3D.position;
+			this.myarrow.object3D.visible = true;
+			this.useArrow = (this.useArrow + 1) % this.maxArrow;
 		},
 
 		moveone(e) {
@@ -281,7 +290,8 @@ AFRAME.registerComponent('arrowshoot', {
 
 		setTimeout( () => {
 			if ( this.el != null && this.el.parentNode != null )
-				this.el.parentNode.removeChild(this.el);
+				this.el.object3D.visible = false;
+        this.el.removeAttribute("arrowshoot");
 		}, 2000);
 	},
 
