@@ -126,6 +126,8 @@ AFRAME.registerComponent('brandon-hit', {
 
 									this.mydamage--;
 
+									console.log('my damage : ' + this.mydamage);
+
 									if ( this.mydamage === 1 ) {
 										document.getElementById('iconimg' + this.data.chrnum).style.filter = 'brightness(50%)';
 									} else {
