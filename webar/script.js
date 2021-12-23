@@ -216,8 +216,10 @@ AFRAME.registerComponent('brandon-shoot', {
 				this.useArrow = 0;
 				this.arrows = [];
 
+				
 				// 화살 미리 정해진 갯수만큼 생성
 				for ( var i = 0; i < this.maxArrow; i++ ) {
+/*					
 					let model = document.createElement('a-entity');
 					model.setAttribute('gltf-model', '#arrowtemp');
 
@@ -225,10 +227,12 @@ AFRAME.registerComponent('brandon-shoot', {
 					model.object3D.position = this.el.object3D.position;
 					model.object3D.rotation = this.el.object3D.rotation;
 					model.object3D.position.z = -0.04;
-//					model.object3D.visible = 1;
+					model.object3D.visible = 1;
 
 					this.el.appendChild(model);
-
+*/
+					let model = document.getElementById('arrow' + (i+1));
+					console.log('arrows : ' + model);
 					this.arrows.push(model);
 				}
     },
