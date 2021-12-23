@@ -37,6 +37,9 @@ var quizidx = 0;
 	}
 
 function showQR() {
+var entity = document.getElementById('bgm');
+entity.components.sound.stopSound();        
+
 document.getElementById('congratux').style.display = 'none';
 document.getElementById('qrux').style.display = 'block';
 removeAllQR();
