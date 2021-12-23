@@ -61,6 +61,7 @@ AFRAME.registerComponent('gyro-camera', {
 //        if (!!navigator.userAgent.match(/Version\/[\d.]+.*Safari/)) {
             // iOS 13+
             if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+/*                
                 var handler = function () {
                     alert('장치 방향 권한 요청중');
                     console.log('장치 방향 권한 요청중...')
@@ -69,7 +70,7 @@ AFRAME.registerComponent('gyro-camera', {
                 };
 
                 document.addEventListener('touchend', function () { handler() }, false);
-
+*/
                 alert('AR 구동을 위해, 카메라 권한 요청 및 위치 정보 사용요청이 뜹니다. 모두 허용해주세요');
             } else {
                 var timeout = setTimeout(function () {
