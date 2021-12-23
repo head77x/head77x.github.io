@@ -225,7 +225,7 @@ AFRAME.registerComponent('brandon-shoot', {
 					model.object3D.position = this.el.object3D.position;
 					model.object3D.rotation = this.el.object3D.rotation;
 					model.object3D.position.z = -0.04;
-					model.object3D.visible = false;
+					model.object3D.visible = 1;
 
 					this.el.appendChild(model);
 
@@ -238,7 +238,7 @@ AFRAME.registerComponent('brandon-shoot', {
 
 			this.myarrow = this.arrows[this.useArrow];
 			this.myarrow.object3D.position = this.el.object3D.position;
-			this.myarrow.object3D.visible = true;
+//			this.myarrow.object3D.visible = true;
 			this.useArrow = (this.useArrow + 1) % this.maxArrow;
 		},
 
