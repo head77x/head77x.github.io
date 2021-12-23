@@ -14,12 +14,13 @@ var quizs = [
 var quizidx = 0;
 
 	function saveQR() {
+/*		
 		var temp = document.getElementsByTagName('canvas');
 
 		if ( temp != null ) {
 			temp[0].parentNode.removeChild(temp[0]);
 		}
-
+*/
 		html2canvas(document.querySelector("#scrmine"))
 		.then(
 		function (canvas) {
@@ -49,7 +50,7 @@ entity.components.sound.stopSound();
 document.getElementById('congratux').style.display = 'none';
 document.getElementById('qrux').style.display = 'block';
 removeAllQR();
-
+/*
 var qrcode = new QRCode(document.getElementById("qrcode"), {
 	text: "https://www.naver.com",
 	width: 64,
@@ -58,8 +59,7 @@ var qrcode = new QRCode(document.getElementById("qrcode"), {
 	colorLight : "#ffffff",
 	correctLevel : QRCode.CorrectLevel.H
 });
-
-/*	
+*/
 	$.ajax("https://game.digilog-xr.com/app/gameQr")
 	.done(function(response) {
 		console.log("qr return : " + response.result.qrString);
@@ -79,8 +79,6 @@ var qrcode = new QRCode(document.getElementById("qrcode"), {
 	.fail(function(error) {
 		console.log(error);
 	});
-*/	
-
 }
 
 AFRAME.registerComponent('camrot', {
@@ -330,7 +328,7 @@ AFRAME.registerComponent('moveanywhere', {
 	},
 
 	tick: function (time) {
-//		this.el.object3D.rotateX(THREE.Math.degToRad(this.random_x));
+		this.el.object3D.rotateX(THREE.Math.degToRad(this.random_x));
 
 		if ( time > this.random_time ) {
 			this.restart(time);
