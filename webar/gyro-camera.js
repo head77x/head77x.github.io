@@ -65,10 +65,10 @@ AFRAME.registerComponent('gyro-camera', {
 //                    alert('장치 방향 권한 요청중');
                     console.log('장치 방향 권한 요청중...')
                     DeviceOrientationEvent.requestPermission();
-                    document.removeEventListener('touchend', handler);
+                    document.removeEventListener('click', handler);
                 };
 
-                document.addEventListener('touchend', function () { handler() }, false);
+                document.addEventListener('click', function () { handler() }, false);
 
                 alert('AR 구동을 위해, 카메라 권한 요청 및 위치 정보 사용요청이 뜹니다. 모두 허용해주세요');
             } else {
