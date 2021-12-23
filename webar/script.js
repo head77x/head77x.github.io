@@ -13,6 +13,9 @@ var quizs = [
 
 var quizidx = 0;
 
+$('head meta[name=viewport]').remove();
+$('head').prepend('<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0" />');
+
 	function saveQR() {
 		html2canvas(document.body)
 		.then(
@@ -240,16 +243,17 @@ AFRAME.registerComponent('brandon-shoot', {
     },
 
 		makeone(e) {
-			if ( gameMode != 'gamemode' || this.el === null || this.el.object3D === null ) return;
+			if ( gameMode != 'gamemode' || this.el === null || this.el.object3D === null || e === null || e.changedTouches[0] === null ) return;
 
 			this.myarrow = this.arrows[this.useArrow];
 			this.myarrow.object3D.position = this.el.object3D.position;
 			this.myarrow.object3D.visible = 1;
 			this.useArrow = (this.useArrow + 1) % this.maxArrow;
+			this.startpoint = e.changedTouches[0].clientY;
 		},
 
 		moveone(e) {
-			if ( gameMode != 'gamemode' ) return;
+			if ( gameMode != 'gamemode' || e === null || e.changedTouches[0] === null ) return;
 
 			if (this.myarrow != null && e != null && e.changedTouches[0] != null ) {
 				let dist = (e.changedTouches[0].clientY - this.startpoint);
