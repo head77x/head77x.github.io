@@ -219,9 +219,6 @@ AFRAME.registerComponent('brandon-shoot', {
 				// 화살 미리 정해진 갯수만큼 생성
 				for ( var i = 0; i < this.maxArrow; i++ ) {
 					let model = document.getElementById('arrow' + (i+1));
-
-					model.object3D.visible = 0;
-
 					this.arrows.push(model);
 				}
     },
@@ -230,14 +227,13 @@ AFRAME.registerComponent('brandon-shoot', {
 			if ( gameMode != 'gamemode' || this.el === null || this.el.object3D === null || e === null || e.changedTouches[0] === null ) return;
 
 			this.myarrow = this.arrows[this.useArrow];
-			this.myarrow.object3D.scale = this.el.object3D.scale;
-			this.myarrow.object3D.position.set( this.el.object3D.position );
-			this.myarrow.object3D.rotation = this.el.object3D.rotation;
-			this.myarrow.object3D.position.z = -0.04;
+//			this.myarrow.object3D.scale = this.el.object3D.scale;
+			this.myarrow.object3D.position.set( 0, 0, -0.04 );
+//			this.myarrow.object3D.rotation = this.el.object3D.rotation;
 
 			console.log('what pos : ' + this.myarrow.object3D.position.z );
 
-			this.myarrow.object3D.visible = 1;
+			this.myarrow.object3D.visible = true;
 			this.useArrow = (this.useArrow + 1) % this.maxArrow;
 			this.startpoint = e.changedTouches[0].clientY;
 			this.bowlevel = 0;
@@ -293,7 +289,7 @@ AFRAME.registerComponent('arrowshoot', {
 
 		setTimeout( () => {
 			if ( this.el != null && this.el.parentNode != null )
-				this.el.object3D.visible = 0;
+				this.el.object3D.visible = false;
         this.el.removeAttribute("arrowshoot");
 		}, 2000);
 	},
