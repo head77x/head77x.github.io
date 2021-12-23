@@ -140,7 +140,7 @@ AFRAME.registerComponent('brandon-hit', {
         if ( gameMode === 'gamemode' && this.nohittime === false && this.mydamage > 0 && this.checker.childNodes.length > 1 )
         {
 					this.checker.childNodes.forEach((who, index, sourceArr) => {
-						if ( who != null && who.object3D != null && who.object3D.visible === 1 && this.el.object3D != null ) {
+						if ( who != null && who.object3D != null && who.object3D.visible === true && this.el.object3D != null ) {
 								var arrowpos = new THREE.Vector3( who.object3D.position.x, who.object3D.position.y, who.object3D.position.z );
 								who.object3D.getWorldPosition(arrowpos);
 
