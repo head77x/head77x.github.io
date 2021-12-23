@@ -124,13 +124,13 @@ AFRAME.registerComponent('brandon-hit', {
 			
     init: function () {
 				this.nohittime = false;
-				this.mydamage = 2;
+				this.mydamage = 1;
         this.checker = document.getElementById('gun');
 
 				this.eventHandlerFn = () => { 
 					this.nohittime = false;
-					this.mydamage = 2; 
-					document.getElementById('iconimg' + this.data.chrnum).style.filter = 'brightness(20%)';
+					this.mydamage = 1; 
+					document.getElementById('iconimg' + this.data.chrnum).style.filter = 'brightness(50%)';
 					this.el.object3D.visible = true;
 				};
 
@@ -160,8 +160,6 @@ AFRAME.registerComponent('brandon-hit', {
 										document.getElementById('iconimg' + this.data.chrnum).style.filter = 'brightness(50%)';
 									} else {
 										document.getElementById('iconimg' + this.data.chrnum).style.filter = 'brightness(100%)';
-										this.el.object3D.visible = false;
-										this.openquiz();
 									}
 
 									// 맞는 소리
@@ -173,6 +171,11 @@ AFRAME.registerComponent('brandon-hit', {
 									setTimeout( ()=> {
 										this.el.setAttribute("animation-mixer","clip: fly; loop: repeat; duration: 5;");					
 										this.nohittime = false;
+
+										if ( this.mydamage === 0 ) {
+											this.el.object3D.visible = false;
+											this.openquiz();
+										}
 									}, 2000);
 								}
 						}
