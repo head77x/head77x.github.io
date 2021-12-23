@@ -160,7 +160,8 @@ AFRAME.registerComponent('brandon-hit', {
 										document.getElementById('iconimg' + this.data.chrnum).style.filter = 'brightness(50%)';
 									} else {
 										document.getElementById('iconimg' + this.data.chrnum).style.filter = 'brightness(100%)';
-										this.el.removeAttribute('moveanywhere');
+										this.el.parentNode.removeAttribute('moveanywhere');
+										gameMode = 'quizready';		// 퀴즈 진행중
 									}
 
 									// 맞는 소리
