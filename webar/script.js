@@ -234,6 +234,7 @@ AFRAME.registerComponent('brandon-shoot', {
 
 					let model = document.getElementById('arrow' + (i+1));
 					console.log('arrows : ' + model);
+					model.object3D.visible = 0;
 					this.arrows.push(model);
 				}
     },
@@ -242,8 +243,8 @@ AFRAME.registerComponent('brandon-shoot', {
 			if ( gameMode != 'gamemode' || this.el === null || this.el.object3D === null ) return;
 
 			this.myarrow = this.arrows[this.useArrow];
-//			this.myarrow.object3D.position = this.el.object3D.position;
-//			this.myarrow.object3D.visible = true;
+			this.myarrow.object3D.position = this.el.object3D.position;
+			this.myarrow.object3D.visible = 1;
 			this.useArrow = (this.useArrow + 1) % this.maxArrow;
 		},
 
@@ -270,7 +271,7 @@ AFRAME.registerComponent('brandon-shoot', {
 					this.bowlevel = 0;
 					document.getElementById('bow').setAttribute("animation-mixer","clip: ready0; loop: once; duration: 0.5; clampWhenFinished: true;");					
 				}
-//				this.myarrow.object3D.position.z = dist;
+				this.myarrow.object3D.position.z = dist;
 			}
 
 		},
@@ -295,7 +296,7 @@ AFRAME.registerComponent('arrowshoot', {
 
 		setTimeout( () => {
 			if ( this.el != null && this.el.parentNode != null )
-				this.el.object3D.visible = false;
+//				this.el.object3D.visible = false;
         this.el.removeAttribute("arrowshoot");
 		}, 2000);
 	},
