@@ -210,8 +210,9 @@ AFRAME.registerComponent('brandon-shoot', {
     init: function () {
 				this.myarrow = null;
         document.body.addEventListener('touchstart', (e) => { this.makeone(e); });
-        document.body.addEventListener('touchmove', (e) => { this.moveone(e); });
-        document.body.addEventListener('touchend', () => { this.shootone(); });
+
+//        document.body.addEventListener('touchmove', (e) => { this.moveone(e); });
+//        document.body.addEventListener('touchend', () => { this.shootone(); });
 				this.maxArrow = 20;
 				this.useArrow = 0;
 				this.arrows = [];
