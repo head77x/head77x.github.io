@@ -13,9 +13,6 @@ var quizs = [
 
 var quizidx = 0;
 
-$('head meta[name=viewport]').remove();
-$('head').prepend('<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0" />');
-
 	function saveQR() {
 		html2canvas(document.body)
 		.then(

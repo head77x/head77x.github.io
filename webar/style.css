@@ -1,3 +1,7 @@
+body {
+    touch-action: pan-y;
+}
+
 .centered {
     height: 20%;
     justify-content: center;
