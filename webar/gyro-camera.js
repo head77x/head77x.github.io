@@ -56,13 +56,13 @@ AFRAME.registerComponent('gyro-camera', {
         // listen to deviceorientation event
         var eventName = this._getDeviceOrientationEventName();
         this._onDeviceOrientation = this._onDeviceOrientation.bind(this);
-/*
+
         // if Safari
 //        if (!!navigator.userAgent.match(/Version\/[\d.]+.*Safari/)) {
             // iOS 13+
             if (typeof DeviceOrientationEvent.requestPermission === 'function') {
                 var handler = function () {
-                    alert('장치 방향 권한 요청중');
+//                    alert('장치 방향 권한 요청중');
                     console.log('장치 방향 권한 요청중...')
                     DeviceOrientationEvent.requestPermission();
                     document.removeEventListener('touchend', handler);
@@ -80,7 +80,7 @@ AFRAME.registerComponent('gyro-camera', {
                 });
             }
 //        }
-*/
+
         window.addEventListener(eventName, this._onDeviceOrientation, false);
 
         this._watchPositionId = this._initWatchGPS(function (position) {
