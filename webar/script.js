@@ -231,19 +231,22 @@ AFRAME.registerComponent('brandon-shoot', {
 
 					this.el.appendChild(model);
 */
+/*
 					let model = document.getElementById('arrow' + (i+1));
 					console.log('arrows : ' + model);
 					this.arrows.push(model);
+*/					
 				}
     },
 
 		makeone(e) {
 			if ( gameMode != 'gamemode' || this.el === null || this.el.object3D === null ) return;
-
+/*
 			this.myarrow = this.arrows[this.useArrow];
 //			this.myarrow.object3D.position = this.el.object3D.position;
 //			this.myarrow.object3D.visible = true;
 			this.useArrow = (this.useArrow + 1) % this.maxArrow;
+*/			
 		},
 
 		moveone(e) {

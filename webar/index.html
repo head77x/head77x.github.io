@@ -36,6 +36,15 @@
         embedded
         arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
 			<a-assets>
+				<a-asset-item id="solchr" src="./assets/chr/sol_v03.gltf"></a-asset-item>
+				<a-asset-item id="molichr" src="./assets/chr/moli_v01.gltf"></a-asset-item>
+				<a-asset-item id="rinochr" src="./assets/chr/rino_v01.gltf"></a-asset-item>
+				<a-asset-item id="shoochr" src="./assets/chr/shoo_v01.gltf"></a-asset-item>
+				<a-asset-item id="doremichr" src="./assets/chr/doremi_v03.gltf"></a-asset-item>
+				<a-asset-item id="luluchr" src="./assets/chr/Lululala_v04.gltf"></a-asset-item>
+				<a-asset-item id="bowmodel" src="./assets/bow_anim06.gltf"></a-asset-item>
+				<a-asset-item id="arrowtemp" src="./assets/arrow.gltf"></a-asset-item>
+
 				<audio id="background" src="./assets/sound/background.mp3" preload="auto"></audio>
 				<audio id="miss" src="./assets/sound/miss.mp3" preload="auto"></audio>
 				<audio id="shoot1" src="./assets/sound/shoot1.mp3" preload="auto"></audio>
@@ -47,7 +56,6 @@
 				<audio id="countdown" src="./assets/sound/countdown.mp3" preload="auto"></audio>
 				<audio id="hitted" src="./assets/sound/hitted.mp3" preload="auto"></audio>
 
-				<a-asset-item id="arrowtemp" src="./assets/arrow.gltf"></a-asset-item>
 		  	</a-assets>		
 <!--
 			  <a-entity class="target" target="healthPoints: 10" geometry="primitive: box" material="color: teal" position="0 0 -4" hit-handler></a-entity>
@@ -56,7 +64,7 @@
 				<!-- 회전축 -->
 			  <a-entity id="solmodel" position="0 0 0" visible="false">
 					<a-entity id="solhit"
-						gltf-model="url(./assets/chr/sol_v03.gltf)" 
+						gltf-model="#solchr" 
 						position="0 0 -5" 
 						scale="0.5 0.5 0.5" 
 						rotation="0 0 0" 
@@ -65,7 +73,7 @@
 				</a-entity>
 			  <a-entity id="molymodel" position="0 0 0" visible="false">
 					<a-entity id="molihit"
-						gltf-model="url(./assets/chr/moli_v01.gltf)" 
+						gltf-model="#molichr" 
 						position="0 0 -6" 
 						scale="0.5 0.5 0.5" 
 						rotation="0 0 0" 
@@ -74,7 +82,7 @@
 				</a-entity>
 				<a-entity id="rinomodel" position="0 0 0" visible="false">
 					<a-entity id="rinohit"
-						gltf-model="url(./assets/chr/rino_v01.gltf)" 
+						gltf-model="#rinochr" 
 						position="0 0 -6" 
 						scale="0.5 0.5 0.5" 
 						rotation="0 0 0" 
@@ -83,7 +91,7 @@
 				</a-entity>
 				<a-entity id="suemodel" position="0 0 0" visible="false">
 					<a-entity id="shoohit"
-						gltf-model="url(./assets/chr/shoo_v01.gltf)" 
+						gltf-model="#shoochr" 
 						position="0 0 -6" 
 						scale="0.5 0.5 0.5" 
 						rotation="0 0 0" 
@@ -92,7 +100,7 @@
 				</a-entity>
 				<a-entity id="doremodel" position="0 0 0" visible="false">
 					<a-entity id="dorehit"
-						gltf-model="url(./assets/chr/doremi_v03.gltf)" 
+						gltf-model="#doremichr" 
 						position="0 0 -6" 
 						scale="0.5 0.5 0.5" 
 						rotation="0 0 0" 
@@ -101,7 +109,7 @@
 				</a-entity>
 				<a-entity id="lulamodel" position="0 0 0" visible="false">
 					<a-entity id="luluhit"
-						gltf-model="url(./assets/chr/Lululala_v04.gltf)" 
+						gltf-model="#luluchr" 
 						position="0 0 -6" 
 						scale="0.5 0.5 0.5" 
 						rotation="0 0 0" 
@@ -125,11 +133,11 @@
 							<a-entity id="firstux2" mixin="gamehelp" visible="true"></a-entity>
 						</a-entity>
 -->
-					<a-entity text="value: version 1.3.2.1" position="0 1.0 -2.1"></a-entity>
+					<a-entity text="value: version 1.3.2.2" position="0 1.0 -2.1"></a-entity>
 				</a-entity>
 				<a-entity 
 					id="bow"
-					gltf-model="url(./assets/bow_anim06.gltf)" 
+					gltf-model="#bowmodel" 
 					position="0 -0.6 -1"
 					scale="0.05 0.05 0.05" 
 					rotation="0 0 0"
@@ -167,22 +175,22 @@
 				</a-entity>
 <!--				<a-entity class="target" target="healthPoints: 2" gltf-model="url(./assets/bow_anim05.gltf)" position="0 0 -5" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: bowani; loop: repeat; duration: 5;"></a-entity> -->
 				<a-entity id="solstart" position="0 0 0" visible="false">
-					<a-entity gltf-model="url(./assets/chr/sol_v03.gltf)" position="0 0 -7" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: idle; loop: repeat; duration: 5;"></a-entity>
+					<a-entity gltf-model="#solchr" position="0 0 -7" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: idle; loop: repeat; duration: 5;"></a-entity>
 				</a-entity>
 				  <a-entity id="molystart" position="0 0 0" visible="false">
-					<a-entity gltf-model="url(./assets/chr/moli_v01.gltf)" position="0 0 -7.5" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: idle; loop: repeat; duration: 5;"></a-entity>
+					<a-entity gltf-model="#molichr" position="0 0 -7.5" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: idle; loop: repeat; duration: 5;"></a-entity>
 				</a-entity>
 				<a-entity id="rinostart" position="0 0 0" visible="false">
-					<a-entity gltf-model="url(./assets/chr/rino_v01.gltf)" position="0 0 -6" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: idle; loop: repeat; duration: 5;"></a-entity>
+					<a-entity gltf-model="#rinochr" position="0 0 -6" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: idle; loop: repeat; duration: 5;"></a-entity>
 				</a-entity>
 				<a-entity id="suestart" position="0 0 0" visible="false">
-					<a-entity gltf-model="url(./assets/chr/shoo_v01.gltf)" position="0 0 -6.5" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: idle; loop: repeat; duration: 5;"></a-entity>
+					<a-entity gltf-model="#shoochr" position="0 0 -6.5" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: idle; loop: repeat; duration: 5;"></a-entity>
 				</a-entity>
 				<a-entity id="dorestart" position="0 0 0" visible="false">
-					<a-entity gltf-model="url(./assets/chr/doremi_v03.gltf)" position="0 0 -5" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: idle; loop: repeat; duration: 5;"></a-entity>
+					<a-entity gltf-model="#doremichr" position="0 0 -5" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: idle; loop: repeat; duration: 5;"></a-entity>
 				</a-entity>
 				<a-entity id="lulastart" position="0 0 0" visible="false">
-					<a-entity gltf-model="url(./assets/chr/Lululala_v04.gltf)" position="0 0 -5.5" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: idle; loop: repeat; duration: 5;"></a-entity>
+					<a-entity gltf-model="#luluchr" position="0 0 -5.5" scale="0.5 0.5 0.5" rotation="0 0 0" animation-mixer="clip: idle; loop: repeat; duration: 5;"></a-entity>
 				</a-entity>
 
 				<a-sound id="bgm" sound="src: #background" loop="true"></a-sound>
