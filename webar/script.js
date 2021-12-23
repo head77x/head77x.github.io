@@ -220,10 +220,6 @@ AFRAME.registerComponent('brandon-shoot', {
 				for ( var i = 0; i < this.maxArrow; i++ ) {
 					let model = document.getElementById('arrow' + (i+1));
 
-					model.object3D.scale = this.el.object3D.scale;
-					model.object3D.position = this.el.object3D.position;
-					model.object3D.rotation = this.el.object3D.rotation;
-					model.object3D.position.z = -0.04;
 					model.object3D.visible = 0;
 
 					this.arrows.push(model);
@@ -234,11 +230,13 @@ AFRAME.registerComponent('brandon-shoot', {
 			if ( gameMode != 'gamemode' || this.el === null || this.el.object3D === null || e === null || e.changedTouches[0] === null ) return;
 
 			this.myarrow = this.arrows[this.useArrow];
-			this.myarrow.object3D.position = this.el.object3D.position;
+			this.myarrow.object3D.scale = this.el.object3D.scale;
+			this.myarrow.object3D.position.set( this.el.object3D.position );
+			this.myarrow.object3D.rotation = this.el.object3D.rotation;
+			this.myarrow.object3D.position.z = -0.04;
 
 			console.log('what pos : ' + this.myarrow.object3D.position.z );
-			
-			this.myarrow.object3D.position.z = -0.04;
+
 			this.myarrow.object3D.visible = 1;
 			this.useArrow = (this.useArrow + 1) % this.maxArrow;
 			this.startpoint = e.changedTouches[0].clientY;
@@ -274,6 +272,8 @@ AFRAME.registerComponent('brandon-shoot', {
 		},
 
     shootone() {
+			if ( gameMode != 'gamemode' ) return;
+
 			if (this.myarrow != null) {
 				document.getElementById('bow').setAttribute("animation-mixer","clip: shotani; loop: once; duration: 0.5;");					
         this.myarrow.setAttribute("arrowshoot", "shootlevel:" + this.bowlevel + ";");
