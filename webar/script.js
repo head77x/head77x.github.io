@@ -241,10 +241,6 @@ AFRAME.registerComponent('brandon-shoot', {
 			if ( gameMode != 'gamemode' || this.el === null || this.el.object3D === null ) return;
 
 			this.myarrow = this.arrows[this.useArrow];
-
-			if ( this.myarrow.object3D.active ) {
-				this.myarrow.object3D.position.set(this.el.object3D.position);
-			}
 //			this.myarrow.object3D.position = this.el.object3D.position;
 //			this.myarrow.object3D.visible = true;
 			this.useArrow = (this.useArrow + 1) % this.maxArrow;
