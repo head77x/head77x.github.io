@@ -21,10 +21,10 @@ var quizidx = 0;
 			temp[0].parentNode.removeChild(temp[0]);
 		}
 */
-		html2canvas(document.querySelector("#qrcode"))
+		html2canvas(document.querySelector("#scrmine"))
 		.then(
 		function (canvas) {
-		saveAs(canvas.toDataURL(), 'shinhan_qr.jpg');
+		saveAs(canvas.toDataURL(), 'shinhan_qr');
 		}).catch(function (err) {
 		console.log(err);
 		});
