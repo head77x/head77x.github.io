@@ -45,70 +45,6 @@
 				<a-asset-item id="bowmodel" src="./assets/bow_anim06.gltf"></a-asset-item>
 				<a-asset-item id="arrowtemp" src="./assets/arrow.gltf"></a-asset-item>
 
-				<img id="introbg" src="./assets/first_start/intro_bg.png"></img>
-				<img id="solquizlogo" src="./assets/first_start/solquiz_logo.png"></img>
-				<img id="startsol" src="./assets/first_start/start_sol.png"></img>
-				<img id="introimg" src="./assets/first_start/intro_img.png"></img>
-				<img id="gamestartbutton" src="./assets/first_start/start_button.png"></img>
-				<img id="gamehelpbutton" src="./assets/first_start/help_button.png"></img>
-
-				<img id="helpback" src="./assets/second_game/help_back.png"></img>
-				<img id="okbutton2" src="./assets/third_qa/ok_button2.png"></img>
-				
-				<img id="no1" src="./assets/first_start/1.png"></img>
-				<img id="no2" src="./assets/first_start/2.png"></img>
-				<img id="no3" src="./assets/first_start/3.png"></img>
-				<img id="no4" src="./assets/first_start/catch.png"></img>
-
-				<img id="topbarback" src="./assets/second_game/topbar_back.png"></img>
-				<img id="homebuttonon" src="./assets/second_game/home_button_on.png"></img>
-				<img id="help2buttonon" src="./assets/second_game/help2_button_on.png"></img>
-				<img id="solicon" src="./assets/second_game/sol_icon.png"></img>
-				<img id="moliicon" src="./assets/second_game/moli_icon.png"></img>
-				<img id="rinoicon" src="./assets/second_game/rino_icon.png"></img>
-				<img id="shooicon" src="./assets/second_game/sue_icon.png"></img>
-				<img id="doremiicon" src="./assets/second_game/doremi_icon.png"></img>
-				<img id="luluicon" src="./assets/second_game/ruru_icon.png"></img>
-				<img id="crosshair" src="./assets/second_game/crosshair.png"></img>
-
-				<img id="solnotice" src="./assets/third_qa/sol_notice.gif"></img>
-				<img id="tohomebox" src="./assets/second_game/tohome_box.png"></img>
-				<img id="okbuttononimg" src="./assets/forth_finish/ok_button_on.png"></img>
-				<img id="cancelbuttonon" src="./assets/forth_finish/cancel_button_on.png"></img>
-
-				<img id="quizback" src="./assets/third_qa/quiz_back.png"></img>
-				<img id="obuttonimg" src="./assets/third_qa/O_button.png"></img>
-				<img id="xbuttonimg" src="./assets/third_qa/X_button.png"></img>
-				<img id="retrybuttonimg" src="./assets/third_qa/retry_button.png"></img>
-
-				<img id="solquest" src="./assets/third_qa/sol_quest.gif"></img>
-				<img id="moliquest" src="./assets/third_qa/moli_quest.gif"></img>
-				<img id="rinoquest" src="./assets/third_qa/rino_quest.gif"></img>
-				<img id="shooquest" src="./assets/third_qa/shoo_quest.gif"></img>
-				<img id="doremiquest" src="./assets/third_qa/doremi_quest.gif"></img>
-				<img id="luluquest" src="./assets/third_qa/lulu_quest.gif"></img>
-
-				<img id="solwin" src="./assets/third_qa/sol_win.gif"></img>
-				<img id="moliwin" src="./assets/third_qa/moli_win.gif"></img>
-				<img id="rinowin" src="./assets/third_qa/rino_win.gif"></img>
-				<img id="shoowin" src="./assets/third_qa/shoo_win.gif"></img>
-				<img id="doremiwin" src="./assets/third_qa/doremi_win.gif"></img>
-				<img id="luluwin" src="./assets/third_qa/lulu_win.gif"></img>
-
-				<img id="sollose" src="./assets/third_qa/sol_lose.gif"></img>
-				<img id="molilose" src="./assets/third_qa/moli_lose.gif"></img>
-				<img id="rinolose" src="./assets/third_qa/rino_lose.gif"></img>
-				<img id="shoolose" src="./assets/third_qa/shoo_lose.gif"></img>
-				<img id="doremilose" src="./assets/third_qa/doremi_lose.gif"></img>
-				<img id="lululose" src="./assets/third_qa/lulu_lose.gif"></img>
-
-				<img id="finishbackimg" src="./assets/forth_finish/finish_back_img.png"></img>
-				<img id="finishbackback" src="./assets/forth_finish/finish_back.png"></img>
-				<img id="checkbuttonon" src="./assets/forth_finish/check_button_on.png"></img>
-
-				<img id="qrbackimg" src="./assets/forth_finish/qr_back.png"></img>
-				<img id="qrsaveimg" src="./assets/forth_finish/qrsave.png"></img>
-
 				<audio id="background" src="./assets/sound/background.mp3" preload="auto"></audio>
 				<audio id="miss" src="./assets/sound/miss.mp3" preload="auto"></audio>
 				<audio id="shoot1" src="./assets/sound/shoot1.mp3" preload="auto"></audio>
@@ -197,7 +133,7 @@
 							<a-entity id="firstux2" mixin="gamehelp" visible="true"></a-entity>
 						</a-entity>
 -->
-					<a-entity text="value: version 1.3.2.4" position="0 1.0 -2.1"></a-entity>
+					<a-entity text="value: version 1.3.2.5" position="0 1.0 -2.1"></a-entity>
 				</a-entity>
 				<a-entity 
 					id="bow"
@@ -275,64 +211,64 @@
 	<div id="titlescene">
 		<!-- 첫번째 UX 화면 --> 
 		<div id="firstux" style="display: none;">
-			<img style="position:absolute; display: flex; height:100vh; width:100vw; top: 0; left:0;" src="#introbg"/>
-			<img style="position:absolute; display: flex; width: 253px; height: 130px; left: 50vw; margin-left: -127px; top: 10vh;" src="#solquizlogo"/>    
-			<img style="position:absolute; display: flex; width: 253px; height: 214px; left: 50vw; margin-left: -127px; top: 30vh;" src="#startsol"/>    
-			<img style="position:absolute; display: flex; width: 340px; height: 144px; left: 50vw; margin-left: -170px; bottom: 0;" src="#introimg"/>    
+			<img style="position:absolute; display: flex; height:100vh; width:100vw; top: 0; left:0;" src="./assets/first_start/intro_bg.png"/>
+			<img style="position:absolute; display: flex; width: 253px; height: 130px; left: 50vw; margin-left: -127px; top: 10vh;" src="./assets/first_start/solquiz_logo.png"/>    
+			<img style="position:absolute; display: flex; width: 253px; height: 214px; left: 50vw; margin-left: -127px; top: 30vh;" src="./assets/first_start/start_sol.png"/>    
+			<img style="position:absolute; display: flex; width: 340px; height: 144px; left: 50vw; margin-left: -170px; bottom: 0;" src="./assets/first_start/intro_img.png"/>    
 
 			<div id="startgamebutton" >
-				<img style="position:absolute; display: flex; width: 253px; height: 45px; left: 50vw; margin-left: -127px; top: 62vh;" src="#gamestartbutton"/>    
+				<img style="position:absolute; display: flex; width: 253px; height: 45px; left: 50vw; margin-left: -127px; top: 62vh;" src="./assets/first_start/start_button.png"/>    
 			</div>
 			<div id="helpbutton" >
-				<img style="position:absolute; display: flex; width: 253px; height: 45px; left: 50vw; margin-left: -127px; top: 70vh; " src="#gamehelpbutton"/>    
+				<img style="position:absolute; display: flex; width: 253px; height: 45px; left: 50vw; margin-left: -127px; top: 70vh; " src="./assets/first_start/help_button.png"/>    
 			</div>
 		</div>
 		<!-- 도움말 UX 화면 --> 
 		<div id="helpux" style="display: none;">
-			<img style="position:absolute; display: flex; height:100vh; width:100vw; top: 0; left:0;" src="#introbg"/>
-			<img style="position:absolute; display: flex; width: 310px; height: 533px; left: 50vw; top: 50vh; margin-top: -266px; margin-left: -155px;" src="#helpback"/>
+			<img style="position:absolute; display: flex; height:100vh; width:100vw; top: 0; left:0;" src="./assets/first_start/intro_bg.png"/>
+			<img style="position:absolute; display: flex; width: 310px; height: 533px; left: 50vw; top: 50vh; margin-top: -266px; margin-left: -155px;" src="./assets/second_game/help_back.png"/>
 
 			<div id="helpokbutton">
-				<img style="position:absolute; display: flex; width: 149px; height: 69px; left: 50vw; top: 50vh; margin-left: -75px; margin-top: 185px;" src="#okbutton2"/>    
+				<img style="position:absolute; display: flex; width: 149px; height: 69px; left: 50vw; top: 50vh; margin-left: -75px; margin-top: 185px;" src="./assets/third_qa/ok_button2.png"/>    
 			</div>
 		</div>
 
 		<!-- 카운트다운 화면 -->
 		<div id="countdowntext" style="display: none;">
-			<img id="count1" style="position:absolute; width: 240px; height: 170px; left:50vw; top:50vh; margin-left: -120px; margin-top: -85px; display: none;" src="#no1"/>
-			<img id="count2" style="position:absolute; width: 240px; height: 170px; left:50vw; top:50vh; margin-left: -120px; margin-top: -85px; display: none;" src="#no2"/>
-			<img id="count3" style="position:absolute; width: 240px; height: 170px; left:50vw; top:50vh; margin-left: -120px; margin-top: -85px; display: none;" src="#no3"/>
-			<img id="count4" style="position:absolute; width: 300px; height: 214px; left:50vw; top:50vh; margin-left: -150px; margin-top: -107px; display: none;" src="#no4"/>
+			<img id="count1" style="position:absolute; width: 240px; height: 170px; left:50vw; top:50vh; margin-left: -120px; margin-top: -85px; display: none;" src="./assets/first_start/1.png"/>
+			<img id="count2" style="position:absolute; width: 240px; height: 170px; left:50vw; top:50vh; margin-left: -120px; margin-top: -85px; display: none;" src="./assets/first_start/2.png"/>
+			<img id="count3" style="position:absolute; width: 240px; height: 170px; left:50vw; top:50vh; margin-left: -120px; margin-top: -85px; display: none;" src="./assets/first_start/3.png"/>
+			<img id="count4" style="position:absolute; width: 300px; height: 214px; left:50vw; top:50vh; margin-left: -150px; margin-top: -107px; display: none;" src="./assets/first_start/catch.png"/>
 		</div>
 
 		<!-- 게임 UX 화면 --> 
 		<div id="gameux" style="display: none;">
-			<img style="position:absolute; display: flex; width: 100vw; left:0; top: 0;" src="#topbarback"/>
+			<img style="position:absolute; display: flex; width: 100vw; left:0; top: 0;" src="./assets/second_game/topbar_back.png"/>
 			<div id="whathomebutton">
-				<img style="position:absolute; display: flex; width:10vw; left: 0; top: 20vw;" src="#homebuttonon"/>
+				<img style="position:absolute; display: flex; width:10vw; left: 0; top: 20vw;" src="./assets/second_game/home_button_on.png"/>
 			</div>
 			<div id="gamehelpbutton">
-				<img style="position:absolute; display: flex; width:10vw; right: 0; top: 20vw;" src="#help2buttonon"/>
+				<img style="position:absolute; display: flex; width:10vw; right: 0; top: 20vw;" src="./assets/second_game/help2_button_on.png"/>
 			</div>
 			<div>
-				<img id="iconimg1" style="position:absolute; display: flex; width: 13vw; left: 3vw; top: 3vw; filter: brightness(20%);" src="#solicon"/>
+				<img id="iconimg1" style="position:absolute; display: flex; width: 13vw; left: 3vw; top: 3vw; filter: brightness(20%);" src="./assets/second_game/sol_icon.png"/>
 			</div>
 			<div>
-				<img id="iconimg2" style="position:absolute; display: flex; width: 13vw; left: 19.2vw; top: 3vw; filter: brightness(20%);" src="#moliicon"/>
+				<img id="iconimg2" style="position:absolute; display: flex; width: 13vw; left: 19.2vw; top: 3vw; filter: brightness(20%);" src="./assets/second_game/moli_icon.png"/>
 			</div>
 			<div>
-				<img id="iconimg3" style="position:absolute; display: flex; width: 13vw; left: 35.4vw; top: 3vw; filter: brightness(20%);" src="#rinoicon"/>
+				<img id="iconimg3" style="position:absolute; display: flex; width: 13vw; left: 35.4vw; top: 3vw; filter: brightness(20%);" src="./assets/second_game/rino_icon.png"/>
 			</div>
 			<div>
-				<img id="iconimg4" style="position:absolute; display: flex; width: 13vw; left: 51.6vw; top: 3vw; filter: brightness(20%);" src="#shooicon"/>
+				<img id="iconimg4" style="position:absolute; display: flex; width: 13vw; left: 51.6vw; top: 3vw; filter: brightness(20%);" src="./assets/second_game/sue_icon.png"/>
 			</div>
 			<div>
-				<img id="iconimg5" style="position:absolute; display: flex; width: 13vw; left: 67.8vw; top: 3vw; filter: brightness(20%);" src="#doremiicon"/>
+				<img id="iconimg5" style="position:absolute; display: flex; width: 13vw; left: 67.8vw; top: 3vw; filter: brightness(20%);" src="./assets/second_game/doremi_icon.png"/>
 			</div>
 			<div>
-				<img id="iconimg6" style="position:absolute; display: flex; width: 13vw; left: 84vw; top: 3vw; filter: brightness(20%);" src="#luluicon"/>
+				<img id="iconimg6" style="position:absolute; display: flex; width: 13vw; left: 84vw; top: 3vw; filter: brightness(20%);" src="./assets/second_game/ruru_icon.png"/>
 			</div>
-			<img style="position:absolute; display: flex; width:84px; height:84px; top: calc(50vh - 42px); left: calc(50vw - 42px);" src="#crosshair"/>
+			<img style="position:absolute; display: flex; width:84px; height:84px; top: calc(50vh - 42px); left: calc(50vw - 42px);" src="./assets/second_game/crosshair.png"/>
 <!--			<img style="position:absolute; display: flex; width:84px; height:84px; top: calc(50vh - 42px); left: calc(50vw - 42px);" src="./assets/butterfly-flying.gif"/> -->
 
 <!--			<div id="clickbow" style="position:absolute; display: flex; width:100vw; height:30vh; bottom: 30vh; left: 0; background-color: black;"></div> -->
@@ -341,13 +277,13 @@
 		<!-- 홈으로 가기 확인 UX 화면 --> 
 		<div id="confirmhome" style="display: none;">
 			<div style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; opacity: 0.5; background-color: rgb(0, 0, 0);"></div>
-			<img style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -300px;" src="#solnotice"/>
-			<img style="position:absolute; display: flex; width:310px; height:260px; top: 50vh; left: 50vw; margin-left: -155px; margin-top: -130px;" src="#tohomebox"/>
+			<img style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -300px;" src="./assets/third_qa/sol_notice.gif"/>
+			<img style="position:absolute; display: flex; width:310px; height:260px; top: 50vh; left: 50vw; margin-left: -155px; margin-top: -130px;" src="./assets/second_game/tohome_box.png"/>
 			<div id="tohomeok">
-				<img style="position:absolute; display: flex; width:120px; height:35px; top: 50vh; left: 50vw; margin-left: -130px; margin-top: 64px;" src="#okbuttonon"/>    
+				<img style="position:absolute; display: flex; width:120px; height:35px; top: 50vh; left: 50vw; margin-left: -130px; margin-top: 64px;" src="./assets/forth_finish/ok_button_on.png"/>    
 			</div>
 			<div id="tohomecancel">
-				<img style="position:absolute; display: flex; width:120px; height:35px; top: 50vh; left: 50vw; margin-left: 10px; margin-top: 64px;" src="#cancelbuttonon"/>    
+				<img style="position:absolute; display: flex; width:120px; height:35px; top: 50vh; left: 50vw; margin-left: 10px; margin-top: 64px;" src="./assets/forth_finish/cancel_button_on.png"/>    
 			</div>
 		</div>
 
@@ -355,86 +291,86 @@
 		<!-- 퀴즈 UX 화면 --> 
 		<div id="quizux" style="display: none;">
 			<div style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; opacity: 0.5; background-color: rgb(0, 0, 0);"></div>
-			<img id="quest1" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="#solquest"/>
-			<img id="quest2" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="#moliquest"/>
-			<img id="quest3" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="#rinoquest"/>
-			<img id="quest4" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="#shooquest"/>
-			<img id="quest5" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="#doremiquest"/>
-			<img id="quest6" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="#luluquest"/>
-			<img style="position:absolute; display: flex; width:355px; height:325px; top: 50vh; left: 50vw; margin-left: -178px; margin-top: -163px;" src="#quizback"/>
+			<img id="quest1" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="./assets/third_qa/sol_quest.gif"/>
+			<img id="quest2" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="./assets/third_qa/moli_quest.gif"/>
+			<img id="quest3" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="./assets/third_qa/rino_quest.gif"/>
+			<img id="quest4" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="./assets/third_qa/shoo_quest.gif"/>
+			<img id="quest5" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="./assets/third_qa/doremi_quest.gif"/>
+			<img id="quest6" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="./assets/third_qa/lulu_quest.gif"/>
+			<img style="position:absolute; display: flex; width:355px; height:325px; top: 50vh; left: 50vw; margin-left: -178px; margin-top: -163px;" src="./assets/third_qa/quiz_back.png"/>
 
 			<p id="quiztext" style="position:absolute; display: flex; text-align:center; width:250px; height:325px; top: 50vh; left: 50vw; margin-left: -125px; margin-top: -120px; font-size: large; font-weight: bold; color:white;"> </p>
 
 			<div id="obutton" >
-				<img style="position:absolute; display: flex; width:118px; height:140px; top: 50vh; left: 50vw; margin-left: -170px; margin-top: 130px;" src="#obuttonimg"/>    
+				<img style="position:absolute; display: flex; width:118px; height:140px; top: 50vh; left: 50vw; margin-left: -170px; margin-top: 130px;" src="./assets/third_qa/O_button.png"/>    
 			</div>
 			<div id="xbutton" >
-				<img style="position:absolute; display: flex; width:118px; height:140px; top: 50vh; left: 50vw; margin-left: 60px; margin-top: 130px;" src="#xbuttonimg"/>    
+				<img style="position:absolute; display: flex; width:118px; height:140px; top: 50vh; left: 50vw; margin-left: 60px; margin-top: 130px;" src="./assets/third_qa/X_button.png"/>    
 			</div>
 		</div>
 
 		<!-- 퀴즈 맞은 UX 화면 --> 
 		<div id="quizcorrect" style="display: none;">
 			<div style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; opacity: 0.5; background-color: rgb(0, 0, 0);"></div>
-			<img id="win1" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="#solwin"/>
-			<img id="win2" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="#moliwin"/>
-			<img id="win3" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="#rinowin"/>
-			<img id="win4" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="#shoowin"/>
-			<img id="win5" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="#doremiwin"/>
-			<img id="win6" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="#luluwin"/>
-			<img style="position:absolute; display: flex; width:355px; height:325px; top: 50vh; left: 50vw; margin-left: -178px; margin-top: -163px;" src="#quizback"/>
+			<img id="win1" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="./assets/third_qa/sol_win.gif"/>
+			<img id="win2" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="./assets/third_qa/moli_win.gif"/>
+			<img id="win3" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="./assets/third_qa/rino_win.gif"/>
+			<img id="win4" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="./assets/third_qa/shoo_win.gif"/>
+			<img id="win5" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="./assets/third_qa/doremi_win.gif"/>
+			<img id="win6" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="./assets/third_qa/lulu_win.gif"/>
+			<img style="position:absolute; display: flex; width:355px; height:325px; top: 50vh; left: 50vw; margin-left: -178px; margin-top: -163px;" src="./assets/third_qa/quiz_back.png"/>
 
 			<p id="resulttext" style="position:absolute; display: flex; text-align:center; width:250px; height:325px; top: 50vh; left: 50vw; margin-left: -125px; margin-top: -120px; font-size: large; font-weight: bold; color:white;"> </p>
 
 			<div id="oknext" >
-				<img style="position:absolute; display: flex; width:40vw; bottom: 8vh; left: 30vw;" src="#okbutton2"/>    
+				<img style="position:absolute; display: flex; width:40vw; bottom: 8vh; left: 30vw;" src="./assets/third_qa/ok_button2.png"/>    
 			</div>
 		</div>
 
 		<!-- 퀴즈 틀린 UX 화면 --> 
 		<div id="quizincorrect" style="display: none;">
 			<div style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; opacity: 0.5; background-color: rgb(0, 0, 0);"></div>
-			<img id="lose1" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="#sollose"/>
-			<img id="lose2" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="#molilose"/>
-			<img id="lose3" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="#rinolose"/>
-			<img id="lose4" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="#shoolose"/>
-			<img id="lose5" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="#doremilose"/>
-			<img id="lose6" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="#lululose"/>
-			<img style="position:absolute; display: flex; width:355px; height:325px; top: 50vh; left: 50vw; margin-left: -178px; margin-top: -163px;" src="#quizback"/>
+			<img id="lose1" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="./assets/third_qa/sol_lose.gif"/>
+			<img id="lose2" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="./assets/third_qa/moli_lose.gif"/>
+			<img id="lose3" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="./assets/third_qa/rino_lose.gif"/>
+			<img id="lose4" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="./assets/third_qa/shoo_lose.gif"/>
+			<img id="lose5" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="./assets/third_qa/doremi_lose.gif"/>
+			<img id="lose6" style="position:absolute; display: flex; width:350px; height:180px; top: 50vh; left: 50vw; margin-left: -175px; margin-top: -305px;" src="./assets/third_qa/lulu_lose.gif"/>
+			<img style="position:absolute; display: flex; width:355px; height:325px; top: 50vh; left: 50vw; margin-left: -178px; margin-top: -163px;" src="./assets/third_qa/quiz_back.png"/>
 
 			<p id="wrongtext" style="position:absolute; display: flex; text-align:center; width:250px; height:325px; top: 50vh; left: 50vw; margin-left: -125px; margin-top: -125px; font-size: x-large; font-weight: bold; color:white;">
 				틀렸습니다<br><br>다시 한 번 잘 생각해봐주세요.
 			</p>
 
 			<div id="okbefore" >
-				<img style="position:absolute; display: flex; width:40vw; bottom: 8vh; left: 30vw;" src="#retrybuttonimg"/>    
+				<img style="position:absolute; display: flex; width:40vw; bottom: 8vh; left: 30vw;" src="./assets/third_qa/retry_button.png"/>    
 			</div>
 		</div>
 
 		<!-- 축하 UX 화면 --> 
 		<div id="congratux" style="display: none;">
 			<div style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; opacity: 0.5; background-color: rgb(0, 0, 0);"></div>
-			<img style="position:absolute; display: flex; width:375px; height:308px; top: 50vh; left: 50vw; margin-left: -188px; margin-top: -377px;" src="#finishbackimg"/>
-			<img style="position:absolute; display: flex; width:310px; height:260px; top: 50vh; left: 50vw; margin-left: -155px; margin-top: -130px;" src="#finishbackback"/>
+			<img style="position:absolute; display: flex; width:375px; height:308px; top: 50vh; left: 50vw; margin-left: -188px; margin-top: -377px;" src="./assets/forth_finish/finish_back_img.png"/>
+			<img style="position:absolute; display: flex; width:310px; height:260px; top: 50vh; left: 50vw; margin-left: -155px; margin-top: -130px;" src="./assets/forth_finish/finish_back.png"/>
 
 			<div id="gotoqr" >
-				<img style="position:absolute; display: flex; width:120px; height:35px; top: 50vh; left: 50vw; margin-left: -60px; margin-top: 66px;" src="#checkbuttonon"/>    
+				<img style="position:absolute; display: flex; width:120px; height:35px; top: 50vh; left: 50vw; margin-left: -60px; margin-top: 66px;" src="./assets/forth_finish/check_button_on.png"/>    
 			</div>
 		</div>
 
 		<!-- 최종 QR 화면 --> 
 		<div id="qrux" style="display: none;">
-			<img style="position:absolute; display: flex; height:100vh; width:100vw; top: 0; left:0;" src="#introbg"/>
-			<img style="position:absolute; display: flex; display: flex; width:310px; height:533px; top: 50vh; left: 50vw; margin-left: -155px; margin-top: -266px;" src="#qrbackimg"/>
+			<img style="position:absolute; display: flex; height:100vh; width:100vw; top: 0; left:0;" src="./assets/first_start/intro_bg.png"/>
+			<img style="position:absolute; display: flex; display: flex; width:310px; height:533px; top: 50vh; left: 50vw; margin-left: -155px; margin-top: -266px;" src="./assets/forth_finish/qr_back.png"/>
 
 			<div class="qrcode" id="qrcode"></div>
 
 			<div id="saveqr" >
-				<img style="position:absolute; display: flex; width:204px; height:54px; top: 50vh; left: 50vw; margin-left: -102px; margin-top: 90px;" src="#qrsaveimg"/>    
+				<img style="position:absolute; display: flex; width:204px; height:54px; top: 50vh; left: 50vw; margin-left: -102px; margin-top: 90px;" src="./assets/forth_finish/qrsave.png"/>    
 			</div>
 
 			<div id="restarthome" >
-				<img style="position:absolute; display: flex; width:120px; height:35px; top: 50vh; left: 50vw; margin-left: -60px; margin-top: 200px;" src="#checkbuttonon"/>    
+				<img style="position:absolute; display: flex; width:120px; height:35px; top: 50vh; left: 50vw; margin-left: -60px; margin-top: 200px;" src="./assets/forth_finish/check_button_on.png"/>    
 			</div>
 		</div>
 		
