@@ -21,7 +21,7 @@ var quizidx = 0;
 			temp[0].parentNode.removeChild(temp[0]);
 		}
 */
-		html2canvas(document.querySelector("#scrmine"))
+		html2canvas(document.querySelector("#qrcode"))
 		.then(
 		function (canvas) {
 		saveAs(canvas.toDataURL(), 'shinhan_qr.jpg');
