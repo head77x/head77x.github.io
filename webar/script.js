@@ -225,7 +225,7 @@ AFRAME.registerComponent('brandon-shoot', {
 					model.object3D.position = this.el.object3D.position;
 					model.object3D.rotation = this.el.object3D.rotation;
 					model.object3D.position.z = -0.04;
-					model.object3D.visible = 1;
+//					model.object3D.visible = 1;
 
 					this.el.appendChild(model);
 
