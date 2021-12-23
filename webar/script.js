@@ -14,7 +14,7 @@ var quizs = [
 var quizidx = 0;
 
 	function saveQR() {
-		html2canvas(document.body)
+		html2canvas(document.getElementById('scrshot'))
 		.then(
 		function (canvas) {
 		saveAs(canvas.toDataURL(), 'shinhan_qr.jpg');

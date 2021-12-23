@@ -31,6 +31,7 @@
 
 <body style='margin: 0; overflow: hidden;' oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
     <!--<div class="centered instructions"></div>-->
+		<div id="scrshot">
     <a-scene 
         vr-mode-ui='enabled: false' 
         embedded
@@ -124,9 +125,9 @@
 				rotation-reader 
 				look-controls="reverseMouseDrag:true; touchEnabled: false"
 				>
-				<a-entity light="type: ambient; color: #FFF; intensity: 0.5"></a-entity>
+				<a-entity light="type: ambient; color: #FFF; intensity: 0.7"></a-entity>
 				<a-light type="directional" position="0 0 0" rotation="-90 0 0" target="#directionaltarget">
-					<a-entity id="directionaltarget" position="0 1 0"></a-entity>
+					<a-entity id="directionaltarget" position="0 1 -0.2"></a-entity>
 				</a-light>
 
 <!--				<a-entity light="type: hemisphere; color: #FFF; groundColor: #DDD; intensity: 1"></a-entity>				-->
@@ -140,7 +141,7 @@
 							<a-entity id="firstux2" mixin="gamehelp" visible="true"></a-entity>
 						</a-entity>
 -->
-					<a-entity text="value: version 1.3.5.5" position="0 1.0 -2.1"></a-entity>
+					<a-entity text="value: version 1.3.5.6" position="0 1.0 -2.1"></a-entity>
 				</a-entity>
 				<a-entity 
 					id="bow"
@@ -385,5 +386,5 @@
 		
 	</div>
 
-
+	</div>
 </body>
