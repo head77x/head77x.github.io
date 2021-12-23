@@ -14,10 +14,10 @@ var quizs = [
 var quizidx = 0;
 
 	function saveQR() {
-		var temp = document.getElementsByClassName('canval');
+		var temp = document.getElementsByTagName('canvas');
 
 		if ( temp != null ) {
-			temp.parentNode.removeChild(temp);
+			temp[0].parentNode.removeChild(temp[0]);
 		}
 
 		html2canvas(document.querySelector("#scrmine"))
