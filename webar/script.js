@@ -14,9 +14,11 @@ var quizs = [
 var quizidx = 0;
 
 	function saveQR() {
-		var temp = document.querySelector("#scrmine");
+		var temp = document.getElementById("scrmine");
 
-		temp.removeChild(temp.childNodes[0]);
+//		if ( temp.firstChild.class === '' )
+
+//		temp.removeChild(temp.firstChild);
 		
 		html2canvas(temp)
 		.then(
@@ -64,7 +66,7 @@ var qrcode = new QRCode(document.getElementById("qrcode"), {
 		document.getElementById('congratux').style.display = 'none';
 		document.getElementById('qrux').style.display = 'block';
 		
-		var qrcode = new QRCode(document.getElementById("qrcode"), {
+		var qrcode = new QRCode(document.getElementById("scrmine"), {
 			text: response.result.qrString,
 			width: 64,
 			height: 64,
