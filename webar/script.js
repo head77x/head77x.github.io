@@ -327,7 +327,7 @@ AFRAME.registerComponent('moveanywhere', {
 	},
 
 	tick: function (time) {
-//		this.el.object3D.rotateX(THREE.Math.degToRad(this.random_x));
+		this.el.object3D.rotateX(THREE.Math.degToRad(this.random_x));
 
 		if ( time > this.random_time ) {
 			this.restart(time);
