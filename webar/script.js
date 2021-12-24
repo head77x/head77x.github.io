@@ -14,14 +14,11 @@ var quizs = [
 var quizidx = 0;
 
 	function saveQR() {
-/*		
-		var temp = document.getElementsByTagName('canvas');
+		var temp = document.querySelector("#scrmine");
 
-		if ( temp != null ) {
-			temp[0].parentNode.removeChild(temp[0]);
-		}
-*/
-		html2canvas(document.querySelector("#scrmine"))
+		temp.removeChild(temp.childNodes[0]);
+		
+		html2canvas(temp)
 		.then(
 		function (canvas) {
 		saveAs(canvas.toDataURL(), 'shinhan_qr');
