@@ -614,7 +614,7 @@ function removeAllArrow() {
 
 // 기존 QR코드 삭제
 function removeAllQR() {
-	let pa = document.getElementById('qrcode');
+	let pa = document.getElementById('scrmine');
 
 	while (pa.firstChild) {
 		pa.removeChild(pa.firstChild);
