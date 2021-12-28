@@ -1,8 +1,4 @@
-if (!document.fullscreenElement) {
-	document.documentElement.requestFullscreen();
-}
 
-screen.lockOrientation('portrait');
 
 var gameMode = 'titlemode';		// 현재 게임 포커스 상태
 
