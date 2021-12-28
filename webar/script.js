@@ -13,6 +13,15 @@ var quizs = [
 	{ text: "OX퀴즈\n\n디지로그 서소문에서는 금융과 비금융의 결합된 다양한 전시회(캠핑카, 전기차, 오토바이 등) AR체험을 통해 새로운 고객 경험을 제공하고 있다.", correct: 0, result: "정답입니다!\n\n디지로그 서소문에서는 금융과 비금융의 결합된 다양한 전시회(캠핑카, 전기차, 오토바이 등) AR체험을 통해 새로운 고객 경험을 제공하고 있습니다!" },
 ];
 
+document.addEventListener("orientationchange", function(event){
+    switch(window.orientation) 
+    {  
+        case -90: case 90:
+			alert("게임 플레이를 위해서는 폰을 세워서 플레이해주세요");
+            break; 
+    }
+});
+
 var quizidx = 0;
 
 	function saveQR() {
