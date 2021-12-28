@@ -804,21 +804,24 @@ window.onload = () => {
 		});
 
 
+		window.onorientationchange = readDeviceOrientation;
+
+
     // 최초 로딩 완료후 UX표시
     document.querySelector('a-scene').addEventListener('loaded', function () {
         document.getElementById('firstux').style.display = 'block';
     });
 
-	document.addEventListener("orientationchange", function(){
-		alert("change orientation");
-		switch(window.orientation) 
-		{  
-			case -90: case 90:
-				alert("게임 플레이를 위해서는 폰을 세워서 플레이해주세요");
-				break; 
-		}
-	});
+	window.onorientationchange = readDeviceOrientation;
 };
+
+function readDeviceOrientation() {
+    if (Math.abs(window.orientation) === 90) {
+		alert("게임 플레이를 위해서는 폰을 세워서 플레이해주세요");
+    }
+}
+
+
 
 /*
 var models = [
