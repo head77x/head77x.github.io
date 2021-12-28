@@ -15,6 +15,7 @@ var quizs = [
 
 var quizidx = 0;
 
+	// QR코드 저장 처리
 	function saveQR() {
 		var temp = document.getElementById("scrmine");
 
@@ -44,6 +45,7 @@ var quizidx = 0;
 		}
 	}
 
+// QR코드 생성 처리
 function showQR() {
 var entity = document.getElementById('bgm');
 entity.components.sound.stopSound();        
@@ -82,6 +84,7 @@ var qrcode = new QRCode(document.getElementById("qrcode"), {
 	});
 }
 
+
 AFRAME.registerComponent('camrot', {
     init: function () {
             },
@@ -96,35 +99,7 @@ AFRAME.registerComponent('camrot', {
 
 });
 
-/*
-AFRAME.registerComponent('click-to-shoot', {
-init: function () {
-    document.body.addEventListener('mousedown', () => { this.el.emit('shoot'); });
-}
-});
-
-AFRAME.registerComponent('hit-handler', {
-init: function () {
-    var el = this.el;
-
-    el.addEventListener('hit', () => {
-        console.log('hitted');
-        color = new THREE.Color();
-        color.setRGB(1, 0, 0);
-        el.components.material.material.color.copy(color);        
-    });
-
-    el.addEventListener('die', () => {
-        console.log('die!');
-
-        document.getElementById('gameux').style.display = 'none';
-        document.getElementById('quizux').style.display = 'block';
-        gameMode = 'quizready';
-    });
-}
-});
-*/
-
+// 화살과 캐릭터 충돌 처리
 AFRAME.registerComponent('brandon-hit', {
 		schema: {
 			chrnum: {type: 'number', default: 1},
@@ -209,7 +184,6 @@ AFRAME.registerComponent('brandon-hit', {
 
 			document.getElementById('quiztext').innerText = quizs[quizidx].text;
 			gameMode = 'quizready';		// 퀴즈 진행중
-//			removeAllArrow();
 
 			// 시계 똑딱이는 소리
 			var entity = document.getElementById('ticktock');
@@ -218,6 +192,7 @@ AFRAME.registerComponent('brandon-hit', {
 
     });
 
+// 화살 드래그 및 쏘는 장면 처리
 AFRAME.registerComponent('brandon-shoot', {
     init: function () {
 				this.myarrow = null;
@@ -292,6 +267,7 @@ AFRAME.registerComponent('brandon-shoot', {
 });
 
 
+// 화살 날아가는 처리
 AFRAME.registerComponent('arrowshoot', {
 	schema: {
 		shootlevel: {type: 'number', default: 1},
@@ -313,6 +289,7 @@ AFRAME.registerComponent('arrowshoot', {
 	}
 });
 
+// 게임상에서 각 캐릭터 날아다니는 모습 처리
 AFRAME.registerComponent('moveanywhere', {
 	init: function () {
 		this.restart(0);
@@ -337,6 +314,7 @@ AFRAME.registerComponent('moveanywhere', {
 	}
 });
 
+// 첫 타이틀에서 몰리 캐릭터 날아간 후 리노 캐릭터 날아가도록 처리
 AFRAME.registerComponent('molystart', {
 	init: function () {
 		this.random_x = 0.5;//((Math.random() * 2) - 1)/10;
@@ -367,6 +345,7 @@ AFRAME.registerComponent('molystart', {
 		}	
 	}
 });
+// 첫 타이틀에서 리노 캐릭터 날아간 후 슈 캐릭터 날아가도록 처리
 AFRAME.registerComponent('rinostart', {
 	init: function () {
 		this.random_x = 0.5;//((Math.random() * 2) - 1)/10;
@@ -397,6 +376,7 @@ AFRAME.registerComponent('rinostart', {
 		}	
 	}
 });
+// 첫 타이틀에서 슈 캐릭터 날아간 후 루루라라 캐릭터 날아가도록 처리
 AFRAME.registerComponent('suestart', {
 	init: function () {
 		this.random_x = 0.5;//((Math.random() * 2) - 1)/10;
@@ -427,6 +407,7 @@ AFRAME.registerComponent('suestart', {
 		}	
 	}
 });
+// 첫 타이틀에서 루루라라 캐릭터 날아간 후 도레미 캐릭터 날아가도록 처리
 AFRAME.registerComponent('lulastart', {
 	init: function () {
 		this.random_x = 0.5;//((Math.random() * 2) - 1)/10;
@@ -457,6 +438,8 @@ AFRAME.registerComponent('lulastart', {
 		}	
 	}
 });
+
+// 첫 타이틀에서 도레미 캐릭터 날아간 후 솔 캐릭터 날아가도록 처리
 AFRAME.registerComponent('dorestart', {
 	init: function () {
 		this.random_x = 0.5;//((Math.random() * 2) - 1)/10;
@@ -487,6 +470,8 @@ AFRAME.registerComponent('dorestart', {
 		}	
 	}
 });
+
+// 첫 타이틀에서 솔 캐릭터 날아간 후 정식 게임 시작
 AFRAME.registerComponent('solstart', {
 	init: function () {
 		this.random_x = 0.5;//((Math.random() * 2) - 1)/10;
@@ -604,15 +589,6 @@ function allResetToStart() {
 	quizidx = 0;
 }
 
-// UX 바뀔때 모든 화살 없애기
-function removeAllArrow() {
-	let pa = document.getElementById('gun');
-/*
-	while (pa.firstChild) {
-		pa.removeChild(pa.firstChild);
-	}
-*/	
-}
 
 // 기존 QR코드 삭제
 function removeAllQR() {
@@ -623,25 +599,8 @@ function removeAllQR() {
 	}
 }
 
-    
+// 페이지 로딩되면 각종 이벤트 리스너 셋팅    
 window.onload = () => {
-/*
-    var tex = new THREE.TextureLoader().load('./assets/lambert1_baseColor.png');
-    tex.flipY = false; // for glTF models.
-
-    document.getElementById('gun').addEventListener('model-loaded', function (e) {
-        e.detail.model.traverse(function(node) {
-            if (node.isMesh) { 
-                node.material.map = tex;
-
-                node.material.shader="flat";
-
-                console.log('texture changed : ' + tex);
-            }
-        });
-    });
-*/
-
     // 첫번째 UX에서 스타트 버튼 누를때 처리
     document.getElementById('startgamebutton').addEventListener('click', function () {
         document.getElementById('firstux').style.display = 'none';
@@ -674,7 +633,6 @@ window.onload = () => {
     document.getElementById('gamehelpbutton').addEventListener('click', function () {
 			document.getElementById('helpux').style.display = 'block';
 			document.getElementById('gameux').style.display = 'none';
-			removeAllArrow();
 			gameMode = 'gamehelp';
 		});
 
@@ -682,7 +640,6 @@ window.onload = () => {
     document.getElementById('whathomebutton').addEventListener('click', function () {
 			document.getElementById('confirmhome').style.display = 'block';
 			document.getElementById('gameux').style.display = 'none';
-			removeAllArrow();
 			gameMode = 'askbackhome';
 		});
 
@@ -690,7 +647,6 @@ window.onload = () => {
     document.getElementById('tohomeok').addEventListener('click', function () {
 			document.getElementById('confirmhome').style.display = 'none';
 			document.getElementById('firstux').style.display = 'block';
-			removeAllArrow();
 			gameMode = 'titlemode';
 
 			allResetToStart();
@@ -820,83 +776,3 @@ function readDeviceOrientation() {
 		alert("게임 플레이를 위해서는 폰을 세워서 플레이해주세요");
     }
 }
-
-
-
-/*
-var models = [
-    {
-        url: './assets/sol_v02.glb',
-        scale: '0.5 0.5 0.5',
-        info: 'Magnemite, Lv. 5, HP 10/10',
-        rotation: '0 180 0',
-        position: '0 0 15',
-    },
-    {
-        url: './assets/magnemite/scene.gltf',
-        scale: '0.2 0.2 0.2',
-        rotation: '0 180 0',
-        position: '0 0 -10',
-        info: 'Articuno, Lv. 80, HP 100/100',
-    },
-    {
-        url: './assets/magnemite/scene.gltf',
-        scale: '0.08 0.08 0.08',
-        rotation: '0 180 0',
-        position: '0 -10 0',
-        info: 'Dragonite, Lv. 99, HP 150/150',
-    },
-];
-*/
-
-var modelIndex = 0;
-var setModel = function (model, entity) {
-    if (model.scale) {
-        entity.setAttribute('scale', model.scale);
-    }
-
-    if (model.rotation) {
-        entity.setAttribute('rotation', model.rotation);
-    }
-
-    if (model.position) {
-        entity.setAttribute('position', model.position);
-    }
-
-    entity.setAttribute('gltf-model', model.url);
-
-    if ( modelIndex == 1 ) {
-        entity.setAttribute('solchr', '');
-    }
-/*
-    const div = document.querySelector('.instructions');
-    div.innerText = model.info;
-*/    
-};
-/*
-function renderPlaces(places) {
-    let scene = document.querySelector('a-scene');
-
-    places.forEach((place) => {
-        let latitude = place.location.lat;
-        let longitude = place.location.lng;
-
-        let model = document.createElement('a-entity');
-        model.setAttribute('gyro-entity-object', `latitude: ${latitude}; longitude: ${longitude};`);
-
-        setModel(models[modelIndex], model);
-
-        model.setAttribute('animation-mixer', '');
-
-        document.querySelector('button[data-action="change"]').addEventListener('click', function () {
-            var entity = document.querySelector('[gyro-entity-object]');
-            modelIndex++;
-            var newIndex = modelIndex % models.length;
-            setModel(models[newIndex], entity);
-        });
-
-        scene.appendChild(model);
-        
-    });
-}
-*/
