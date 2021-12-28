@@ -1,7 +1,6 @@
 
 body {
     touch-action: pan-y;
-    width: 100%;
     min-height: 100%;    
 }
 
