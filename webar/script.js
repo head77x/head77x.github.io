@@ -226,7 +226,7 @@ AFRAME.registerComponent('brandon-shoot', {
 			this.startpoint = e.changedTouches[0].clientY;
 			this.bowlevel = 0;
 		},
-
+ 
 		moveone(e) {
 			if ( gameMode != 'gamemode' || e === null || e.changedTouches[0] === null ) return;
 
