@@ -236,19 +236,19 @@ AFRAME.registerComponent('brandon-shoot', {
 				if ( dist > 30 && dist <= 100 ) {
 					dist = -0.03;
 					this.bowlevel = 1;
-					document.getElementById('bow').setAttribute("animation-mixer","clip: ready1; loop: once; duration: 0.5; clampWhenFinished: true;");					
+					document.getElementById('bow').setAttribute("animation-mixer","clip: ready1; loop: once; duration: 0.5;");					
 				} else if ( dist > 100 && dist <= 200 ) {
 					dist = -0.015;
 					this.bowlevel = 2;
-					document.getElementById('bow').setAttribute("animation-mixer","clip: ready2; loop: once; duration: 0.5; clampWhenFinished: true;");					
+					document.getElementById('bow').setAttribute("animation-mixer","clip: ready2; loop: once; duration: 0.5;");					
 				} else if ( dist > 200 ) {
 					dist = -0.005;
 					this.bowlevel = 3;
-					document.getElementById('bow').setAttribute("animation-mixer","clip: ready3; loop: once; duration: 0.5; clampWhenFinished: true;");					
+					document.getElementById('bow').setAttribute("animation-mixer","clip: ready3; loop: once; duration: 0.5;");					
 				} else {
 					dist = -0.04;
 					this.bowlevel = 0;
-					document.getElementById('bow').setAttribute("animation-mixer","clip: ready0; loop: once; duration: 0.5; clampWhenFinished: true;");					
+					document.getElementById('bow').setAttribute("animation-mixer","clip: ready0; loop: once; duration: 0.5;");					
 				}
 				this.myarrow.object3D.position.z = dist;
 			}
@@ -296,7 +296,7 @@ AFRAME.registerComponent('moveanywhere', {
 	},
 
 	restart: function(whattime) {
-		this.random_x = ((Math.random() * 2) - 1)/2.0;
+		this.random_x = ((Math.random() * 2) - 1)/4.0;
 		this.random_z = ((Math.random() * 90) - 45);
 		this.random_time = whattime + ((Math.random() * 5) * 1000) + 1000;
 
