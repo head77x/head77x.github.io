@@ -219,7 +219,7 @@ AFRAME.registerComponent('brandon-shoot', {
 			this.myarrow.object3D.position.set( 0, 0, -0.04 );
 //			this.myarrow.object3D.rotation = this.el.object3D.rotation;
 
-			console.log('what pos : ' + this.myarrow.object3D.position.z );
+//			console.log('what pos : ' + this.myarrow.object3D.position.z );
 
 			this.myarrow.object3D.visible = true;
 			this.useArrow = (this.useArrow + 1) % this.maxArrow;
@@ -262,7 +262,7 @@ AFRAME.registerComponent('brandon-shoot', {
 				document.getElementById('bow').setAttribute("animation-mixer","clip: shotani; loop: once; duration: 0.5;");					
         this.myarrow.setAttribute("arrowshoot", "shootlevel:" + this.bowlevel + ";");
 			}
-      console.log('shoot : ' + this.bowlevel);
+//      console.log('shoot : ' + this.bowlevel);
     },
 });
 
